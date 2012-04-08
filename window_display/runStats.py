@@ -8,7 +8,7 @@ import time
 
 
 
-PAPER_DIR  = '~/svn/shed/papers'
+PAPER_DIR  = '/opt/svnstat/papers'
 THIS_DIR   = os.getcwd()
 OUTPUT_DIR = 'svnstat'
 
@@ -56,7 +56,7 @@ for i in range(2):
 		f.write(le.tostring(doc))
 
 	print 'Invoking graph generation software...'
-	os.system('java -mx5gb -jar statsvn.jar logfile.log ' + PAPER_DIR + ' -include "**/*.tex:*Makefile*" -config-file config.txt -output-dir ' + OUTPUT_DIR)
+	os.system('java -Djava.awt.headless=true -jar statsvn.jar logfile.log ' + PAPER_DIR + ' -include "**/*.tex:*Makefile*" -config-file config.txt -output-dir ' + OUTPUT_DIR)
 
 	if i == 0:
 		developers = getSoup(OUTPUT_DIR + '/developers.html')
