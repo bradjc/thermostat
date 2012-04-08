@@ -1,5 +1,5 @@
 body {
-  margin-left: 70px;
+    margin: 10px 30px;
     background: #ffffff;
     color: #002070;
     font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -87,7 +87,7 @@ strong a.webrepository {
   display:block;
 }
 .commitlist .revisionNumberInner {
-  font-weight: bold;
+  /*font-weight: bold;*/
 }
 .commitlist dt {
   float: left;
@@ -136,9 +136,13 @@ ul.commitdetails {
 
 table {
   border-collapse: collapse;
+  margin: 0;
+  padding:0;
 }
 table, thead, tfoot, tbody, colgroup, col, tr, th, td {
   border: none;
+    margin: 0;
+  padding:0;
 }
 td, th {
   padding: 0.1em 1em 0.3em;
@@ -163,4 +167,11 @@ thead th {
 }
 #generatedby a:hover {
   color: red;
+}
+#general_commit_log li {
+  margin: 5px 0;
+}
+#general_commit_log div.timeago {
+  text-align: right;
+  font-size: 10px;
 }
