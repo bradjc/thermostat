@@ -1,0 +1,57 @@
+<html>
+<head>
+	<title>4908CSE</title>
+	<link rel="stylesheet" href="ocss.css" type="text/css">
+	<script src="http://inductor.eecs.umich.edu/js/socket.io-0.8.7.js"></script>
+	<script src="http://inductor.eecs.umich.edu/js/jquery-1.7.1.min.js"></script>
+	<script src="http://inductor.eecs.umich.edu/js/jsIP.js"></script>
+	<script src="http://inductor.eecs.umich.edu/js/underscore.js"></script>
+	<script src="http://inductor.eecs.umich.edu/js/flot/jquery.flot.js"></script>
+	<script src="http://inductor.eecs.umich.edu/js/jquery.grapher.js"></script>
+	<script type=text/javascript>WEB_SOCKET_SWF_LOCATION='misc/WebSocketMain.swf'</script>
+	<script src="js/nuclear_graph.js"></script>
+</head>
+
+<body>
+	<h1>#4908cse Status</h1>
+	<table style="width:100%; padding:0; margin:0;">
+		<tr>
+			<td valign="top" style="width:1005px; margin:0; padding:0 20px 0 0;">
+				<h3>Written Lines in .tex Files</h3>
+				<div style="text-align:center">
+					<img src="svnstat/loc_per_author.png" />
+				</div>
+				<br /><br />
+				<div>
+					<h3>Realtime Computer Resource Usage</h3>
+					<div id="nuclear_graph" style="width:1000px; height:500px"></div>
+				</div>
+
+				<!--<table width="100%">
+					<tr>
+						<td>
+							<div id="nuclear_graph" style="width:1000px;height:500px"></div>
+						</td>
+
+						<td align="right"><img src="loc_per_author.png" /></td>
+					</tr>
+				</table>
+				<br><br><br>
+				<table width="100%">
+					<tr>
+						<td valign="top"><img src="activity_time.png" /></td>
+						<td><img src="activity_day.png" /></td>
+					</tr>
+				</table>
+				<h2>Commit Message Tag Cloud</h2>
+				[T]-->
+			</td>
+			<td style="margin:0; border-left: 1px dashed gray;">
+				<h3>LaTeX Commit Log</h3>
+				<div id="commit_log" style="width:450px; margin: 0;">
+				</div>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
