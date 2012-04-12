@@ -75,7 +75,7 @@ onload = function() {
 	});
 
 
-	g = $.grapher($("#nuclear_graph"));
+	g = $.grapher($("#nuclear_graph"), {});
 
 
 	LoadSvnStats();
