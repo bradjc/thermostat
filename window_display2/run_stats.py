@@ -11,14 +11,18 @@ import time
 from datetime import datetime
 
 
-PAPERS_DIR = '.'
+PAPERS_DIR = '/Users/bradjc/git/shed/papers'
 
 # Time in seconds to graph lines
 WINDOW = 60*60*24*31
 
+GNUPLOT_PLT_OUT  = 'plot_lines.plt'
+GNUPLOT_PLT_BASE = 'plot_lines_base.plt'
+
 now = int(time.time())
 
-command = ["git", "log",
+command = ["cd", PAPERS_DIR, "&&"
+           "git", "log",
            "--ignore-space-change",
            "--ignore-all-space",
            "--patience",
@@ -51,7 +55,7 @@ for dirpath, dirname, filenames in os.walk(PAPERS_DIR):
 
     if tex:
         command.append('--')
-        command.append(os.getcwd() + dirpath[1:] + '/*.tex')
+        command.append(dirpath + '/*.tex')
     #    break
 
 print command
@@ -94,13 +98,20 @@ for l in lines:
 
 print data
 
-gof = open('lines_changed_graph.data', 'w')
-tof = open('lines_changed_total.data', 'w')
 
-gof.write('username timestamp lines\n')
+tof = open('lines_changed_total.data', 'w')
 tof.write('username lines\n')
 
+plt_bf = open(GNUPLOT_PLT_BASE, 'r')
+plt_of = open(GNUPLOT_PLT_OUT, 'w')
+plt  = plt_bf.read()
+plt_bf.close()
+plt  += '\n\nplot '
+i    = 0
 for uname in sorted(data):
+
+    gof = open('lines_changed_graph_' + uname + '.data', 'w')
+    gof.write('timestamp lines\n')
 
     sd = sorted(data[uname], key=lambda data: data[0])
 
@@ -116,16 +127,35 @@ for uname in sorted(data):
         if (now - WINDOW < time):
             cumsum += lc
             outs = ''
-            outs += uname + ' ' + str(time) + ' ' + str(cumsum) + '\n'
+            outs += str(time) + ' ' + str(cumsum) + '\n'
             gof.write(outs)
 
-    gof.write('\n')
+    gof.close()
 
+    # Save total
     tof.write(uname + ' ' + str(total) + '\n')
 
+    # Update gnuplot script
+    plt += "'lines_changed_graph_" + uname + ".data' " \
+           "using 1:2 " \
+           "with lines " \
+           "ls " + str(i+1) + " " \
+           "title '" + uname + "'" \
+           ", \\\n"
 
-gof.close()
+
+    i += 1
+
+plt_of.write(plt[:-4])
+
 tof.close()
+plt_of.close()
+
+
+
+
+
+
 
 """
 def outputline(date, changes):
