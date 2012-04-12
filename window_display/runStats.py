@@ -8,7 +8,7 @@ import time
 
 
 
-PAPER_DIR  = '/opt/svnstat/papers'
+PAPER_DIR  = '~/svn/shed/papers'
 THIS_DIR   = os.getcwd()
 OUTPUT_DIR = 'svnstat'
 
