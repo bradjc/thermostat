@@ -19,7 +19,14 @@ WINDOW = 60*60*24*31
 GNUPLOT_PLT_OUT  = 'plot_lines.plt'
 GNUPLOT_PLT_BASE = 'plot_lines_base.plt'
 
+OUTPUT_DIR = 'data'
+
 now = int(time.time())
+
+# dict of all the users and the line counts
+data = {}
+
+user_lines = {}
 
 command = ["cd", PAPERS_DIR, "&&"
            "git", "log",
@@ -34,45 +41,38 @@ command = ["cd", PAPERS_DIR, "&&"
            "--numstat"
           ]
 
-total_files, inserted_t, deleted_t = 0, 0, 0
-
-
+# Find all the .tex files and add them to the git log call
 for dirpath, dirname, filenames in os.walk(PAPERS_DIR):
     print dirpath
     print filenames
 
     # search for .tex files
-    tex = False
+    is_tex = False
     for f in filenames:
         name, ext = os.path.splitext(f)
         if ext == '.tex':
-            tex = True
+            is_tex = True
             break
 
     # Check that this isn't a template
     if 'template' in dirpath:
         continue
 
-    if tex:
+    if is_tex:
         command.append('--')
         command.append(dirpath + '/*.tex')
-    #    break
 
-print command
+
 cmd = ' '.join(command)
 git = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)
-print git
 out, err = git.communicate()
-print out
+
 
 lines = out.split('\n')
 
-
-data = {}
-
 username = ''
-time = ''
-lc = 0 # line count
+time     = ''
+lc       = 0 # line count
 for l in lines:
     if '@' in l:
         if not username == '':
@@ -95,22 +95,18 @@ for l in lines:
 
 
 
-
-print data
-
-
-tof = open('lines_changed_total.data', 'w')
+tof = open(OUTPUT_DIR + '/lines_changed_total.data', 'w')
 tof.write('username lines\n')
 
 plt_bf = open(GNUPLOT_PLT_BASE, 'r')
-plt_of = open(GNUPLOT_PLT_OUT, 'w')
+plt_of = open(OUTPUT_DIR + '/' + GNUPLOT_PLT_OUT, 'w')
 plt  = plt_bf.read()
 plt_bf.close()
 plt  += '\n\nplot '
 i    = 0
 for uname in sorted(data):
 
-    gof = open('lines_changed_graph_' + uname + '.data', 'w')
+    gof = open(OUTPUT_DIR + '/lines_changed_graph_' + uname + '.data', 'w')
     gof.write('timestamp lines\n')
 
     sd = sorted(data[uname], key=lambda data: data[0])
@@ -134,9 +130,10 @@ for uname in sorted(data):
 
     # Save total
     tof.write(uname + ' ' + str(total) + '\n')
+    user_lines[uname] = total
 
     # Update gnuplot script
-    plt += "'lines_changed_graph_" + uname + ".data' " \
+    plt += "'" + OUTPUT_DIR + "/lines_changed_graph_" + uname + ".data' " \
            "using 1:2 " \
            "with lines " \
            "ls " + str(i+1) + " " \
@@ -153,51 +150,22 @@ plt_of.close()
 
 
 
+# Run gnuplot
+gnuplot_cmd = ['gnuplot', OUTPUT_DIR + '/' + GNUPLOT_PLT_OUT]
+
+gnup = subprocess.Popen(gnuplot_cmd, stdout=subprocess.PIPE)
+out, err = gnup.communicate()
+
+convert_cmd = ['convert', '-quality', '300', 'lines.eps', 'lines.png']
+conv = subprocess.Popen(convert_cmd, stdout=subprocess.PIPE)
+out, err = conv.communicate()
 
 
+# Make the total lines table
+ul = open('user_lines.html', 'w')
+#for uname, lines in sorted(user_lines.iteritems(), key=lambda (k,v): (v,k)):
+for uname in sorted(user_lines, key=user_lines.get, reverse=True):
+    ul.write('<tr><td>' + uname + '</td><td>' + str(user_lines[uname]) + '</td></tr>')
 
+ul.close()
 
-"""
-def outputline(date, changes):
-    global total_files, inserted_t, deleted_t
-    if not date: return
-    print "%s |% 7d lines | (%d)" % (date.strftime("%a, %b %d %Y"), changes, inserted_t + deleted_t)
-    sys.stdout.flush()
-
-def main(argv):
-    global total_files, inserted_t, deleted_t
-    if len(argv) > 1:
-        command.append("--")
-        command.extend(argv[1:])
-    #print ' '.join(command)  # DEBUG
-    git = subprocess.Popen(command, stdout=subprocess.PIPE)
-    out, err = git.communicate()
-    curr_day = None
-    days_changes = 0
-    for line in out.split('\n'):
-        if not line: continue
-        if line[0] != ' ':
-            # This is a description line
-            timestamp = datetime.fromtimestamp(float(line.strip()))
-            day = datetime.date(timestamp)
-        else:
-            # This is a stat line
-            data = re.findall(
-                ' (\d+) files changed, (\d+) insertions\(\+\), (\d+) deletions\(-\)',
-                line)
-            files, insertions, deletions = ( int(x) for x in data[0] )
-
-            if day != curr_day:
-                outputline(curr_day, days_changes)
-                days_changes = 0
-                curr_day = day
-
-            total_files += files
-            inserted_t += insertions
-            deleted_t += deletions
-            days_changes += insertions + deletions
-    outputline(curr_day, days_changes)
-if __name__ == '__main__':
-    sys.exit(main(sys.argv))
-
-"""
