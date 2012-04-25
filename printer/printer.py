@@ -10,7 +10,7 @@ import socket
 import json
 import time
 
-ENABLE_TWEETING = False
+ENABLE_TWEETING = True
 ENABLE_GATD     = True
 
 api = twitter.Api(consumer_key='OAicZZPAyI6QsIIr8xFXVw', \
@@ -163,46 +163,6 @@ def parseErrors(soup):
 
 
 
-# Get the last print job at the start of running the script
-soup      = BeautifulSoup(urllib.urlopen(PRINTER_URL + '/UE/jobaccountingbrowse.html'))
-dataTable = soup.find("table", { "id" : "data" })
-row       = dataTable.findAll('tr')[-1]
-newestID  = row.findAll('td')[0].find(text=True)
-
-print 'Starting id: ' + str(newestID)
-
-# Keep checking for any new print jobs
-while True:
-	try:
-		# Check to see if there are any new print jobs
-		soup = BeautifulSoup(urllib.urlopen(PRINTER_URL + '/UE/jobaccountingbrowse.html'))
-		pjs  = parseJobs(soup)
-		for pj in pjs:
-			if ENABLE_TWEETING:
-				outputString = createTweet(pj.userName.strip(), pj.pages, pj.isColor, pj.isDuplex)
-				print outputString
-				api.PostUpdate(outputString)
-
-			if ENABLE_GATD:
-				sendPrinterJobToGatd(pj)
-
-		# Check for any errors
-		soup = BeautifulSoup(urllib.urlopen(PRINTER_URL + '/status.html'))
-		pjs  = parseErrors(soup)
-		for pj in pjs:
-			if ENABLE_TWEETING:
-				outputString = createErrorTweet(error_type=pj.status_type, error_val=pj.status_val)
-				api.PostUpdate(outputString)
-
-			if ENABLE_GATD:
-				sendPrinterJobToGatd(pj)
-
-	except Exception as e:
-		print e
-		print 'failed'
-
-	sleep(10)
-
 def createTweet (username, pages, color, double_sided):
 	if len(username) > 20:
 		username = username[0:16] + "..."
@@ -274,9 +234,53 @@ def createErrorTweet (error_type, error_val):
 			"OK who messed up this time? Send someone up to fix my " + error_type + " error: " + error_val + ".", \
 			"Another day another problem. I'm having trouble " + error_type + " because " + error_val + ".", \
 			"I sure wish you people would stop letting me break. I'm getting sick of this " + error_type + " error called " + error_val + ".",\
-			"You know, some proper maintenance wouldn't hurt. Now I have a " + error_type + "error because " + error_val + ".", \
+			"You know, some proper maintenance wouldn't hurt. Now I have a " + error_type + " error because " + error_val + ".", \
 			"What does " + error_val + " mean? Could someone take care of this " + error_type + " error for me?"]
-	tweet = tweets[random.randrage(0, len(tweets))] + " #4908cse"
+	tweet = tweets[random.randrange(0, len(tweets))] + " #4908cse"
 	return tweet
+
+
+
+
+# Get the last print job at the start of running the script
+soup      = BeautifulSoup(urllib.urlopen(PRINTER_URL + '/UE/jobaccountingbrowse.html'))
+dataTable = soup.find("table", { "id" : "data" })
+row       = dataTable.findAll('tr')[-1]
+newestID  = row.findAll('td')[0].find(text=True)
+
+print 'Starting id: ' + str(newestID)
+
+# Keep checking for any new print jobs
+while True:
+	try:
+		# Check to see if there are any new print jobs
+		soup = BeautifulSoup(urllib.urlopen(PRINTER_URL + '/UE/jobaccountingbrowse.html'))
+		pjs  = parseJobs(soup)
+		for pj in pjs:
+			if ENABLE_TWEETING:
+				outputString = createTweet(pj.userName.strip(), pj.pages, pj.isColor, pj.isDuplex)
+				print outputString
+				api.PostUpdate(outputString)
+
+			if ENABLE_GATD:
+				sendPrinterJobToGatd(pj)
+
+		# Check for any errors
+		soup = BeautifulSoup(urllib.urlopen(PRINTER_URL + '/status.html'))
+		pjs  = parseErrors(soup)
+		for pj in pjs:
+			if ENABLE_TWEETING:
+				outputString = createErrorTweet(error_type=pj.status_type, error_val=pj.status_val)
+				api.PostUpdate(outputString)
+
+			if ENABLE_GATD:
+				sendPrinterJobToGatd(pj)
+
+	except Exception as e:
+		print e
+		print 'failed'
+
+	sleep(10)
+
 
 
