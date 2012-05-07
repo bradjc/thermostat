@@ -12,7 +12,7 @@ from datetime import datetime
 
 MAX_LINE_COUNT_PER_COMMIT = 1000
 
-PAPERS_DIR = '/Users/bradjc/git/shed/papers'
+PAPERS_DIR = '/home/bradjc/git/shed/papers'
 
 # Time in seconds to graph lines
 WINDOW = 60*60*24*31
@@ -66,7 +66,7 @@ for dirpath, dirname, filenames in os.walk(PAPERS_DIR):
 cmd = ' '.join(command)
 git = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)
 out, err = git.communicate()
-
+print out
 lines = out.split('\n')
 
 # Iterate through all results and group by username
@@ -134,10 +134,10 @@ for uname in sorted(data):
 	user_lines[uname] = total
 
 	# Update gnuplot script
+		  # "ls " + str(i+1) + " " \
 	plt += "'" + OUTPUT_DIR + "/lines_changed_graph_" + uname + ".data' " \
 		   "using 1:2 " \
 		   "with lines " \
-		   "ls " + str(i+1) + " " \
 		   "lw 10 " \
 		   "title '" + uname + "'" \
 		   ", \\\n"
