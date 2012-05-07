@@ -11,8 +11,9 @@ import time
 from datetime import datetime
 
 MAX_LINE_COUNT_PER_COMMIT = 1000
+NUMBER_COMMIT_MSGS_DISPLAY = 10
 
-PAPERS_DIR = '/home/bradjc/git/shed/papers'
+PAPERS_DIR = os.environ['SHED_REPO'] + '/papers'
 
 # Time in seconds to graph lines
 WINDOW = 60*60*24*31
@@ -65,7 +66,7 @@ for dirpath, dirname, filenames in os.walk(PAPERS_DIR):
 # Run log call with all .tex files listed
 cmd = ' '.join(command)
 git = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)
-out, err = git.communicate()
+out = git.communicate()[0]
 
 lines = out.split('\n')
 
@@ -185,7 +186,7 @@ commit_list_f = open('commit_list.html', 'w')
 # get commit log
 git_log_cmd = ["cd", PAPERS_DIR, "&&"
 		   "git", "log",
-		   "-n 10",
+		   "-n " + str(NUMBER_COMMIT_MSGS_DISPLAY),
 		   "--no-color",
 		   "--pretty='%ae %ct %s'"
 		  ]
