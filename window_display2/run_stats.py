@@ -66,7 +66,7 @@ for dirpath, dirname, filenames in os.walk(PAPERS_DIR):
 cmd = ' '.join(command)
 git = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)
 out, err = git.communicate()
-print out
+
 lines = out.split('\n')
 
 # Iterate through all results and group by username
@@ -138,7 +138,7 @@ for uname in sorted(data):
 	plt += "'" + OUTPUT_DIR + "/lines_changed_graph_" + uname + ".data' " \
 		   "using 1:2 " \
 		   "with lines " \
-		   "lw 10 " \
+		   "ls " + str(i+1) + " " \
 		   "title '" + uname + "'" \
 		   ", \\\n"
 
