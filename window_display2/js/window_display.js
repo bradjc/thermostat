@@ -37,7 +37,7 @@ function updateTimeAgoDates () {
 }
 
 function updateLinesGraph () {
-	$("#lines_graph").attr("src", "svnstat/loc_per_author.png?"+(new Date()).getTime());
+	$("#lines_graph").attr("src", "lines.png?"+(new Date()).getTime());
 }
 
 onload = function() {
