@@ -1,7 +1,7 @@
 set terminal postscript enhanced eps solid color font "Helvetica,32" size 11.11in,6.94in
 set output "lines.eps"
 
-set style line 1 lt 1 lw 7 ps 1 pt 7 lc rgb "red"
+set style line 1 lt 1 lw 10 ps 1 pt 7 lc rgb "red"
 set style line 2 lt 1 lw 7 ps 1 pt 7 lc rgb "blue"
 set style line 3 lt 1 lw 7 ps 1 pt 7 lc rgb "#33cc33"
 set style line 4 lt 1 lw 7 ps 1 pt 7 lc rgb "#993399"
