@@ -225,6 +225,7 @@ LETTER landscape</description>
 <wire x1="0" y1="-3" x2="-0.5" y2="-2.5" width="0.127" layer="21"/>
 <wire x1="-0.5" y1="-2.5" x2="0.5" y2="-2.5" width="0.127" layer="21"/>
 <wire x1="0.5" y1="-2.5" x2="0" y2="-3" width="0.127" layer="21"/>
+<text x="-2.54" y="3.81" size="1.016" layer="25" font="vector" ratio="12">&gt;NAME</text>
 </package>
 <package name="CONN_BLOCK_3">
 <wire x1="-4.07" y1="3.1" x2="-4.07" y2="-3.1" width="0.127" layer="21"/>
@@ -244,6 +245,7 @@ LETTER landscape</description>
 <pad name="3" x="2.54" y="0" drill="1.1"/>
 <hole x="2.54" y="-2.54" drill="1.1"/>
 <text x="2.54" y="1.1" size="0.762" layer="21" font="vector" ratio="12" align="bottom-center">3</text>
+<text x="-3.81" y="3.81" size="1.016" layer="25" font="vector" ratio="12">&gt;NAME</text>
 </package>
 <package name="PJ-0361-SMT">
 <smd name="2" x="0" y="6.1" dx="6.2" dy="3.9" layer="1"/>
@@ -9375,6 +9377,8 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <part name="P+7" library="SparkFun" deviceset="VCC" device=""/>
 <part name="GND37" library="supply1" deviceset="GND" device=""/>
 <part name="JP1" library="pinhead" deviceset="PINHD-2X10" device=""/>
+<part name="GND38" library="supply1" deviceset="GND" device=""/>
+<part name="GND39" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -9389,24 +9393,24 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <attribute name="VALUE" x="55.88" y="129.54" size="1.27" layer="96" rot="R180"/>
 </instance>
 <instance part="J4" gate="G$1" x="53.34" y="170.18" rot="R180"/>
-<instance part="J5" gate="G$1" x="198.12" y="160.02" smashed="yes">
-<attribute name="NAME" x="195.58" y="167.64" size="1.27" layer="95"/>
-<attribute name="VALUE" x="195.58" y="152.4" size="1.27" layer="96"/>
+<instance part="J5" gate="G$1" x="198.12" y="160.02" smashed="yes" rot="MR180">
+<attribute name="NAME" x="195.58" y="152.4" size="1.27" layer="95" rot="MR180"/>
+<attribute name="VALUE" x="195.58" y="167.64" size="1.27" layer="96" rot="MR180"/>
 </instance>
-<instance part="J6" gate="G$1" x="198.12" y="142.24" smashed="yes">
-<attribute name="NAME" x="195.58" y="149.86" size="1.27" layer="95"/>
-<attribute name="VALUE" x="195.58" y="134.62" size="1.27" layer="96"/>
+<instance part="J6" gate="G$1" x="198.12" y="142.24" smashed="yes" rot="MR180">
+<attribute name="NAME" x="195.58" y="134.62" size="1.27" layer="95" rot="MR180"/>
+<attribute name="VALUE" x="195.58" y="149.86" size="1.27" layer="96" rot="MR180"/>
 </instance>
-<instance part="J7" gate="G$1" x="198.12" y="127"/>
-<instance part="J8" gate="G$1" x="198.12" y="96.52" smashed="yes">
-<attribute name="NAME" x="195.58" y="104.14" size="1.27" layer="95"/>
-<attribute name="VALUE" x="195.58" y="88.9" size="1.27" layer="96"/>
+<instance part="J7" gate="G$1" x="198.12" y="124.46" rot="MR180"/>
+<instance part="J8" gate="G$1" x="198.12" y="96.52" smashed="yes" rot="MR180">
+<attribute name="NAME" x="195.58" y="88.9" size="1.27" layer="95" rot="MR180"/>
+<attribute name="VALUE" x="195.58" y="104.14" size="1.27" layer="96" rot="MR180"/>
 </instance>
-<instance part="J9" gate="G$1" x="198.12" y="78.74" smashed="yes">
-<attribute name="NAME" x="195.58" y="86.36" size="1.27" layer="95"/>
-<attribute name="VALUE" x="195.58" y="71.12" size="1.27" layer="96"/>
+<instance part="J9" gate="G$1" x="198.12" y="78.74" smashed="yes" rot="MR180">
+<attribute name="NAME" x="195.58" y="71.12" size="1.27" layer="95" rot="MR180"/>
+<attribute name="VALUE" x="195.58" y="86.36" size="1.27" layer="96" rot="MR180"/>
 </instance>
-<instance part="J10" gate="G$1" x="198.12" y="63.5"/>
+<instance part="J10" gate="G$1" x="198.12" y="60.96" rot="MR180"/>
 <instance part="U$1" gate="G$1" x="127" y="124.46"/>
 <instance part="J11" gate="G$1" x="53.34" y="81.28" rot="R180"/>
 <instance part="GND17" gate="1" x="43.18" y="73.66"/>
@@ -9423,6 +9427,8 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <instance part="P+6" gate="1" x="86.36" y="71.12"/>
 <instance part="P+7" gate="1" x="86.36" y="40.64"/>
 <instance part="JP1" gate="A" x="124.46" y="162.56"/>
+<instance part="GND38" gate="1" x="208.28" y="119.38"/>
+<instance part="GND39" gate="1" x="208.28" y="55.88"/>
 </instances>
 <busses>
 </busses>
@@ -9509,6 +9515,18 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <pinref part="GND36" gate="1" pin="GND"/>
 <wire x1="86.36" y1="27.94" x2="86.36" y2="33.02" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="J10" gate="G$1" pin="1"/>
+<wire x1="205.74" y1="60.96" x2="208.28" y2="60.96" width="0.1524" layer="91"/>
+<pinref part="GND39" gate="1" pin="GND"/>
+<wire x1="208.28" y1="58.42" x2="208.28" y2="60.96" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="J7" gate="G$1" pin="1"/>
+<wire x1="205.74" y1="124.46" x2="208.28" y2="124.46" width="0.1524" layer="91"/>
+<pinref part="GND38" gate="1" pin="GND"/>
+<wire x1="208.28" y1="121.92" x2="208.28" y2="124.46" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="VCC" class="0">
 <segment>
@@ -9537,16 +9555,9 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <label x="208.28" y="160.02" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
-<net name="TSTAT1_UP" class="0">
-<segment>
-<pinref part="J5" gate="G$1" pin="3"/>
-<wire x1="205.74" y1="157.48" x2="208.28" y2="157.48" width="0.1524" layer="91"/>
-<label x="208.28" y="157.48" size="1.27" layer="95" xref="yes"/>
-</segment>
-</net>
 <net name="TSTAT1_ESC" class="0">
 <segment>
-<pinref part="J6" gate="G$1" pin="1"/>
+<pinref part="J6" gate="G$1" pin="3"/>
 <wire x1="205.74" y1="144.78" x2="208.28" y2="144.78" width="0.1524" layer="91"/>
 <label x="208.28" y="144.78" size="1.27" layer="95" xref="yes"/>
 </segment>
@@ -9558,30 +9569,9 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <label x="208.28" y="142.24" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
-<net name="TSTAT1_DOWN" class="0">
-<segment>
-<pinref part="J6" gate="G$1" pin="3"/>
-<wire x1="205.74" y1="139.7" x2="208.28" y2="139.7" width="0.1524" layer="91"/>
-<label x="208.28" y="139.7" size="1.27" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="TSTAT1_ENTER" class="0">
-<segment>
-<pinref part="J7" gate="G$1" pin="1"/>
-<wire x1="205.74" y1="127" x2="208.28" y2="127" width="0.1524" layer="91"/>
-<label x="208.28" y="127" size="1.27" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="TSTAT1_GND" class="0">
-<segment>
-<pinref part="J7" gate="G$1" pin="2"/>
-<wire x1="205.74" y1="124.46" x2="208.28" y2="124.46" width="0.1524" layer="91"/>
-<label x="208.28" y="124.46" size="1.27" layer="95" xref="yes"/>
-</segment>
-</net>
 <net name="TSTAT2_ON/OFF" class="0">
 <segment>
-<pinref part="J8" gate="G$1" pin="1"/>
+<pinref part="J8" gate="G$1" pin="3"/>
 <wire x1="205.74" y1="99.06" x2="208.28" y2="99.06" width="0.1524" layer="91"/>
 <label x="208.28" y="99.06" size="1.27" layer="95" xref="yes"/>
 </segment>
@@ -9593,16 +9583,9 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <label x="208.28" y="96.52" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
-<net name="TSTAT2_UP" class="0">
-<segment>
-<pinref part="J8" gate="G$1" pin="3"/>
-<wire x1="205.74" y1="93.98" x2="208.28" y2="93.98" width="0.1524" layer="91"/>
-<label x="208.28" y="93.98" size="1.27" layer="95" xref="yes"/>
-</segment>
-</net>
 <net name="TSTAT2_ESC" class="0">
 <segment>
-<pinref part="J9" gate="G$1" pin="1"/>
+<pinref part="J9" gate="G$1" pin="3"/>
 <wire x1="205.74" y1="81.28" x2="208.28" y2="81.28" width="0.1524" layer="91"/>
 <label x="208.28" y="81.28" size="1.27" layer="95" xref="yes"/>
 </segment>
@@ -9612,27 +9595,6 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <pinref part="J9" gate="G$1" pin="2"/>
 <wire x1="205.74" y1="78.74" x2="208.28" y2="78.74" width="0.1524" layer="91"/>
 <label x="208.28" y="78.74" size="1.27" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="TSTAT2_DOWN" class="0">
-<segment>
-<pinref part="J9" gate="G$1" pin="3"/>
-<wire x1="205.74" y1="76.2" x2="208.28" y2="76.2" width="0.1524" layer="91"/>
-<label x="208.28" y="76.2" size="1.27" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="TSTAT2_ENTER" class="0">
-<segment>
-<pinref part="J10" gate="G$1" pin="1"/>
-<wire x1="205.74" y1="63.5" x2="208.28" y2="63.5" width="0.1524" layer="91"/>
-<label x="208.28" y="63.5" size="1.27" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="TSTAT2_GND" class="0">
-<segment>
-<pinref part="J10" gate="G$1" pin="2"/>
-<wire x1="205.74" y1="60.96" x2="208.28" y2="60.96" width="0.1524" layer="91"/>
-<label x="208.28" y="60.96" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="5V" class="0">
@@ -9659,100 +9621,93 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="TSTAT1_ON/OFF" class="0">
 <segment>
-<pinref part="J5" gate="G$1" pin="1"/>
+<pinref part="J5" gate="G$1" pin="3"/>
 <wire x1="205.74" y1="162.56" x2="208.28" y2="162.56" width="0.1524" layer="91"/>
 <label x="208.28" y="162.56" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="P2.0" class="0">
 <segment>
-<pinref part="JP1" gate="A" pin="2"/>
-<wire x1="129.54" y1="172.72" x2="137.16" y2="172.72" width="0.1524" layer="91"/>
-<label x="137.16" y="172.72" size="1.27" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="P2.1" class="0">
-<segment>
-<pinref part="JP1" gate="A" pin="4"/>
-<wire x1="129.54" y1="170.18" x2="137.16" y2="170.18" width="0.1524" layer="91"/>
-<label x="137.16" y="170.18" size="1.27" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="ADC5" class="0">
-<segment>
 <pinref part="JP1" gate="A" pin="1"/>
 <wire x1="121.92" y1="172.72" x2="114.3" y2="172.72" width="0.1524" layer="91"/>
 <label x="114.3" y="172.72" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="ADC6/DAC0" class="0">
+<net name="P2.1" class="0">
 <segment>
 <pinref part="JP1" gate="A" pin="3"/>
 <wire x1="121.92" y1="170.18" x2="114.3" y2="170.18" width="0.1524" layer="91"/>
 <label x="114.3" y="170.18" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="ADC7/DAC1" class="0">
+<net name="ADC5" class="0">
 <segment>
-<pinref part="JP1" gate="A" pin="5"/>
-<wire x1="121.92" y1="167.64" x2="114.3" y2="167.64" width="0.1524" layer="91"/>
-<label x="114.3" y="167.64" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="JP1" gate="A" pin="16"/>
+<wire x1="129.54" y1="154.94" x2="137.16" y2="154.94" width="0.1524" layer="91"/>
+<label x="137.16" y="154.94" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="ADC6/DAC0" class="0">
+<segment>
+<pinref part="JP1" gate="A" pin="14"/>
+<wire x1="129.54" y1="157.48" x2="137.16" y2="157.48" width="0.1524" layer="91"/>
+<label x="137.16" y="157.48" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="STE0" class="0">
-<segment>
-<pinref part="JP1" gate="A" pin="7"/>
-<wire x1="121.92" y1="165.1" x2="114.3" y2="165.1" width="0.1524" layer="91"/>
-<label x="114.3" y="165.1" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="MOSI0/SDA" class="0">
 <segment>
 <pinref part="JP1" gate="A" pin="9"/>
 <wire x1="121.92" y1="162.56" x2="114.3" y2="162.56" width="0.1524" layer="91"/>
 <label x="114.3" y="162.56" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="MISO0" class="0">
+<net name="MOSI0/SDA" class="0">
 <segment>
 <pinref part="JP1" gate="A" pin="11"/>
 <wire x1="121.92" y1="160.02" x2="114.3" y2="160.02" width="0.1524" layer="91"/>
 <label x="114.3" y="160.02" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="SCLK0/SCL" class="0">
+<net name="MISO0" class="0">
 <segment>
 <pinref part="JP1" gate="A" pin="13"/>
 <wire x1="121.92" y1="157.48" x2="114.3" y2="157.48" width="0.1524" layer="91"/>
 <label x="114.3" y="157.48" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="UART0TX" class="0">
+<net name="SCLK0/SCL" class="0">
 <segment>
 <pinref part="JP1" gate="A" pin="15"/>
 <wire x1="121.92" y1="154.94" x2="114.3" y2="154.94" width="0.1524" layer="91"/>
 <label x="114.3" y="154.94" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="UART0RX" class="0">
+<net name="UART0TX" class="0">
 <segment>
 <pinref part="JP1" gate="A" pin="17"/>
 <wire x1="121.92" y1="152.4" x2="114.3" y2="152.4" width="0.1524" layer="91"/>
 <label x="114.3" y="152.4" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
+<net name="UART0RX" class="0">
+<segment>
+<pinref part="JP1" gate="A" pin="19"/>
+<wire x1="121.92" y1="149.86" x2="114.3" y2="149.86" width="0.1524" layer="91"/>
+<label x="114.3" y="149.86" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
 <net name="P2.3" class="0">
 <segment>
-<pinref part="JP1" gate="A" pin="6"/>
-<wire x1="129.54" y1="167.64" x2="137.16" y2="167.64" width="0.1524" layer="91"/>
-<label x="137.16" y="167.64" size="1.27" layer="95" xref="yes"/>
+<pinref part="JP1" gate="A" pin="5"/>
+<wire x1="121.92" y1="167.64" x2="114.3" y2="167.64" width="0.1524" layer="91"/>
+<label x="114.3" y="167.64" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="P2.6" class="0">
 <segment>
-<pinref part="JP1" gate="A" pin="8"/>
-<wire x1="129.54" y1="165.1" x2="137.16" y2="165.1" width="0.1524" layer="91"/>
-<label x="137.16" y="165.1" size="1.27" layer="95" xref="yes"/>
+<pinref part="JP1" gate="A" pin="7"/>
+<wire x1="121.92" y1="165.1" x2="114.3" y2="165.1" width="0.1524" layer="91"/>
+<label x="114.3" y="165.1" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="RADIO_SFD" class="0">
@@ -9760,6 +9715,55 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <pinref part="JP1" gate="A" pin="10"/>
 <wire x1="129.54" y1="162.56" x2="137.16" y2="162.56" width="0.1524" layer="91"/>
 <label x="137.16" y="162.56" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="TSTAT1_UP" class="0">
+<segment>
+<pinref part="J5" gate="G$1" pin="1"/>
+<wire x1="205.74" y1="157.48" x2="208.28" y2="157.48" width="0.1524" layer="91"/>
+<label x="208.28" y="157.48" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="TSTAT1_DOWN" class="0">
+<segment>
+<pinref part="J6" gate="G$1" pin="1"/>
+<wire x1="205.74" y1="139.7" x2="208.28" y2="139.7" width="0.1524" layer="91"/>
+<label x="208.28" y="139.7" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="TSTAT2_UP" class="0">
+<segment>
+<pinref part="J8" gate="G$1" pin="1"/>
+<wire x1="205.74" y1="93.98" x2="208.28" y2="93.98" width="0.1524" layer="91"/>
+<label x="208.28" y="93.98" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="TSTAT2_DOWN" class="0">
+<segment>
+<pinref part="J9" gate="G$1" pin="1"/>
+<wire x1="205.74" y1="76.2" x2="208.28" y2="76.2" width="0.1524" layer="91"/>
+<label x="208.28" y="76.2" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="TSTAT1_ENTER" class="0">
+<segment>
+<pinref part="J7" gate="G$1" pin="2"/>
+<wire x1="205.74" y1="127" x2="208.28" y2="127" width="0.1524" layer="91"/>
+<label x="208.28" y="127" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="TSTAT2_ENTER" class="0">
+<segment>
+<pinref part="J10" gate="G$1" pin="2"/>
+<wire x1="205.74" y1="63.5" x2="208.28" y2="63.5" width="0.1524" layer="91"/>
+<label x="208.28" y="63.5" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="ADC7/DAC1" class="0">
+<segment>
+<pinref part="JP1" gate="A" pin="12"/>
+<wire x1="129.54" y1="160.02" x2="137.16" y2="160.02" width="0.1524" layer="91"/>
+<label x="137.16" y="160.02" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 </nets>
@@ -10876,60 +10880,32 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <wire x1="172.72" y1="165.1" x2="172.72" y2="177.8" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="TSTAT1_ON/OFF_PIN" class="0">
-<segment>
-<pinref part="U2" gate="G$1" pin="P5.0"/>
-<wire x1="147.32" y1="144.78" x2="144.78" y2="144.78" width="0.1524" layer="91"/>
-<label x="144.78" y="144.78" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="TSTAT1_MENU_PIN" class="0">
-<segment>
-<pinref part="U2" gate="G$1" pin="P5.1"/>
-<wire x1="147.32" y1="142.24" x2="144.78" y2="142.24" width="0.1524" layer="91"/>
-<label x="144.78" y="142.24" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="TSTAT1_UP_PIN" class="0">
-<segment>
-<pinref part="U2" gate="G$1" pin="P5.2"/>
-<wire x1="147.32" y1="139.7" x2="144.78" y2="139.7" width="0.1524" layer="91"/>
-<label x="144.78" y="139.7" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="TSTAT1_ESC_PIN" class="0">
+<net name="TSTAT1_HELP_PIN" class="0">
 <segment>
 <pinref part="U2" gate="G$1" pin="P5.3"/>
 <wire x1="147.32" y1="137.16" x2="144.78" y2="137.16" width="0.1524" layer="91"/>
 <label x="144.78" y="137.16" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="TSTAT1_HELP_PIN" class="0">
-<segment>
-<pinref part="U2" gate="G$1" pin="P5.4"/>
-<wire x1="147.32" y1="134.62" x2="144.78" y2="134.62" width="0.1524" layer="91"/>
-<label x="144.78" y="134.62" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
 <net name="TSTAT1_DOWN_PIN" class="0">
 <segment>
-<pinref part="U2" gate="G$1" pin="P5.5"/>
-<wire x1="147.32" y1="132.08" x2="144.78" y2="132.08" width="0.1524" layer="91"/>
-<label x="144.78" y="132.08" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="U2" gate="G$1" pin="P5.2"/>
+<wire x1="147.32" y1="139.7" x2="144.78" y2="139.7" width="0.1524" layer="91"/>
+<label x="144.78" y="139.7" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="TSTAT1_ENTER_PIN" class="0">
 <segment>
-<pinref part="U2" gate="G$1" pin="P5.6"/>
-<wire x1="147.32" y1="129.54" x2="144.78" y2="129.54" width="0.1524" layer="91"/>
-<label x="144.78" y="129.54" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="U2" gate="G$1" pin="P5.1"/>
+<wire x1="147.32" y1="142.24" x2="144.78" y2="142.24" width="0.1524" layer="91"/>
+<label x="144.78" y="142.24" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="TSTAT2_ON/OFF_PIN" class="0">
 <segment>
-<pinref part="U2" gate="G$1" pin="P5.7"/>
-<wire x1="147.32" y1="127" x2="144.78" y2="127" width="0.1524" layer="91"/>
-<label x="144.78" y="127" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="U2" gate="G$1" pin="P5.0"/>
+<wire x1="147.32" y1="144.78" x2="144.78" y2="144.78" width="0.1524" layer="91"/>
+<label x="144.78" y="144.78" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="HEATING_PIN" class="0">
@@ -11109,6 +11085,34 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <wire x1="198.12" y1="88.9" x2="198.12" y2="53.34" width="0.1524" layer="91"/>
 <wire x1="198.12" y1="53.34" x2="165.1" y2="53.34" width="0.1524" layer="91"/>
 <label x="165.1" y="53.34" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="TSTAT1_ON/OFF_PIN" class="0">
+<segment>
+<pinref part="U2" gate="G$1" pin="P5.7"/>
+<wire x1="147.32" y1="127" x2="144.78" y2="127" width="0.1524" layer="91"/>
+<label x="144.78" y="127" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="TSTAT1_MENU_PIN" class="0">
+<segment>
+<pinref part="U2" gate="G$1" pin="P5.6"/>
+<wire x1="147.32" y1="129.54" x2="144.78" y2="129.54" width="0.1524" layer="91"/>
+<label x="144.78" y="129.54" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="TSTAT1_UP_PIN" class="0">
+<segment>
+<pinref part="U2" gate="G$1" pin="P5.5"/>
+<wire x1="147.32" y1="132.08" x2="144.78" y2="132.08" width="0.1524" layer="91"/>
+<label x="144.78" y="132.08" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="TSTAT1_ESC_PIN" class="0">
+<segment>
+<pinref part="U2" gate="G$1" pin="P5.4"/>
+<wire x1="147.32" y1="134.62" x2="144.78" y2="134.62" width="0.1524" layer="91"/>
+<label x="144.78" y="134.62" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 </nets>

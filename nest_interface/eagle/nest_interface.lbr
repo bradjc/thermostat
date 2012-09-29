@@ -216,6 +216,7 @@
 <wire x1="0" y1="-3" x2="-0.5" y2="-2.5" width="0.127" layer="21"/>
 <wire x1="-0.5" y1="-2.5" x2="0.5" y2="-2.5" width="0.127" layer="21"/>
 <wire x1="0.5" y1="-2.5" x2="0" y2="-3" width="0.127" layer="21"/>
+<text x="-2.54" y="3.81" size="1.016" layer="25" font="vector" ratio="12">&gt;NAME</text>
 </package>
 <package name="CONN_BLOCK_3">
 <wire x1="-4.07" y1="3.1" x2="-4.07" y2="-3.1" width="0.127" layer="21"/>
@@ -235,6 +236,7 @@
 <pad name="3" x="2.54" y="0" drill="1.1"/>
 <hole x="2.54" y="-2.54" drill="1.1"/>
 <text x="2.54" y="1.1" size="0.762" layer="21" font="vector" ratio="12" align="bottom-center">3</text>
+<text x="-3.81" y="3.81" size="1.016" layer="25" font="vector" ratio="12">&gt;NAME</text>
 </package>
 <package name="PJ-0361-SMT">
 <smd name="2" x="0" y="6.1" dx="6.2" dy="3.9" layer="1"/>
