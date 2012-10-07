@@ -1281,6 +1281,7 @@
 </devices>
 </deviceset>
 <deviceset name="RT314524" prefix="RE">
+<description>RELAY GEN PURPOSE SPDT 16A 24VAC</description>
 <gates>
 <gate name="G$1" symbol="RELAY-SPDT" x="0" y="0"/>
 </gates>
@@ -1294,12 +1295,15 @@
 <connect gate="G$1" pin="NO" pad="NO1 NO2"/>
 </connects>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="DIGIKEY" value="PB1238-ND"/>
+</technology>
 </technologies>
 </device>
 </devices>
 </deviceset>
 <deviceset name="CONN_BLOCK_2" prefix="J">
+<description>2x 0.100 in screw terminal block</description>
 <gates>
 <gate name="G$1" symbol="CONN_BLOCK_2" x="0" y="0"/>
 </gates>
@@ -1310,17 +1314,15 @@
 <connect gate="G$1" pin="2" pad="2"/>
 </connects>
 <technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="CONN_BLOCK_3" package="CONN_BLOCK_2">
-<technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="DIGIKEY" value="277-1273-ND"/>
+</technology>
 </technologies>
 </device>
 </devices>
 </deviceset>
 <deviceset name="CONN_BLOCK_3" prefix="J">
+<description>3x 0.100 in screw terminal block</description>
 <gates>
 <gate name="G$1" symbol="CONN_BLOCK_3" x="0" y="0"/>
 </gates>
@@ -1340,6 +1342,7 @@
 </devices>
 </deviceset>
 <deviceset name="PJ-036A-SMT" prefix="J">
+<description>CONN PWR JACK 2.0X6.3MM SMT</description>
 <gates>
 <gate name="G$1" symbol="PWR" x="0" y="0"/>
 </gates>
@@ -1350,7 +1353,9 @@
 <connect gate="G$1" pin="COMMON" pad="2 3"/>
 </connects>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="DIGIKEY" value="CP-036APJCT-ND"/>
+</technology>
 </technologies>
 </device>
 </devices>
@@ -1425,6 +1430,7 @@ BJT configuration in SOT23 package. MMBT2222 is the common NPN we use. Double ch
 </devices>
 </deviceset>
 <deviceset name="MOLEX_MICRO_USB_B_047346" prefix="J">
+<description>Very tiny smd micro USB receptacle.</description>
 <gates>
 <gate name="G$1" symbol="USB" x="0" y="0"/>
 </gates>
@@ -1438,12 +1444,15 @@ BJT configuration in SOT23 package. MMBT2222 is the common NPN we use. Double ch
 <connect gate="G$1" pin="VCC" pad="VCC"/>
 </connects>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="DIGIKEY" value="WM17141CT-ND"/>
+</technology>
 </technologies>
 </device>
 </devices>
 </deviceset>
 <deviceset name="MPC1825" prefix="U">
+<description>3V 500mA LDO</description>
 <gates>
 <gate name="G$1" symbol="4PIN_LDO" x="0" y="0"/>
 </gates>
@@ -1455,12 +1464,15 @@ BJT configuration in SOT23 package. MMBT2222 is the common NPN we use. Double ch
 <connect gate="G$1" pin="VOUT" pad="3"/>
 </connects>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="DIGIKEY" value="MCP1825S-3002E/DB-ND"/>
+</technology>
 </technologies>
 </device>
 </devices>
 </deviceset>
 <deviceset name="ALD1107" prefix="U">
+<description>4x P-FET transistor chip</description>
 <gates>
 <gate name="G$1" symbol="P-FET-4" x="0" y="0"/>
 </gates>
@@ -1483,7 +1495,9 @@ BJT configuration in SOT23 package. MMBT2222 is the common NPN we use. Double ch
 <connect gate="G$1" pin="VCC" pad="11"/>
 </connects>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="DIGIKEY" value="1014-1015-ND"/>
+</technology>
 </technologies>
 </device>
 </devices>
@@ -1575,7 +1589,7 @@ BJT configuration in SOT23 package. MMBT2222 is the common NPN we use. Double ch
 </devices>
 </deviceset>
 <deviceset name="TC1262" prefix="U">
-<description>5V 500mA regulator</description>
+<description>5V 500mA LDO</description>
 <gates>
 <gate name="G$1" symbol="4PIN_LDO" x="0" y="0"/>
 </gates>
@@ -1657,6 +1671,7 @@ BJT configuration in SOT23 package. MMBT2222 is the common NPN we use. Double ch
 </devices>
 </deviceset>
 <deviceset name="CONN_BLOCK_7" prefix="J">
+<description>7x 0.100 in screw terminal block</description>
 <gates>
 <gate name="G$1" symbol="CONN_BLOCK_7" x="0" y="0"/>
 </gates>
@@ -1680,6 +1695,7 @@ BJT configuration in SOT23 package. MMBT2222 is the common NPN we use. Double ch
 </devices>
 </deviceset>
 <deviceset name="CONN_BLOCK_8" prefix="J">
+<description>8x 0.100 in screw terminal block</description>
 <gates>
 <gate name="G$1" symbol="CONN_BLOCK_8" x="0" y="0"/>
 </gates>
@@ -1704,6 +1720,7 @@ BJT configuration in SOT23 package. MMBT2222 is the common NPN we use. Double ch
 </devices>
 </deviceset>
 <deviceset name="VSSR1603103" prefix="RA">
+<description>RES ARRAY 10K OHM 8 RES 16-LSSOP</description>
 <gates>
 <gate name="G$1" symbol="RES_ARRAY_8" x="0" y="0"/>
 </gates>
@@ -1728,7 +1745,9 @@ BJT configuration in SOT23 package. MMBT2222 is the common NPN we use. Double ch
 <connect gate="G$1" pin="9" pad="9"/>
 </connects>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="DIGIKEY" value="VSSR16-10K-JI-ND"/>
+</technology>
 </technologies>
 </device>
 </devices>
