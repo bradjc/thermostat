@@ -3400,7 +3400,7 @@ BJT configuration in SOT23 package. MMBT2222 is the common NPN we use. Double ch
 LETTER landscape</description>
 <gates>
 <gate name="G$1" symbol="LETTER_L" x="0" y="0"/>
-<gate name="G$2" symbol="DOCFIELD" x="147.32" y="0"/>
+<gate name="G$2" symbol="DOCFIELD" x="147.32" y="0" addlevel="must"/>
 </gates>
 <devices>
 <device name="">
