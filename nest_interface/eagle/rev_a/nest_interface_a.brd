@@ -2393,13 +2393,15 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <attribute name="NAME" x="71.247" y="8.636" size="1.016" layer="25" font="vector" ratio="12" rot="R270" align="bottom-center"/>
 <attribute name="VALUE" x="68.707" y="9.271" size="1.27" layer="27" rot="R270"/>
 </element>
-<element name="C16" library="SparkFun" package="EIA3216" value="10u" x="60.198" y="19.304" smashed="yes" rot="R90">
+<element name="C18" library="SparkFun" package="EIA3216" value="10u" x="60.198" y="19.304" smashed="yes" rot="R90">
 <attribute name="NAME" x="61.579" y="19.304" size="1.016" layer="25" font="vector" ratio="12" rot="R270" align="bottom-center"/>
 <attribute name="VALUE" x="58.866" y="19.712" size="0.4064" layer="27" rot="R90"/>
+<attribute name="DIGIKEY" value="478-1655-1-ND" x="60.198" y="19.304" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
 <element name="L1" library="SparkFun" package="0603" value="" x="67.818" y="8.636" smashed="yes" rot="R90">
 <attribute name="NAME" x="68.453" y="8.636" size="1.016" layer="25" font="vector" ratio="12" rot="R270" align="bottom-center"/>
 <attribute name="VALUE" x="68.961" y="7.62" size="0.4064" layer="27" font="vector" rot="R90"/>
+<attribute name="DIGIKEY" value="240-2373-1-ND" x="67.818" y="8.636" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
 <element name="R1" library="rcl" package="R0603" value="240" x="58.928" y="8.636" smashed="yes" rot="R270">
 <attribute name="NAME" x="59.563" y="8.636" size="1.016" layer="25" font="vector" ratio="12" rot="R270" align="bottom-center"/>
@@ -2409,11 +2411,11 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <attribute name="NAME" x="62.357" y="8.636" size="1.016" layer="25" font="vector" ratio="12" rot="R270" align="bottom-center"/>
 <attribute name="VALUE" x="59.817" y="9.271" size="1.27" layer="27" rot="R270"/>
 </element>
-<element name="D1" library="SparkFun" package="LED-0603" value="" x="58.928" y="4.826" smashed="yes">
+<element name="D1" library="SparkFun" package="LED-0603" value="RED" x="58.928" y="4.826" smashed="yes">
 <attribute name="NAME" x="59.563" y="4.826" size="1.016" layer="25" font="vector" ratio="12" rot="R270" align="bottom-center"/>
 <attribute name="VALUE" x="60.0075" y="3.81" size="0.4064" layer="27" rot="R90"/>
 </element>
-<element name="D2" library="SparkFun" package="LED-0603" value="" x="61.722" y="4.826" smashed="yes">
+<element name="D2" library="SparkFun" package="LED-0603" value="BLUE" x="61.722" y="4.826" smashed="yes">
 <attribute name="NAME" x="62.357" y="4.826" size="1.016" layer="25" font="vector" ratio="12" rot="R270" align="bottom-center"/>
 <attribute name="VALUE" x="62.8015" y="3.81" size="0.4064" layer="27" rot="R90"/>
 </element>
@@ -2424,20 +2426,21 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <element name="S3" library="berkeley-epic" package="EVQP2" value="EVQP2" x="54.102" y="22.098" smashed="yes" rot="R270">
 <attribute name="NAME" x="55.48" y="25.908" size="1.016" layer="25" font="vector" ratio="12" rot="R90"/>
 <attribute name="VALUE" x="50.946" y="25.4" size="1.27" layer="27" font="vector" ratio="10" rot="R270"/>
+<attribute name="DIGIKEY" value="P11084SCT-ND" x="54.102" y="22.098" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
 <element name="C4" library="rcl" package="C0603" value="0.1u" x="77.978" y="58.928" smashed="yes" rot="R180">
 <attribute name="NAME" x="77.978" y="59.563" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center"/>
 <attribute name="VALUE" x="78.613" y="60.833" size="1.27" layer="27" rot="R180"/>
 </element>
-<element name="D3" library="SparkFun" package="LED-0603" value="" x="65.786" y="27.432" smashed="yes" rot="R90">
+<element name="D3" library="SparkFun" package="LED-0603" value="RED" x="65.786" y="27.432" smashed="yes" rot="R90">
 <attribute name="NAME" x="65.786" y="26.797" size="1.016" layer="25" font="vector" ratio="12" rot="R180" align="bottom-center"/>
 <attribute name="VALUE" x="66.802" y="28.5115" size="0.4064" layer="27" rot="R180"/>
 </element>
-<element name="D4" library="SparkFun" package="LED-0603" value="" x="69.85" y="27.432" smashed="yes" rot="R90">
+<element name="D4" library="SparkFun" package="LED-0603" value="GREEN" x="69.85" y="27.432" smashed="yes" rot="R90">
 <attribute name="NAME" x="69.85" y="26.797" size="1.016" layer="25" font="vector" ratio="12" rot="R180" align="bottom-center"/>
 <attribute name="VALUE" x="70.866" y="28.5115" size="0.4064" layer="27" rot="R180"/>
 </element>
-<element name="D5" library="SparkFun" package="LED-0603" value="" x="73.914" y="27.432" smashed="yes" rot="R90">
+<element name="D5" library="SparkFun" package="LED-0603" value="BLUE" x="73.914" y="27.432" smashed="yes" rot="R90">
 <attribute name="NAME" x="73.914" y="26.797" size="1.016" layer="25" font="vector" ratio="12" rot="R180" align="bottom-center"/>
 <attribute name="VALUE" x="74.93" y="28.5115" size="0.4064" layer="27" rot="R180"/>
 </element>
@@ -2653,9 +2656,10 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <attribute name="NAME" x="40.259" y="101.6" size="1.016" layer="25" font="vector" ratio="12" rot="R90" align="bottom-center"/>
 <attribute name="VALUE" x="42.799" y="100.965" size="1.27" layer="27" rot="R90"/>
 </element>
-<element name="C17" library="SparkFun" package="EIA3216" value="10u" x="33.274" y="93.98" smashed="yes" rot="R90">
+<element name="C19" library="SparkFun" package="EIA3216" value="10u" x="33.274" y="93.98" smashed="yes" rot="R90">
 <attribute name="NAME" x="31.766" y="93.98" size="1.016" layer="25" font="vector" ratio="12" rot="R90" align="bottom-center"/>
 <attribute name="VALUE" x="31.942" y="94.388" size="0.4064" layer="27" rot="R90"/>
+<attribute name="DIGIKEY" value="478-1655-1-ND" x="33.274" y="93.98" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
 <element name="L2" library="SparkFun" package="0603" value="" x="35.814" y="101.6" smashed="yes" rot="R270">
 <attribute name="DIGIKEY" value="240-2373-1-ND" x="35.814" y="101.6" size="1.778" layer="27" rot="R270" display="off"/>
@@ -2670,17 +2674,18 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <attribute name="NAME" x="41.91" y="87.249" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center"/>
 <attribute name="VALUE" x="42.545" y="88.519" size="1.27" layer="27" rot="R180"/>
 </element>
-<element name="D6" library="SparkFun" package="LED-0603" value="" x="38.1" y="84.328" smashed="yes" rot="R90">
+<element name="D6" library="SparkFun" package="LED-0603" value="RED" x="38.1" y="84.328" smashed="yes" rot="R90">
 <attribute name="NAME" x="38.1" y="83.6295" size="1.016" layer="25" font="vector" ratio="12" rot="R180" align="bottom-center"/>
 <attribute name="VALUE" x="39.116" y="85.4075" size="0.4064" layer="27" rot="R180"/>
 </element>
-<element name="D7" library="SparkFun" package="LED-0603" value="" x="41.91" y="84.328" smashed="yes" rot="R90">
+<element name="D7" library="SparkFun" package="LED-0603" value="BLUE" x="41.91" y="84.328" smashed="yes" rot="R90">
 <attribute name="NAME" x="41.91" y="83.6295" size="1.016" layer="25" font="vector" ratio="12" rot="R180" align="bottom-center"/>
 <attribute name="VALUE" x="42.926" y="85.4075" size="0.4064" layer="27" rot="R180"/>
 </element>
 <element name="S4" library="berkeley-epic" package="EVQP2" value="EVQP2" x="33.528" y="85.598" smashed="yes" rot="R90">
 <attribute name="NAME" x="36.049" y="88.9" size="1.016" layer="25" font="vector" ratio="12" rot="R90" align="bottom-center"/>
 <attribute name="VALUE" x="36.684" y="82.296" size="1.27" layer="27" font="vector" ratio="10" rot="R90"/>
+<attribute name="DIGIKEY" value="P11084SCT-ND" x="33.528" y="85.598" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
 <element name="S2" library="SparkFun" package="SWITCH-SPDT" value="" x="28.702" y="101.346" smashed="yes" rot="R180">
 <attribute name="DIGIKEY" value="EG1903-ND" x="28.702" y="101.346" size="1.778" layer="27" rot="R180" display="off"/>
@@ -2690,12 +2695,13 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <element name="Y1" library="berkeley-epic" package="FC-135" value="FC-135_32.768KA-A3" x="48.768" y="99.06" smashed="yes" rot="R180">
 <attribute name="NAME" x="48.768" y="96.774" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center"/>
 <attribute name="VALUE" x="51.308" y="101.6" size="1.016" layer="27" font="vector" ratio="10" rot="R180"/>
+<attribute name="DIGIKEY" value="535-9543-1-ND" x="48.768" y="99.06" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
 <element name="R12" library="rcl" package="R0603" value="5.1M" x="48.768" y="101.854" smashed="yes" rot="R180">
 <attribute name="NAME" x="48.768" y="102.489" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center"/>
 <attribute name="VALUE" x="49.403" y="103.759" size="1.27" layer="27" rot="R180"/>
 </element>
-<element name="C15" library="rcl" package="C0603" value="1u" x="53.34" y="100.076" smashed="yes">
+<element name="C17" library="rcl" package="C0603" value="1u" x="53.34" y="100.076" smashed="yes">
 <attribute name="NAME" x="53.086" y="100.711" size="1.016" layer="25" font="vector" ratio="12" align="bottom-center"/>
 <attribute name="VALUE" x="52.705" y="98.171" size="1.27" layer="27"/>
 </element>
@@ -2721,7 +2727,7 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <attribute name="NAME" x="82.804" y="97.028" size="1.016" layer="25" font="vector" ratio="12" rot="R90" align="bottom-center"/>
 <attribute name="VALUE" x="81.026" y="102.108" size="1.016" layer="27" font="vector" ratio="12" rot="R180"/>
 </element>
-<element name="D8" library="SparkFun" package="LED-0603" value="" x="82.296" y="86.614" smashed="yes">
+<element name="D8" library="SparkFun" package="LED-0603" value="RED" x="82.296" y="86.614" smashed="yes">
 <attribute name="NAME" x="82.9945" y="86.614" size="1.016" layer="25" font="vector" ratio="12" rot="R270" align="bottom-center"/>
 <attribute name="VALUE" x="83.3755" y="85.598" size="0.4064" layer="27" rot="R90"/>
 </element>
@@ -2729,7 +2735,7 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <attribute name="NAME" x="80.518" y="86.614" size="1.016" layer="25" font="vector" ratio="12" rot="R270" align="bottom-center"/>
 <attribute name="VALUE" x="81.661" y="85.979" size="1.27" layer="27" rot="R90"/>
 </element>
-<element name="D9" library="SparkFun" package="LED-0603" value="" x="77.343" y="86.614" smashed="yes">
+<element name="D9" library="SparkFun" package="LED-0603" value="GREEN" x="77.343" y="86.614" smashed="yes">
 <attribute name="NAME" x="78.0415" y="86.614" size="1.016" layer="25" font="vector" ratio="12" rot="R270" align="bottom-center"/>
 <attribute name="VALUE" x="78.4225" y="85.598" size="0.4064" layer="27" rot="R90"/>
 </element>
@@ -2737,7 +2743,7 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <attribute name="NAME" x="75.565" y="86.614" size="1.016" layer="25" font="vector" ratio="12" rot="R270" align="bottom-center"/>
 <attribute name="VALUE" x="76.835" y="85.979" size="1.27" layer="27" rot="R90"/>
 </element>
-<element name="D10" library="SparkFun" package="LED-0603" value="" x="72.644" y="86.614" smashed="yes">
+<element name="D10" library="SparkFun" package="LED-0603" value="BLUE" x="72.644" y="86.614" smashed="yes">
 <attribute name="NAME" x="73.2155" y="86.614" size="1.016" layer="25" font="vector" ratio="12" rot="R270" align="bottom-center"/>
 <attribute name="VALUE" x="73.7235" y="85.598" size="0.4064" layer="27" rot="R90"/>
 </element>
@@ -2834,13 +2840,13 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <element name="J4" library="pinhead" package="1X08" value="" x="62.23" y="76.2" smashed="yes">
 <attribute name="VALUE" x="52.07" y="73.025" size="1.27" layer="27"/>
 </element>
-<element name="C18" library="rcl" package="C0603" value="0.1u" x="112.014" y="25.4" smashed="yes">
+<element name="C15" library="rcl" package="C0603" value="0.1u" x="112.014" y="25.4" smashed="yes">
 <attribute name="TITLE" value="Nest Interface Board" x="112.014" y="25.4" size="1.778" layer="27" display="off"/>
 <attribute name="REV" value="A" x="112.014" y="25.4" size="1.778" layer="27" display="off"/>
 <attribute name="NAME" x="112.014" y="24.765" size="1.016" layer="25" font="vector" ratio="12" rot="R180" align="bottom-center"/>
 <attribute name="VALUE" x="111.379" y="23.495" size="1.27" layer="27"/>
 </element>
-<element name="C19" library="rcl" package="C0603" value="0.1u" x="116.586" y="60.198" smashed="yes" rot="R90">
+<element name="C16" library="rcl" package="C0603" value="0.1u" x="116.586" y="60.198" smashed="yes" rot="R90">
 <attribute name="TITLE" value="Nest Interface Board" x="116.586" y="60.198" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="REV" value="A" x="116.586" y="60.198" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="NAME" x="117.221" y="60.198" size="1.016" layer="25" font="vector" ratio="12" rot="R270" align="bottom-center"/>
@@ -3014,7 +3020,7 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <wire x1="119.126" y1="29.972" x2="117.856" y2="29.972" width="0.254" layer="16"/>
 <wire x1="117.856" y1="29.972" x2="117.348" y2="30.48" width="0.254" layer="16"/>
 <wire x1="117.348" y1="30.48" x2="113.792" y2="30.48" width="0.254" layer="16"/>
-<contactref element="C15" pad="1"/>
+<contactref element="C17" pad="1"/>
 <wire x1="52.13" y1="98.256" x2="52.13" y2="99.716" width="0.254" layer="1"/>
 <wire x1="52.13" y1="99.716" x2="52.49" y2="100.076" width="0.254" layer="1"/>
 <wire x1="77.089" y1="30.226" x2="80.01" y2="33.147" width="0.6096" layer="1"/>
@@ -3109,8 +3115,8 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <wire x1="84.328" y1="31.75" x2="84.328" y2="35.814" width="0.254" layer="1"/>
 <wire x1="84.328" y1="35.814" x2="85.09" y2="36.576" width="0.254" layer="1"/>
 <wire x1="85.09" y1="36.576" x2="85.09" y2="39.116" width="0.254" layer="1"/>
-<contactref element="C18" pad="1"/>
-<contactref element="C19" pad="1"/>
+<contactref element="C15" pad="1"/>
+<contactref element="C16" pad="1"/>
 <wire x1="116.586" y1="59.348" x2="116.586" y2="58.166" width="0.254" layer="1"/>
 <wire x1="116.586" y1="58.166" x2="116.332" y2="57.912" width="0.254" layer="1"/>
 <wire x1="111.164" y1="25.4" x2="111.6" y2="25.836" width="0.254" layer="1"/>
@@ -3122,7 +3128,7 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <contactref element="C3" pad="2"/>
 <contactref element="J1" pad="GND"/>
 <contactref element="U3" pad="25"/>
-<contactref element="C16" pad="C"/>
+<contactref element="C18" pad="C"/>
 <contactref element="U3" pad="26"/>
 <contactref element="U3" pad="7"/>
 <contactref element="U3" pad="18"/>
@@ -3251,7 +3257,7 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <contactref element="C13" pad="2"/>
 <contactref element="J2" pad="GND"/>
 <contactref element="U4" pad="25"/>
-<contactref element="C17" pad="C"/>
+<contactref element="C19" pad="C"/>
 <contactref element="U4" pad="26"/>
 <contactref element="U4" pad="7"/>
 <contactref element="U4" pad="18"/>
@@ -3428,7 +3434,7 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <via x="48.768" y="100.711" extent="1-16" drill="0.4064" diameter="0.4064"/>
 <via x="50.038" y="100.711" extent="1-16" drill="0.4064" diameter="0.4064"/>
 <via x="47.117" y="100.711" extent="1-16" drill="0.4064" diameter="0.4064"/>
-<contactref element="C15" pad="2"/>
+<contactref element="C17" pad="2"/>
 <wire x1="34.398" y1="88.138" x2="34.398" y2="85.706" width="0.254" layer="1"/>
 <via x="34.398" y="85.706" extent="1-16" drill="0.4064" diameter="0.4064"/>
 <wire x1="34.398" y1="83.058" x2="34.398" y2="85.706" width="0.254" layer="1"/>
@@ -3482,8 +3488,8 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <contactref element="J4" pad="2"/>
 <wire x1="29.806" y1="87.122" x2="29.806" y2="87.337" width="0.254" layer="1"/>
 <wire x1="29.806" y1="87.337" x2="30.949" y2="88.48" width="0.254" layer="1"/>
-<contactref element="C18" pad="2"/>
-<contactref element="C19" pad="2"/>
+<contactref element="C15" pad="2"/>
+<contactref element="C16" pad="2"/>
 <wire x1="116.586" y1="61.048" x2="116.586" y2="61.976" width="0.254" layer="1"/>
 <wire x1="116.586" y1="61.976" x2="116.84" y2="62.23" width="0.254" layer="1"/>
 <via x="116.84" y="62.23" extent="1-16" drill="0.4064" diameter="0.4064"/>
@@ -3529,7 +3535,7 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <signal name="N$6">
 <contactref element="L1" pad="2"/>
 <contactref element="C2" pad="1"/>
-<contactref element="C16" pad="A"/>
+<contactref element="C18" pad="A"/>
 <contactref element="U3" pad="20"/>
 <wire x1="73.406" y1="10.922" x2="73.406" y2="9.486" width="0.254" layer="1"/>
 <wire x1="73.406" y1="9.486" x2="72.556" y2="8.636" width="0.254" layer="1"/>
@@ -5241,7 +5247,7 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <signal name="N$43">
 <contactref element="L2" pad="2"/>
 <contactref element="C12" pad="1"/>
-<contactref element="C17" pad="A"/>
+<contactref element="C19" pad="A"/>
 <contactref element="U4" pad="20"/>
 <wire x1="37.269" y1="94.955" x2="33.699" y2="94.955" width="0.254" layer="1"/>
 <wire x1="33.699" y1="94.955" x2="33.274" y2="95.38" width="0.254" layer="1"/>
