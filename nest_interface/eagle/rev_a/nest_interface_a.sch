@@ -12341,7 +12341,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <part name="C1" library="rcl" deviceset="C-EU" device="C0603" value="0.1u"/>
 <part name="C2" library="rcl" deviceset="C-EU" device="C0603" value="0.1u"/>
 <part name="C3" library="rcl" deviceset="C-EU" device="C0603" value="0.1u"/>
-<part name="C4" library="SparkFun" deviceset="CAP_POL" device="1206" value="10u"/>
+<part name="C16" library="SparkFun" deviceset="CAP_POL" device="1206" value="10u"/>
 <part name="GND2" library="supply1" deviceset="GND" device=""/>
 <part name="GND3" library="supply1" deviceset="GND" device=""/>
 <part name="GND4" library="supply1" deviceset="GND" device=""/>
@@ -12357,7 +12357,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <part name="S3" library="berkeley-epic" deviceset="EVQP2" device=""/>
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
 <part name="P+1" library="SparkFun" deviceset="VCC" device=""/>
-<part name="C5" library="rcl" deviceset="C-EU" device="C0603" value="0.1u"/>
+<part name="C4" library="rcl" deviceset="C-EU" device="C0603" value="0.1u"/>
 <part name="D3" library="SparkFun" deviceset="LED" device="0603"/>
 <part name="D4" library="SparkFun" deviceset="LED" device="0603"/>
 <part name="D5" library="SparkFun" deviceset="LED" device="0603"/>
@@ -12384,21 +12384,21 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <part name="GND20" library="supply1" deviceset="GND" device=""/>
 <part name="GND21" library="supply1" deviceset="GND" device=""/>
 <part name="GND22" library="supply1" deviceset="GND" device=""/>
-<part name="R1722" library="rcl" deviceset="R-US_" device="R0603" value="100k"/>
-<part name="R1822" library="rcl" deviceset="R-US_" device="R0603" value="100k"/>
-<part name="R1922" library="rcl" deviceset="R-US_" device="R0603" value="100k"/>
+<part name="R17" library="rcl" deviceset="R-US_" device="R0603" value="100k"/>
+<part name="R18" library="rcl" deviceset="R-US_" device="R0603" value="100k"/>
+<part name="R19" library="rcl" deviceset="R-US_" device="R0603" value="100k"/>
 <part name="P+10" library="SparkFun" deviceset="VCC" device=""/>
 <part name="P+11" library="SparkFun" deviceset="VCC" device=""/>
 <part name="P+12" library="SparkFun" deviceset="VCC" device=""/>
-<part name="C6" library="rcl" deviceset="C-EU" device="C0603" value=".1u"/>
-<part name="C7" library="rcl" deviceset="C-EU" device="C0603" value=".1u"/>
-<part name="C8" library="rcl" deviceset="C-EU" device="C0603" value=".1u"/>
+<part name="C5" library="rcl" deviceset="C-EU" device="C0603" value="0.1u"/>
+<part name="C6" library="rcl" deviceset="C-EU" device="C0603" value="0.1u"/>
+<part name="C7" library="rcl" deviceset="C-EU" device="C0603" value="0.1u"/>
 <part name="GND23" library="supply1" deviceset="GND" device=""/>
 <part name="GND24" library="supply1" deviceset="GND" device=""/>
 <part name="GND25" library="supply1" deviceset="GND" device=""/>
-<part name="R1522" library="rcl" deviceset="R-US_" device="R0603" value="10k"/>
+<part name="R15" library="rcl" deviceset="R-US_" device="R0603" value="10k"/>
 <part name="GND31" library="supply1" deviceset="GND" device=""/>
-<part name="R1622" library="rcl" deviceset="R-US_" device="R0603" value="10k"/>
+<part name="R16" library="rcl" deviceset="R-US_" device="R0603" value="10k"/>
 <part name="J8" library="nest_interface" deviceset="CONN_BLOCK_2" device=""/>
 <part name="GND33" library="supply1" deviceset="GND" device=""/>
 <part name="J9" library="nest_interface" deviceset="CONN_BLOCK_2" device=""/>
@@ -12419,15 +12419,15 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <part name="GND41" library="supply1" deviceset="GND" device=""/>
 <part name="GND42" library="supply1" deviceset="GND" device=""/>
 <part name="GND43" library="supply1" deviceset="GND" device=""/>
-<part name="R2022" library="rcl" deviceset="R-US_" device="R0603" value="100k"/>
-<part name="R2122" library="rcl" deviceset="R-US_" device="R0603" value="100k"/>
-<part name="R2322" library="rcl" deviceset="R-US_" device="R0603" value="100k"/>
+<part name="R20" library="rcl" deviceset="R-US_" device="R0603" value="100k"/>
+<part name="R21" library="rcl" deviceset="R-US_" device="R0603" value="100k"/>
+<part name="R22" library="rcl" deviceset="R-US_" device="R0603" value="100k"/>
 <part name="P+13" library="SparkFun" deviceset="VCC" device=""/>
 <part name="P+14" library="SparkFun" deviceset="VCC" device=""/>
 <part name="P+15" library="SparkFun" deviceset="VCC" device=""/>
-<part name="C9" library="rcl" deviceset="C-EU" device="C0603" value=".1u"/>
-<part name="C10" library="rcl" deviceset="C-EU" device="C0603" value=".1u"/>
-<part name="C11" library="rcl" deviceset="C-EU" device="C0603" value=".1u"/>
+<part name="C8" library="rcl" deviceset="C-EU" device="C0603" value="0.1u"/>
+<part name="C9" library="rcl" deviceset="C-EU" device="C0603" value="0.1u"/>
+<part name="C10" library="rcl" deviceset="C-EU" device="C0603" value="0.1u"/>
 <part name="GND44" library="supply1" deviceset="GND" device=""/>
 <part name="GND45" library="supply1" deviceset="GND" device=""/>
 <part name="GND46" library="supply1" deviceset="GND" device=""/>
@@ -12435,16 +12435,16 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <part name="S1" library="SparkFun" deviceset="SWITCH-SPST" device="PTH">
 <attribute name="DIGIKEY" value="EG1903-ND"/>
 </part>
-<part name="QA5" library="nest_interface" deviceset="ALD1107" device=""/>
+<part name="QA4" library="nest_interface" deviceset="ALD1107" device=""/>
 <part name="P+20" library="SparkFun" deviceset="VCC" device=""/>
 <part name="GND51" library="supply1" deviceset="GND" device=""/>
-<part name="QA6" library="nest_interface" deviceset="ALD1107" device=""/>
+<part name="QA5" library="nest_interface" deviceset="ALD1107" device=""/>
 <part name="P+25" library="SparkFun" deviceset="VCC" device=""/>
 <part name="GND56" library="supply1" deviceset="GND" device=""/>
-<part name="QA7" library="nest_interface" deviceset="ALD1107" device=""/>
+<part name="QA6" library="nest_interface" deviceset="ALD1107" device=""/>
 <part name="P+30" library="SparkFun" deviceset="VCC" device=""/>
 <part name="GND61" library="supply1" deviceset="GND" device=""/>
-<part name="QA8" library="nest_interface" deviceset="ALD1107" device=""/>
+<part name="QA7" library="nest_interface" deviceset="ALD1107" device=""/>
 <part name="P+35" library="SparkFun" deviceset="VCC" device=""/>
 <part name="GND66" library="supply1" deviceset="GND" device=""/>
 <part name="U7" library="nest_interface" deviceset="PCA9575" device=""/>
@@ -12454,15 +12454,15 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <part name="P+33" library="SparkFun" deviceset="VCC" device=""/>
 <part name="P+34" library="SparkFun" deviceset="VCC" device=""/>
 <part name="P+36" library="SparkFun" deviceset="VCC" device=""/>
-<part name="R2622" library="rcl" deviceset="R-US_" device="R0603" value="100k"/>
+<part name="R25" library="rcl" deviceset="R-US_" device="R0603" value="100k"/>
 <part name="P+37" library="SparkFun" deviceset="VCC" device=""/>
 <part name="GND67" library="supply1" deviceset="GND" device=""/>
 <part name="GND68" library="supply1" deviceset="GND" device=""/>
 <part name="P+38" library="SparkFun" deviceset="VCC" device=""/>
-<part name="R2722" library="rcl" deviceset="R-US_" device="R0603" value="100k"/>
+<part name="R26" library="rcl" deviceset="R-US_" device="R0603" value="100k"/>
 <part name="P+39" library="SparkFun" deviceset="VCC" device=""/>
 <part name="GND69" library="supply1" deviceset="GND" device=""/>
-<part name="R2522" library="rcl" deviceset="R-US_" device="R0603" value="100k"/>
+<part name="R24" library="rcl" deviceset="R-US_" device="R0603" value="100k"/>
 <part name="U2" library="hijack" deviceset="MSP430F1611" device="IPM"/>
 <part name="P+42" library="SparkFun" deviceset="VCC" device=""/>
 <part name="GND70" library="supply1" deviceset="GND" device=""/>
@@ -12471,10 +12471,10 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </part>
 <part name="J2" library="nest_interface" deviceset="MOLEX_MICRO_USB_B_047346" device=""/>
 <part name="GND71" library="supply1" deviceset="GND" device=""/>
+<part name="C11" library="rcl" deviceset="C-EU" device="C0603" value="0.1u"/>
 <part name="C12" library="rcl" deviceset="C-EU" device="C0603" value="0.1u"/>
 <part name="C13" library="rcl" deviceset="C-EU" device="C0603" value="0.1u"/>
-<part name="C14" library="rcl" deviceset="C-EU" device="C0603" value="0.1u"/>
-<part name="C15" library="SparkFun" deviceset="CAP_POL" device="1206" value="10u"/>
+<part name="C17" library="SparkFun" deviceset="CAP_POL" device="1206" value="10u"/>
 <part name="GND72" library="supply1" deviceset="GND" device=""/>
 <part name="GND73" library="supply1" deviceset="GND" device=""/>
 <part name="GND74" library="supply1" deviceset="GND" device=""/>
@@ -12483,8 +12483,8 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <part name="L2" library="SparkFun" deviceset="INDUCTOR" device="0603">
 <attribute name="DIGIKEY" value="240-2373-1-ND"/>
 </part>
-<part name="R622" library="rcl" deviceset="R-US_" device="R0603" value="240"/>
-<part name="R722" library="rcl" deviceset="R-US_" device="R0603" value="240"/>
+<part name="R6" library="rcl" deviceset="R-US_" device="R0603" value="240"/>
+<part name="R7" library="rcl" deviceset="R-US_" device="R0603" value="240"/>
 <part name="D6" library="SparkFun" deviceset="LED" device="0603"/>
 <part name="D7" library="SparkFun" deviceset="LED" device="0603"/>
 <part name="S4" library="berkeley-epic" deviceset="EVQP2" device=""/>
@@ -12494,28 +12494,28 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </part>
 <part name="GND78" library="supply1" deviceset="GND" device=""/>
 <part name="Y1" library="berkeley-epic" deviceset="FC-135_32.768KA-A3" device=""/>
-<part name="R1222" library="rcl" deviceset="R-US_" device="R0603" value="5.1M"/>
+<part name="R12" library="rcl" deviceset="R-US_" device="R0603" value="5.1M"/>
 <part name="GND79" library="supply1" deviceset="GND" device=""/>
-<part name="C16" library="rcl" deviceset="C-EU" device="C0603" value="1u"/>
+<part name="C15" library="rcl" deviceset="C-EU" device="C0603" value="1u"/>
 <part name="GND80" library="supply1" deviceset="GND" device=""/>
-<part name="R1122" library="rcl" deviceset="R-US_" device="R0603" value="100k 0.1%"/>
+<part name="R11" library="rcl" deviceset="R-US_" device="R0603" value="100k 0.1%"/>
 <part name="P+43" library="SparkFun" deviceset="VCC" device=""/>
-<part name="R2822" library="rcl" deviceset="R-US_" device="R0603" value="100k"/>
+<part name="R27" library="rcl" deviceset="R-US_" device="R0603" value="100k"/>
 <part name="P+44" library="SparkFun" deviceset="VCC" device=""/>
-<part name="C17" library="rcl" deviceset="C-EU" device="C0603" value="0.1u"/>
+<part name="C14" library="rcl" deviceset="C-EU" device="C0603" value="0.1u"/>
 <part name="GND81" library="supply1" deviceset="GND" device=""/>
 <part name="RA1" library="nest_interface" deviceset="VSSR2403103" device=""/>
 <part name="GND87" library="supply1" deviceset="GND" device=""/>
 <part name="RA2" library="nest_interface" deviceset="VSSR2403103" device=""/>
 <part name="GND83" library="supply1" deviceset="GND" device=""/>
 <part name="D8" library="SparkFun" deviceset="LED" device="0603"/>
-<part name="R1022" library="rcl" deviceset="R-US_" device="R0603" value="240"/>
+<part name="R10" library="rcl" deviceset="R-US_" device="R0603" value="240"/>
 <part name="P+46" library="SparkFun" deviceset="VCC" device=""/>
 <part name="D9" library="SparkFun" deviceset="LED" device="0603"/>
-<part name="R922" library="rcl" deviceset="R-US_" device="R0603" value="240"/>
+<part name="R9" library="rcl" deviceset="R-US_" device="R0603" value="240"/>
 <part name="P+47" library="SparkFun" deviceset="VCC" device=""/>
 <part name="D10" library="SparkFun" deviceset="LED" device="0603"/>
-<part name="R822" library="rcl" deviceset="R-US_" device="R0603" value="240"/>
+<part name="R8" library="rcl" deviceset="R-US_" device="R0603" value="240"/>
 <part name="P+48" library="SparkFun" deviceset="VCC" device=""/>
 <part name="U6" library="nest_interface" deviceset="TC1262" device=""/>
 <part name="GND82" library="supply1" deviceset="GND" device=""/>
@@ -12533,7 +12533,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <part name="GND88" library="supply1" deviceset="GND" device=""/>
 <part name="GND89" library="supply1" deviceset="GND" device=""/>
 <part name="RA5" library="nest_interface" deviceset="766161104GP" device=""/>
-<part name="R2422" library="rcl" deviceset="R-US_" device="R0603" value="100k"/>
+<part name="R23" library="rcl" deviceset="R-US_" device="R0603" value="100k"/>
 <part name="GND12" library="supply1" deviceset="GND" device=""/>
 <part name="P+45" library="SparkFun" deviceset="VCC" device=""/>
 <part name="J20" library="nest_interface" deviceset="CONN_BLOCK_8" device=""/>
@@ -12545,11 +12545,11 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <part name="GND14" library="supply1" deviceset="GND" device=""/>
 <part name="GND15" library="supply1" deviceset="GND" device=""/>
 <part name="P+16" library="SparkFun" deviceset="VCC" device=""/>
-<part name="R1322" library="rcl" deviceset="R-US_" device="R0603" value="10k"/>
-<part name="R1422" library="rcl" deviceset="R-US_" device="R0603" value="10k"/>
+<part name="R13" library="rcl" deviceset="R-US_" device="R0603" value="10k"/>
+<part name="R14" library="rcl" deviceset="R-US_" device="R0603" value="10k"/>
 <part name="J16" library="nest_interface" deviceset="CONN_BLOCK_7" device=""/>
 <part name="J17" library="nest_interface" deviceset="CONN_BLOCK_7" device=""/>
-<part name="RA7" library="nest_interface" deviceset="VSSR1603103" device=""/>
+<part name="RA6" library="nest_interface" deviceset="VSSR1603103" device=""/>
 <part name="GND16" library="supply1" deviceset="GND" device=""/>
 <part name="Q1" library="nest_interface" deviceset="TRANSISTOR_NPN" device="SOT23">
 <attribute name="DIGIKEY" value="568-1636-1-ND"/>
@@ -12567,9 +12567,13 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <part name="FRAME6" library="nest_interface" deviceset="LETTER_L" device=""/>
 <part name="FRAME7" library="nest_interface" deviceset="LETTER_L" device=""/>
 <part name="FRAME8" library="nest_interface" deviceset="LETTER_L" device=""/>
-<part name="JP1" library="pinhead" deviceset="PINHD-1X8" device=""/>
+<part name="J4" library="pinhead" deviceset="PINHD-1X8" device=""/>
 <part name="GND19" library="supply1" deviceset="GND" device=""/>
 <part name="P+17" library="SparkFun" deviceset="VCC" device=""/>
+<part name="C18" library="rcl" deviceset="C-EU" device="C0603" value="0.1u"/>
+<part name="GND26" library="supply1" deviceset="GND" device=""/>
+<part name="C19" library="rcl" deviceset="C-EU" device="C0603" value="0.1u"/>
+<part name="GND27" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -13044,15 +13048,15 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <instance part="GND20" gate="1" x="50.8" y="142.24"/>
 <instance part="GND21" gate="1" x="50.8" y="96.52"/>
 <instance part="GND22" gate="1" x="50.8" y="50.8"/>
-<instance part="R1722" gate="G$1" x="58.42" y="165.1" rot="R90"/>
-<instance part="R1822" gate="G$1" x="58.42" y="119.38" rot="R90"/>
-<instance part="R1922" gate="G$1" x="58.42" y="73.66" rot="R90"/>
+<instance part="R17" gate="G$1" x="58.42" y="165.1" rot="R90"/>
+<instance part="R18" gate="G$1" x="58.42" y="119.38" rot="R90"/>
+<instance part="R19" gate="G$1" x="58.42" y="73.66" rot="R90"/>
 <instance part="P+10" gate="1" x="58.42" y="172.72"/>
 <instance part="P+11" gate="1" x="58.42" y="127"/>
 <instance part="P+12" gate="1" x="58.42" y="81.28"/>
-<instance part="C6" gate="G$1" x="58.42" y="152.4"/>
-<instance part="C7" gate="G$1" x="58.42" y="106.68"/>
-<instance part="C8" gate="G$1" x="58.42" y="60.96"/>
+<instance part="C5" gate="G$1" x="58.42" y="152.4"/>
+<instance part="C6" gate="G$1" x="58.42" y="106.68"/>
+<instance part="C7" gate="G$1" x="58.42" y="60.96"/>
 <instance part="GND23" gate="1" x="58.42" y="142.24"/>
 <instance part="GND24" gate="1" x="58.42" y="96.52"/>
 <instance part="GND25" gate="1" x="58.42" y="50.8"/>
@@ -13062,15 +13066,15 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <instance part="GND41" gate="1" x="165.1" y="142.24"/>
 <instance part="GND42" gate="1" x="165.1" y="96.52"/>
 <instance part="GND43" gate="1" x="165.1" y="50.8"/>
-<instance part="R2022" gate="G$1" x="172.72" y="165.1" rot="R90"/>
-<instance part="R2122" gate="G$1" x="172.72" y="119.38" rot="R90"/>
-<instance part="R2322" gate="G$1" x="172.72" y="73.66" rot="R90"/>
+<instance part="R20" gate="G$1" x="172.72" y="165.1" rot="R90"/>
+<instance part="R21" gate="G$1" x="172.72" y="119.38" rot="R90"/>
+<instance part="R22" gate="G$1" x="172.72" y="73.66" rot="R90"/>
 <instance part="P+13" gate="1" x="172.72" y="172.72"/>
 <instance part="P+14" gate="1" x="172.72" y="127"/>
 <instance part="P+15" gate="1" x="172.72" y="81.28"/>
-<instance part="C9" gate="G$1" x="172.72" y="152.4"/>
-<instance part="C10" gate="G$1" x="172.72" y="106.68"/>
-<instance part="C11" gate="G$1" x="172.72" y="60.96"/>
+<instance part="C8" gate="G$1" x="172.72" y="152.4"/>
+<instance part="C9" gate="G$1" x="172.72" y="106.68"/>
+<instance part="C10" gate="G$1" x="172.72" y="60.96"/>
 <instance part="GND44" gate="1" x="172.72" y="142.24"/>
 <instance part="GND45" gate="1" x="172.72" y="96.52"/>
 <instance part="GND46" gate="1" x="172.72" y="50.8"/>
@@ -13153,18 +13157,18 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <pinref part="GND22" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="C7" gate="G$1" pin="2"/>
+<pinref part="C6" gate="G$1" pin="2"/>
 <pinref part="GND24" gate="1" pin="GND"/>
 <wire x1="58.42" y1="99.06" x2="58.42" y2="101.6" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND25" gate="1" pin="GND"/>
-<pinref part="C8" gate="G$1" pin="2"/>
+<pinref part="C7" gate="G$1" pin="2"/>
 <wire x1="58.42" y1="53.34" x2="58.42" y2="55.88" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND23" gate="1" pin="GND"/>
-<pinref part="C6" gate="G$1" pin="2"/>
+<pinref part="C5" gate="G$1" pin="2"/>
 <wire x1="58.42" y1="144.78" x2="58.42" y2="147.32" width="0.1524" layer="91"/>
 </segment>
 <segment>
@@ -13186,18 +13190,18 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <pinref part="GND43" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="C10" gate="G$1" pin="2"/>
+<pinref part="C9" gate="G$1" pin="2"/>
 <pinref part="GND45" gate="1" pin="GND"/>
 <wire x1="172.72" y1="99.06" x2="172.72" y2="101.6" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND46" gate="1" pin="GND"/>
-<pinref part="C11" gate="G$1" pin="2"/>
+<pinref part="C10" gate="G$1" pin="2"/>
 <wire x1="172.72" y1="53.34" x2="172.72" y2="55.88" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND44" gate="1" pin="GND"/>
-<pinref part="C9" gate="G$1" pin="2"/>
+<pinref part="C8" gate="G$1" pin="2"/>
 <wire x1="172.72" y1="144.78" x2="172.72" y2="147.32" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -13205,12 +13209,12 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <segment>
 <pinref part="RE1" gate="G$1" pin="MAIN"/>
 <wire x1="48.26" y1="157.48" x2="58.42" y2="157.48" width="0.1524" layer="91"/>
-<pinref part="R1722" gate="G$1" pin="1"/>
+<pinref part="R17" gate="G$1" pin="1"/>
 <wire x1="58.42" y1="157.48" x2="66.04" y2="157.48" width="0.1524" layer="91"/>
 <wire x1="58.42" y1="160.02" x2="58.42" y2="157.48" width="0.1524" layer="91"/>
 <junction x="58.42" y="157.48"/>
 <label x="66.04" y="157.48" size="1.27" layer="95" xref="yes"/>
-<pinref part="C6" gate="G$1" pin="1"/>
+<pinref part="C5" gate="G$1" pin="1"/>
 <wire x1="58.42" y1="154.94" x2="58.42" y2="157.48" width="0.1524" layer="91"/>
 <junction x="58.42" y="157.48"/>
 </segment>
@@ -13218,12 +13222,12 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <net name="COOLING1_PIN" class="0">
 <segment>
 <pinref part="RE2" gate="G$1" pin="MAIN"/>
-<pinref part="R1822" gate="G$1" pin="1"/>
+<pinref part="R18" gate="G$1" pin="1"/>
 <wire x1="48.26" y1="111.76" x2="58.42" y2="111.76" width="0.1524" layer="91"/>
 <wire x1="58.42" y1="111.76" x2="58.42" y2="114.3" width="0.1524" layer="91"/>
 <junction x="58.42" y="111.76"/>
 <label x="66.04" y="111.76" size="1.27" layer="95" xref="yes"/>
-<pinref part="C7" gate="G$1" pin="1"/>
+<pinref part="C6" gate="G$1" pin="1"/>
 <wire x1="58.42" y1="111.76" x2="66.04" y2="111.76" width="0.1524" layer="91"/>
 <wire x1="58.42" y1="109.22" x2="58.42" y2="111.76" width="0.1524" layer="91"/>
 <junction x="58.42" y="111.76"/>
@@ -13232,12 +13236,12 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <net name="FAN_PIN" class="0">
 <segment>
 <pinref part="RE3" gate="G$1" pin="MAIN"/>
-<pinref part="R1922" gate="G$1" pin="1"/>
+<pinref part="R19" gate="G$1" pin="1"/>
 <wire x1="48.26" y1="66.04" x2="58.42" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="58.42" y1="66.04" x2="58.42" y2="68.58" width="0.1524" layer="91"/>
 <junction x="58.42" y="66.04"/>
 <label x="66.04" y="66.04" size="1.27" layer="95" xref="yes"/>
-<pinref part="C8" gate="G$1" pin="1"/>
+<pinref part="C7" gate="G$1" pin="1"/>
 <wire x1="58.42" y1="66.04" x2="66.04" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="58.42" y1="63.5" x2="58.42" y2="66.04" width="0.1524" layer="91"/>
 <junction x="58.42" y="66.04"/>
@@ -13245,32 +13249,32 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="VCC" class="0">
 <segment>
-<pinref part="R1722" gate="G$1" pin="2"/>
+<pinref part="R17" gate="G$1" pin="2"/>
 <wire x1="58.42" y1="170.18" x2="58.42" y2="172.72" width="0.1524" layer="91"/>
 <pinref part="P+10" gate="1" pin="VCC"/>
 </segment>
 <segment>
-<pinref part="R1822" gate="G$1" pin="2"/>
+<pinref part="R18" gate="G$1" pin="2"/>
 <wire x1="58.42" y1="124.46" x2="58.42" y2="127" width="0.1524" layer="91"/>
 <pinref part="P+11" gate="1" pin="VCC"/>
 </segment>
 <segment>
-<pinref part="R1922" gate="G$1" pin="2"/>
+<pinref part="R19" gate="G$1" pin="2"/>
 <wire x1="58.42" y1="78.74" x2="58.42" y2="81.28" width="0.1524" layer="91"/>
 <pinref part="P+12" gate="1" pin="VCC"/>
 </segment>
 <segment>
-<pinref part="R2022" gate="G$1" pin="2"/>
+<pinref part="R20" gate="G$1" pin="2"/>
 <wire x1="172.72" y1="170.18" x2="172.72" y2="172.72" width="0.1524" layer="91"/>
 <pinref part="P+13" gate="1" pin="VCC"/>
 </segment>
 <segment>
-<pinref part="R2122" gate="G$1" pin="2"/>
+<pinref part="R21" gate="G$1" pin="2"/>
 <wire x1="172.72" y1="124.46" x2="172.72" y2="127" width="0.1524" layer="91"/>
 <pinref part="P+14" gate="1" pin="VCC"/>
 </segment>
 <segment>
-<pinref part="R2322" gate="G$1" pin="2"/>
+<pinref part="R22" gate="G$1" pin="2"/>
 <wire x1="172.72" y1="78.74" x2="172.72" y2="81.28" width="0.1524" layer="91"/>
 <pinref part="P+15" gate="1" pin="VCC"/>
 </segment>
@@ -13300,12 +13304,12 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <segment>
 <pinref part="RE4" gate="G$1" pin="MAIN"/>
 <wire x1="162.56" y1="157.48" x2="172.72" y2="157.48" width="0.1524" layer="91"/>
-<pinref part="R2022" gate="G$1" pin="1"/>
+<pinref part="R20" gate="G$1" pin="1"/>
 <wire x1="172.72" y1="157.48" x2="180.34" y2="157.48" width="0.1524" layer="91"/>
 <wire x1="172.72" y1="160.02" x2="172.72" y2="157.48" width="0.1524" layer="91"/>
 <junction x="172.72" y="157.48"/>
 <label x="180.34" y="157.48" size="1.27" layer="95" xref="yes"/>
-<pinref part="C9" gate="G$1" pin="1"/>
+<pinref part="C8" gate="G$1" pin="1"/>
 <wire x1="172.72" y1="154.94" x2="172.72" y2="157.48" width="0.1524" layer="91"/>
 <junction x="172.72" y="157.48"/>
 </segment>
@@ -13313,12 +13317,12 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <net name="COOLING2_PIN" class="0">
 <segment>
 <pinref part="RE5" gate="G$1" pin="MAIN"/>
-<pinref part="R2122" gate="G$1" pin="1"/>
+<pinref part="R21" gate="G$1" pin="1"/>
 <wire x1="162.56" y1="111.76" x2="172.72" y2="111.76" width="0.1524" layer="91"/>
 <wire x1="172.72" y1="111.76" x2="172.72" y2="114.3" width="0.1524" layer="91"/>
 <junction x="172.72" y="111.76"/>
 <label x="180.34" y="111.76" size="1.27" layer="95" xref="yes"/>
-<pinref part="C10" gate="G$1" pin="1"/>
+<pinref part="C9" gate="G$1" pin="1"/>
 <wire x1="172.72" y1="111.76" x2="180.34" y2="111.76" width="0.1524" layer="91"/>
 <wire x1="172.72" y1="109.22" x2="172.72" y2="111.76" width="0.1524" layer="91"/>
 <junction x="172.72" y="111.76"/>
@@ -13327,12 +13331,12 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <net name="STAR_PIN" class="0">
 <segment>
 <pinref part="RE6" gate="G$1" pin="MAIN"/>
-<pinref part="R2322" gate="G$1" pin="1"/>
+<pinref part="R22" gate="G$1" pin="1"/>
 <wire x1="162.56" y1="66.04" x2="172.72" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="172.72" y1="66.04" x2="172.72" y2="68.58" width="0.1524" layer="91"/>
 <junction x="172.72" y="66.04"/>
 <label x="180.34" y="66.04" size="1.27" layer="95" xref="yes"/>
-<pinref part="C11" gate="G$1" pin="1"/>
+<pinref part="C10" gate="G$1" pin="1"/>
 <wire x1="172.72" y1="66.04" x2="180.34" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="172.72" y1="63.5" x2="172.72" y2="66.04" width="0.1524" layer="91"/>
 <junction x="172.72" y="66.04"/>
@@ -13345,9 +13349,9 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <plain>
 </plain>
 <instances>
-<instance part="R1522" gate="G$1" x="43.18" y="30.48" rot="R180"/>
+<instance part="R15" gate="G$1" x="43.18" y="30.48" rot="R180"/>
 <instance part="GND31" gate="1" x="99.06" y="17.78"/>
-<instance part="R1622" gate="G$1" x="109.22" y="30.48" rot="R180"/>
+<instance part="R16" gate="G$1" x="109.22" y="30.48" rot="R180"/>
 <instance part="RA3" gate="G$1" x="45.72" y="101.6"/>
 <instance part="RA4" gate="G$1" x="226.06" y="101.6"/>
 <instance part="QA1" gate="G$1" x="111.76" y="165.1"/>
@@ -13527,7 +13531,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="TSTAT2_ENTER_OUT_PIN" class="0">
 <segment>
-<pinref part="R1622" gate="G$1" pin="2"/>
+<pinref part="R16" gate="G$1" pin="2"/>
 <label x="101.6" y="30.48" size="1.27" layer="95" rot="R180" xref="yes"/>
 <wire x1="104.14" y1="30.48" x2="101.6" y2="30.48" width="0.1524" layer="91"/>
 </segment>
@@ -13539,7 +13543,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="TSTAT2_DOWN_OUT_PIN" class="0">
 <segment>
-<pinref part="R1522" gate="G$1" pin="2"/>
+<pinref part="R15" gate="G$1" pin="2"/>
 <label x="35.56" y="30.48" size="1.27" layer="95" rot="R180" xref="yes"/>
 <wire x1="38.1" y1="30.48" x2="35.56" y2="30.48" width="0.1524" layer="91"/>
 </segment>
@@ -13837,14 +13841,14 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="N$31" class="0">
 <segment>
-<pinref part="R1522" gate="G$1" pin="1"/>
+<pinref part="R15" gate="G$1" pin="1"/>
 <wire x1="48.26" y1="30.48" x2="50.8" y2="30.48" width="0.1524" layer="91"/>
 <pinref part="Q1" gate="G$1" pin="B"/>
 </segment>
 </net>
 <net name="N$32" class="0">
 <segment>
-<pinref part="R1622" gate="G$1" pin="1"/>
+<pinref part="R16" gate="G$1" pin="1"/>
 <wire x1="114.3" y1="30.48" x2="116.84" y2="30.48" width="0.1524" layer="91"/>
 <pinref part="Q2" gate="G$1" pin="B"/>
 </segment>
@@ -13856,16 +13860,16 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <plain>
 </plain>
 <instances>
-<instance part="QA5" gate="G$1" x="73.66" y="147.32"/>
+<instance part="QA4" gate="G$1" x="73.66" y="147.32"/>
 <instance part="P+20" gate="1" x="114.3" y="152.4"/>
 <instance part="GND51" gate="1" x="114.3" y="139.7"/>
-<instance part="QA6" gate="G$1" x="73.66" y="111.76"/>
+<instance part="QA5" gate="G$1" x="73.66" y="111.76"/>
 <instance part="P+25" gate="1" x="114.3" y="116.84"/>
 <instance part="GND56" gate="1" x="114.3" y="104.14"/>
-<instance part="QA7" gate="G$1" x="73.66" y="76.2"/>
+<instance part="QA6" gate="G$1" x="73.66" y="76.2"/>
 <instance part="P+30" gate="1" x="114.3" y="81.28"/>
 <instance part="GND61" gate="1" x="114.3" y="68.58"/>
-<instance part="QA8" gate="G$1" x="73.66" y="40.64"/>
+<instance part="QA7" gate="G$1" x="73.66" y="40.64"/>
 <instance part="P+35" gate="1" x="114.3" y="45.72"/>
 <instance part="GND66" gate="1" x="114.3" y="33.02"/>
 <instance part="RA5" gate="G$1" x="198.12" y="114.3"/>
@@ -13878,23 +13882,23 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <nets>
 <net name="#KEYPAD_ENABLE" class="0">
 <segment>
-<pinref part="QA5" gate="G$1" pin="G1"/>
+<pinref part="QA4" gate="G$1" pin="G1"/>
 <wire x1="53.34" y1="147.32" x2="50.8" y2="147.32" width="0.1524" layer="91"/>
 <label x="48.26" y="147.32" size="1.27" layer="95" rot="R180" xref="yes"/>
 <wire x1="50.8" y1="147.32" x2="48.26" y2="147.32" width="0.1524" layer="91"/>
 <wire x1="50.8" y1="147.32" x2="50.8" y2="144.78" width="0.1524" layer="91"/>
 <wire x1="50.8" y1="144.78" x2="63.5" y2="144.78" width="0.1524" layer="91"/>
 <junction x="50.8" y="147.32"/>
-<pinref part="QA5" gate="G$1" pin="G3"/>
+<pinref part="QA4" gate="G$1" pin="G3"/>
 <wire x1="63.5" y1="144.78" x2="76.2" y2="144.78" width="0.1524" layer="91"/>
 <wire x1="78.74" y1="147.32" x2="76.2" y2="147.32" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="144.78" x2="76.2" y2="147.32" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="144.78" x2="88.9" y2="144.78" width="0.1524" layer="91"/>
 <junction x="76.2" y="144.78"/>
-<pinref part="QA5" gate="G$1" pin="G4"/>
+<pinref part="QA4" gate="G$1" pin="G4"/>
 <wire x1="91.44" y1="147.32" x2="88.9" y2="147.32" width="0.1524" layer="91"/>
 <wire x1="88.9" y1="144.78" x2="88.9" y2="147.32" width="0.1524" layer="91"/>
-<pinref part="QA5" gate="G$1" pin="G2"/>
+<pinref part="QA4" gate="G$1" pin="G2"/>
 <wire x1="66.04" y1="147.32" x2="63.5" y2="147.32" width="0.1524" layer="91"/>
 <wire x1="63.5" y1="147.32" x2="63.5" y2="144.78" width="0.1524" layer="91"/>
 <junction x="63.5" y="144.78"/>
@@ -13902,49 +13906,49 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <segment>
 <label x="48.26" y="109.22" size="1.27" layer="95" rot="R180" xref="yes"/>
 <wire x1="48.26" y1="109.22" x2="50.8" y2="109.22" width="0.1524" layer="91"/>
-<pinref part="QA6" gate="G$1" pin="G3"/>
+<pinref part="QA5" gate="G$1" pin="G3"/>
 <wire x1="50.8" y1="109.22" x2="63.5" y2="109.22" width="0.1524" layer="91"/>
 <wire x1="63.5" y1="109.22" x2="76.2" y2="109.22" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="109.22" x2="88.9" y2="109.22" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="109.22" x2="76.2" y2="111.76" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="111.76" x2="78.74" y2="111.76" width="0.1524" layer="91"/>
 <junction x="76.2" y="109.22"/>
-<pinref part="QA6" gate="G$1" pin="G2"/>
+<pinref part="QA5" gate="G$1" pin="G2"/>
 <wire x1="66.04" y1="111.76" x2="63.5" y2="111.76" width="0.1524" layer="91"/>
 <wire x1="63.5" y1="111.76" x2="63.5" y2="109.22" width="0.1524" layer="91"/>
 <junction x="63.5" y="109.22"/>
-<pinref part="QA6" gate="G$1" pin="G4"/>
+<pinref part="QA5" gate="G$1" pin="G4"/>
 <wire x1="88.9" y1="109.22" x2="88.9" y2="111.76" width="0.1524" layer="91"/>
 <wire x1="88.9" y1="111.76" x2="91.44" y2="111.76" width="0.1524" layer="91"/>
-<pinref part="QA6" gate="G$1" pin="G1"/>
+<pinref part="QA5" gate="G$1" pin="G1"/>
 <wire x1="53.34" y1="111.76" x2="50.8" y2="111.76" width="0.1524" layer="91"/>
 <wire x1="50.8" y1="111.76" x2="50.8" y2="109.22" width="0.1524" layer="91"/>
 <junction x="50.8" y="109.22"/>
 </segment>
 <segment>
-<pinref part="QA7" gate="G$1" pin="G1"/>
+<pinref part="QA6" gate="G$1" pin="G1"/>
 <wire x1="53.34" y1="76.2" x2="50.8" y2="76.2" width="0.1524" layer="91"/>
 <wire x1="50.8" y1="76.2" x2="50.8" y2="73.66" width="0.1524" layer="91"/>
 <wire x1="50.8" y1="73.66" x2="48.26" y2="73.66" width="0.1524" layer="91"/>
 <label x="48.26" y="73.66" size="1.27" layer="95" rot="R180" xref="yes"/>
 <wire x1="50.8" y1="73.66" x2="63.5" y2="73.66" width="0.1524" layer="91"/>
 <junction x="50.8" y="73.66"/>
-<pinref part="QA7" gate="G$1" pin="G3"/>
+<pinref part="QA6" gate="G$1" pin="G3"/>
 <wire x1="63.5" y1="73.66" x2="76.2" y2="73.66" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="73.66" x2="76.2" y2="76.2" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="76.2" x2="78.74" y2="76.2" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="73.66" x2="88.9" y2="73.66" width="0.1524" layer="91"/>
 <junction x="76.2" y="73.66"/>
-<pinref part="QA7" gate="G$1" pin="G4"/>
+<pinref part="QA6" gate="G$1" pin="G4"/>
 <wire x1="88.9" y1="73.66" x2="88.9" y2="76.2" width="0.1524" layer="91"/>
 <wire x1="88.9" y1="76.2" x2="91.44" y2="76.2" width="0.1524" layer="91"/>
-<pinref part="QA7" gate="G$1" pin="G2"/>
+<pinref part="QA6" gate="G$1" pin="G2"/>
 <wire x1="66.04" y1="76.2" x2="63.5" y2="76.2" width="0.1524" layer="91"/>
 <wire x1="63.5" y1="76.2" x2="63.5" y2="73.66" width="0.1524" layer="91"/>
 <junction x="63.5" y="73.66"/>
 </segment>
 <segment>
-<pinref part="QA8" gate="G$1" pin="G1"/>
+<pinref part="QA7" gate="G$1" pin="G1"/>
 <wire x1="53.34" y1="40.64" x2="50.8" y2="40.64" width="0.1524" layer="91"/>
 <wire x1="50.8" y1="40.64" x2="50.8" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="50.8" y1="38.1" x2="48.26" y2="38.1" width="0.1524" layer="91"/>
@@ -13952,41 +13956,41 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <wire x1="50.8" y1="38.1" x2="63.5" y2="38.1" width="0.1524" layer="91"/>
 <junction x="50.8" y="38.1"/>
 <wire x1="63.5" y1="38.1" x2="63.5" y2="40.64" width="0.1524" layer="91"/>
-<pinref part="QA8" gate="G$1" pin="G2"/>
+<pinref part="QA7" gate="G$1" pin="G2"/>
 <wire x1="63.5" y1="40.64" x2="66.04" y2="40.64" width="0.1524" layer="91"/>
 <wire x1="63.5" y1="38.1" x2="76.2" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="38.1" x2="76.2" y2="40.64" width="0.1524" layer="91"/>
 <junction x="63.5" y="38.1"/>
-<pinref part="QA8" gate="G$1" pin="G3"/>
+<pinref part="QA7" gate="G$1" pin="G3"/>
 <wire x1="76.2" y1="40.64" x2="78.74" y2="40.64" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="38.1" x2="88.9" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="88.9" y1="38.1" x2="88.9" y2="40.64" width="0.1524" layer="91"/>
 <junction x="76.2" y="38.1"/>
-<pinref part="QA8" gate="G$1" pin="G4"/>
+<pinref part="QA7" gate="G$1" pin="G4"/>
 <wire x1="88.9" y1="40.64" x2="91.44" y2="40.64" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="GND" class="0">
 <segment>
-<pinref part="QA5" gate="G$1" pin="GND"/>
+<pinref part="QA4" gate="G$1" pin="GND"/>
 <wire x1="111.76" y1="144.78" x2="114.3" y2="144.78" width="0.1524" layer="91"/>
 <wire x1="114.3" y1="144.78" x2="114.3" y2="142.24" width="0.1524" layer="91"/>
 <pinref part="GND51" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="QA6" gate="G$1" pin="GND"/>
+<pinref part="QA5" gate="G$1" pin="GND"/>
 <wire x1="111.76" y1="109.22" x2="114.3" y2="109.22" width="0.1524" layer="91"/>
 <wire x1="114.3" y1="109.22" x2="114.3" y2="106.68" width="0.1524" layer="91"/>
 <pinref part="GND56" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="QA7" gate="G$1" pin="GND"/>
+<pinref part="QA6" gate="G$1" pin="GND"/>
 <wire x1="111.76" y1="73.66" x2="114.3" y2="73.66" width="0.1524" layer="91"/>
 <wire x1="114.3" y1="73.66" x2="114.3" y2="71.12" width="0.1524" layer="91"/>
 <pinref part="GND61" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="QA8" gate="G$1" pin="GND"/>
+<pinref part="QA7" gate="G$1" pin="GND"/>
 <wire x1="111.76" y1="38.1" x2="114.3" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="114.3" y1="38.1" x2="114.3" y2="35.56" width="0.1524" layer="91"/>
 <pinref part="GND66" gate="1" pin="GND"/>
@@ -13994,7 +13998,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="TSTAT1_ON/OFF_IN" class="0">
 <segment>
-<pinref part="QA5" gate="G$1" pin="S1"/>
+<pinref part="QA4" gate="G$1" pin="S1"/>
 <wire x1="58.42" y1="152.4" x2="58.42" y2="154.94" width="0.1524" layer="91"/>
 <wire x1="58.42" y1="154.94" x2="48.26" y2="154.94" width="0.1524" layer="91"/>
 <label x="48.26" y="154.94" size="1.27" layer="95" rot="R180" xref="yes"/>
@@ -14007,7 +14011,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="TSTAT1_ON/OFF_OUT" class="0">
 <segment>
-<pinref part="QA5" gate="G$1" pin="D1"/>
+<pinref part="QA4" gate="G$1" pin="D1"/>
 <wire x1="58.42" y1="142.24" x2="58.42" y2="139.7" width="0.1524" layer="91"/>
 <wire x1="58.42" y1="139.7" x2="48.26" y2="139.7" width="0.1524" layer="91"/>
 <label x="48.26" y="139.7" size="1.27" layer="95" rot="R180" xref="yes"/>
@@ -14015,7 +14019,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="TSTAT1_MENU_OUT" class="0">
 <segment>
-<pinref part="QA5" gate="G$1" pin="D2"/>
+<pinref part="QA4" gate="G$1" pin="D2"/>
 <wire x1="71.12" y1="142.24" x2="71.12" y2="137.16" width="0.1524" layer="91"/>
 <wire x1="71.12" y1="137.16" x2="48.26" y2="137.16" width="0.1524" layer="91"/>
 <label x="48.26" y="137.16" size="1.27" layer="95" rot="R180" xref="yes"/>
@@ -14023,7 +14027,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="TSTAT1_UP_OUT" class="0">
 <segment>
-<pinref part="QA5" gate="G$1" pin="D3"/>
+<pinref part="QA4" gate="G$1" pin="D3"/>
 <wire x1="83.82" y1="142.24" x2="83.82" y2="134.62" width="0.1524" layer="91"/>
 <wire x1="83.82" y1="134.62" x2="48.26" y2="134.62" width="0.1524" layer="91"/>
 <label x="48.26" y="134.62" size="1.27" layer="95" rot="R180" xref="yes"/>
@@ -14031,7 +14035,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="TSTAT1_ESC_OUT" class="0">
 <segment>
-<pinref part="QA5" gate="G$1" pin="D4"/>
+<pinref part="QA4" gate="G$1" pin="D4"/>
 <wire x1="96.52" y1="142.24" x2="96.52" y2="132.08" width="0.1524" layer="91"/>
 <wire x1="96.52" y1="132.08" x2="48.26" y2="132.08" width="0.1524" layer="91"/>
 <label x="48.26" y="132.08" size="1.27" layer="95" rot="R180" xref="yes"/>
@@ -14039,7 +14043,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="TSTAT1_MENU_IN" class="0">
 <segment>
-<pinref part="QA5" gate="G$1" pin="S2"/>
+<pinref part="QA4" gate="G$1" pin="S2"/>
 <wire x1="71.12" y1="152.4" x2="71.12" y2="157.48" width="0.1524" layer="91"/>
 <wire x1="71.12" y1="157.48" x2="48.26" y2="157.48" width="0.1524" layer="91"/>
 <label x="48.26" y="157.48" size="1.27" layer="95" rot="R180" xref="yes"/>
@@ -14052,7 +14056,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="TSTAT1_UP_IN" class="0">
 <segment>
-<pinref part="QA5" gate="G$1" pin="S3"/>
+<pinref part="QA4" gate="G$1" pin="S3"/>
 <wire x1="83.82" y1="152.4" x2="83.82" y2="160.02" width="0.1524" layer="91"/>
 <wire x1="83.82" y1="160.02" x2="48.26" y2="160.02" width="0.1524" layer="91"/>
 <label x="48.26" y="160.02" size="1.27" layer="95" rot="R180" xref="yes"/>
@@ -14065,7 +14069,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="TSTAT1_ESC_IN" class="0">
 <segment>
-<pinref part="QA5" gate="G$1" pin="S4"/>
+<pinref part="QA4" gate="G$1" pin="S4"/>
 <wire x1="96.52" y1="152.4" x2="96.52" y2="162.56" width="0.1524" layer="91"/>
 <wire x1="96.52" y1="162.56" x2="48.26" y2="162.56" width="0.1524" layer="91"/>
 <label x="48.26" y="162.56" size="1.27" layer="95" rot="R180" xref="yes"/>
@@ -14078,25 +14082,25 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="VCC" class="0">
 <segment>
-<pinref part="QA5" gate="G$1" pin="VCC"/>
+<pinref part="QA4" gate="G$1" pin="VCC"/>
 <wire x1="111.76" y1="149.86" x2="114.3" y2="149.86" width="0.1524" layer="91"/>
 <wire x1="114.3" y1="149.86" x2="114.3" y2="152.4" width="0.1524" layer="91"/>
 <pinref part="P+20" gate="1" pin="VCC"/>
 </segment>
 <segment>
-<pinref part="QA6" gate="G$1" pin="VCC"/>
+<pinref part="QA5" gate="G$1" pin="VCC"/>
 <wire x1="111.76" y1="114.3" x2="114.3" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="114.3" y1="114.3" x2="114.3" y2="116.84" width="0.1524" layer="91"/>
 <pinref part="P+25" gate="1" pin="VCC"/>
 </segment>
 <segment>
-<pinref part="QA7" gate="G$1" pin="VCC"/>
+<pinref part="QA6" gate="G$1" pin="VCC"/>
 <wire x1="111.76" y1="78.74" x2="114.3" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="114.3" y1="78.74" x2="114.3" y2="81.28" width="0.1524" layer="91"/>
 <pinref part="P+30" gate="1" pin="VCC"/>
 </segment>
 <segment>
-<pinref part="QA8" gate="G$1" pin="VCC"/>
+<pinref part="QA7" gate="G$1" pin="VCC"/>
 <wire x1="111.76" y1="43.18" x2="114.3" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="114.3" y1="43.18" x2="114.3" y2="45.72" width="0.1524" layer="91"/>
 <pinref part="P+35" gate="1" pin="VCC"/>
@@ -14110,7 +14114,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="TSTAT1_HELP_IN" class="0">
 <segment>
-<pinref part="QA6" gate="G$1" pin="S1"/>
+<pinref part="QA5" gate="G$1" pin="S1"/>
 <wire x1="58.42" y1="116.84" x2="58.42" y2="119.38" width="0.1524" layer="91"/>
 <wire x1="58.42" y1="119.38" x2="48.26" y2="119.38" width="0.1524" layer="91"/>
 <label x="48.26" y="119.38" size="1.27" layer="95" rot="R180" xref="yes"/>
@@ -14123,7 +14127,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="TSTAT1_DOWN_IN" class="0">
 <segment>
-<pinref part="QA6" gate="G$1" pin="S2"/>
+<pinref part="QA5" gate="G$1" pin="S2"/>
 <wire x1="71.12" y1="116.84" x2="71.12" y2="121.92" width="0.1524" layer="91"/>
 <wire x1="71.12" y1="121.92" x2="48.26" y2="121.92" width="0.1524" layer="91"/>
 <label x="48.26" y="121.92" size="1.27" layer="95" rot="R180" xref="yes"/>
@@ -14136,7 +14140,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="TSTAT1_ENTER_IN" class="0">
 <segment>
-<pinref part="QA6" gate="G$1" pin="S3"/>
+<pinref part="QA5" gate="G$1" pin="S3"/>
 <wire x1="83.82" y1="116.84" x2="83.82" y2="124.46" width="0.1524" layer="91"/>
 <wire x1="83.82" y1="124.46" x2="48.26" y2="124.46" width="0.1524" layer="91"/>
 <label x="48.26" y="124.46" size="1.27" layer="95" rot="R180" xref="yes"/>
@@ -14149,7 +14153,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="TSTAT2_ON/OFF_IN" class="0">
 <segment>
-<pinref part="QA6" gate="G$1" pin="S4"/>
+<pinref part="QA5" gate="G$1" pin="S4"/>
 <wire x1="96.52" y1="116.84" x2="96.52" y2="127" width="0.1524" layer="91"/>
 <wire x1="96.52" y1="127" x2="48.26" y2="127" width="0.1524" layer="91"/>
 <label x="48.26" y="127" size="1.27" layer="95" rot="R180" xref="yes"/>
@@ -14162,7 +14166,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="TSTAT1_HELP_OUT" class="0">
 <segment>
-<pinref part="QA6" gate="G$1" pin="D1"/>
+<pinref part="QA5" gate="G$1" pin="D1"/>
 <wire x1="58.42" y1="106.68" x2="58.42" y2="104.14" width="0.1524" layer="91"/>
 <wire x1="58.42" y1="104.14" x2="48.26" y2="104.14" width="0.1524" layer="91"/>
 <label x="48.26" y="104.14" size="1.27" layer="95" rot="R180" xref="yes"/>
@@ -14170,7 +14174,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="TSTAT1_DOWN_OUT" class="0">
 <segment>
-<pinref part="QA6" gate="G$1" pin="D2"/>
+<pinref part="QA5" gate="G$1" pin="D2"/>
 <wire x1="71.12" y1="106.68" x2="71.12" y2="101.6" width="0.1524" layer="91"/>
 <wire x1="71.12" y1="101.6" x2="48.26" y2="101.6" width="0.1524" layer="91"/>
 <label x="48.26" y="101.6" size="1.27" layer="95" rot="R180" xref="yes"/>
@@ -14178,7 +14182,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="TSTAT1_ENTER_OUT" class="0">
 <segment>
-<pinref part="QA6" gate="G$1" pin="D3"/>
+<pinref part="QA5" gate="G$1" pin="D3"/>
 <wire x1="83.82" y1="106.68" x2="83.82" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="83.82" y1="99.06" x2="48.26" y2="99.06" width="0.1524" layer="91"/>
 <label x="48.26" y="99.06" size="1.27" layer="95" rot="R180" xref="yes"/>
@@ -14186,7 +14190,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="TSTAT2_ON/OFF_OUT" class="0">
 <segment>
-<pinref part="QA6" gate="G$1" pin="D4"/>
+<pinref part="QA5" gate="G$1" pin="D4"/>
 <wire x1="96.52" y1="106.68" x2="96.52" y2="96.52" width="0.1524" layer="91"/>
 <wire x1="96.52" y1="96.52" x2="48.26" y2="96.52" width="0.1524" layer="91"/>
 <label x="48.26" y="96.52" size="1.27" layer="95" rot="R180" xref="yes"/>
@@ -14194,7 +14198,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="TSTAT2_MENU_IN" class="0">
 <segment>
-<pinref part="QA7" gate="G$1" pin="S1"/>
+<pinref part="QA6" gate="G$1" pin="S1"/>
 <wire x1="58.42" y1="81.28" x2="58.42" y2="83.82" width="0.1524" layer="91"/>
 <wire x1="58.42" y1="83.82" x2="48.26" y2="83.82" width="0.1524" layer="91"/>
 <label x="48.26" y="83.82" size="1.27" layer="95" rot="R180" xref="yes"/>
@@ -14207,7 +14211,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="TSTAT2_MENU_OUT" class="0">
 <segment>
-<pinref part="QA7" gate="G$1" pin="D1"/>
+<pinref part="QA6" gate="G$1" pin="D1"/>
 <wire x1="58.42" y1="71.12" x2="58.42" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="58.42" y1="68.58" x2="48.26" y2="68.58" width="0.1524" layer="91"/>
 <label x="48.26" y="68.58" size="1.27" layer="95" rot="R180" xref="yes"/>
@@ -14215,7 +14219,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="TSTAT2_UP_IN" class="0">
 <segment>
-<pinref part="QA7" gate="G$1" pin="S2"/>
+<pinref part="QA6" gate="G$1" pin="S2"/>
 <wire x1="71.12" y1="81.28" x2="71.12" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="71.12" y1="86.36" x2="48.26" y2="86.36" width="0.1524" layer="91"/>
 <label x="48.26" y="86.36" size="1.27" layer="95" rot="R180" xref="yes"/>
@@ -14228,7 +14232,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="TSTAT2_ESC_IN" class="0">
 <segment>
-<pinref part="QA7" gate="G$1" pin="S3"/>
+<pinref part="QA6" gate="G$1" pin="S3"/>
 <wire x1="83.82" y1="81.28" x2="83.82" y2="88.9" width="0.1524" layer="91"/>
 <wire x1="83.82" y1="88.9" x2="48.26" y2="88.9" width="0.1524" layer="91"/>
 <label x="48.26" y="88.9" size="1.27" layer="95" rot="R180" xref="yes"/>
@@ -14241,7 +14245,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="TSTAT2_HELP_IN" class="0">
 <segment>
-<pinref part="QA7" gate="G$1" pin="S4"/>
+<pinref part="QA6" gate="G$1" pin="S4"/>
 <wire x1="96.52" y1="81.28" x2="96.52" y2="91.44" width="0.1524" layer="91"/>
 <wire x1="96.52" y1="91.44" x2="48.26" y2="91.44" width="0.1524" layer="91"/>
 <label x="48.26" y="91.44" size="1.27" layer="95" rot="R180" xref="yes"/>
@@ -14254,7 +14258,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="TSTAT2_UP_OUT" class="0">
 <segment>
-<pinref part="QA7" gate="G$1" pin="D2"/>
+<pinref part="QA6" gate="G$1" pin="D2"/>
 <wire x1="71.12" y1="71.12" x2="71.12" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="71.12" y1="66.04" x2="48.26" y2="66.04" width="0.1524" layer="91"/>
 <label x="48.26" y="66.04" size="1.27" layer="95" rot="R180" xref="yes"/>
@@ -14262,7 +14266,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="TSTAT2_ESC_OUT" class="0">
 <segment>
-<pinref part="QA7" gate="G$1" pin="D3"/>
+<pinref part="QA6" gate="G$1" pin="D3"/>
 <wire x1="83.82" y1="71.12" x2="83.82" y2="63.5" width="0.1524" layer="91"/>
 <wire x1="83.82" y1="63.5" x2="48.26" y2="63.5" width="0.1524" layer="91"/>
 <label x="48.26" y="63.5" size="1.27" layer="95" rot="R180" xref="yes"/>
@@ -14270,7 +14274,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="TSTAT2_HELP_OUT" class="0">
 <segment>
-<pinref part="QA7" gate="G$1" pin="D4"/>
+<pinref part="QA6" gate="G$1" pin="D4"/>
 <wire x1="96.52" y1="71.12" x2="96.52" y2="60.96" width="0.1524" layer="91"/>
 <wire x1="96.52" y1="60.96" x2="48.26" y2="60.96" width="0.1524" layer="91"/>
 <label x="48.26" y="60.96" size="1.27" layer="95" rot="R180" xref="yes"/>
@@ -14278,7 +14282,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="TSTAT2_DOWN_IN" class="0">
 <segment>
-<pinref part="QA8" gate="G$1" pin="S1"/>
+<pinref part="QA7" gate="G$1" pin="S1"/>
 <wire x1="58.42" y1="45.72" x2="58.42" y2="48.26" width="0.1524" layer="91"/>
 <wire x1="58.42" y1="48.26" x2="48.26" y2="48.26" width="0.1524" layer="91"/>
 <label x="48.26" y="48.26" size="1.27" layer="95" rot="R180" xref="yes"/>
@@ -14291,7 +14295,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="TSTAT2_DOWN_OUT" class="0">
 <segment>
-<pinref part="QA8" gate="G$1" pin="D1"/>
+<pinref part="QA7" gate="G$1" pin="D1"/>
 <wire x1="58.42" y1="35.56" x2="58.42" y2="33.02" width="0.1524" layer="91"/>
 <wire x1="58.42" y1="33.02" x2="48.26" y2="33.02" width="0.1524" layer="91"/>
 <label x="48.26" y="33.02" size="1.27" layer="95" rot="R180" xref="yes"/>
@@ -14299,7 +14303,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="TSTAT2_ENTER_IN" class="0">
 <segment>
-<pinref part="QA8" gate="G$1" pin="S2"/>
+<pinref part="QA7" gate="G$1" pin="S2"/>
 <wire x1="71.12" y1="45.72" x2="71.12" y2="50.8" width="0.1524" layer="91"/>
 <wire x1="71.12" y1="50.8" x2="48.26" y2="50.8" width="0.1524" layer="91"/>
 <label x="48.26" y="50.8" size="1.27" layer="95" rot="R180" xref="yes"/>
@@ -14312,7 +14316,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="TSTAT2_ENTER_OUT" class="0">
 <segment>
-<pinref part="QA8" gate="G$1" pin="D2"/>
+<pinref part="QA7" gate="G$1" pin="D2"/>
 <wire x1="71.12" y1="35.56" x2="71.12" y2="30.48" width="0.1524" layer="91"/>
 <wire x1="71.12" y1="30.48" x2="48.26" y2="30.48" width="0.1524" layer="91"/>
 <label x="48.26" y="30.48" size="1.27" layer="95" rot="R180" xref="yes"/>
@@ -14320,7 +14324,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="TSTAT2_SPEAKER_IN" class="0">
 <segment>
-<pinref part="QA8" gate="G$1" pin="S3"/>
+<pinref part="QA7" gate="G$1" pin="S3"/>
 <wire x1="83.82" y1="45.72" x2="83.82" y2="53.34" width="0.1524" layer="91"/>
 <wire x1="83.82" y1="53.34" x2="48.26" y2="53.34" width="0.1524" layer="91"/>
 <label x="48.26" y="53.34" size="1.27" layer="95" rot="R180" xref="yes"/>
@@ -14328,7 +14332,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="TSTAT1_SPEAKER_IN" class="0">
 <segment>
-<pinref part="QA8" gate="G$1" pin="S4"/>
+<pinref part="QA7" gate="G$1" pin="S4"/>
 <wire x1="96.52" y1="45.72" x2="96.52" y2="55.88" width="0.1524" layer="91"/>
 <wire x1="96.52" y1="55.88" x2="48.26" y2="55.88" width="0.1524" layer="91"/>
 <label x="48.26" y="55.88" size="1.27" layer="95" rot="R180" xref="yes"/>
@@ -14336,7 +14340,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="TSTAT1_SPEAKER_OUT" class="0">
 <segment>
-<pinref part="QA8" gate="G$1" pin="D4"/>
+<pinref part="QA7" gate="G$1" pin="D4"/>
 <wire x1="96.52" y1="35.56" x2="96.52" y2="25.4" width="0.1524" layer="91"/>
 <wire x1="96.52" y1="25.4" x2="48.26" y2="25.4" width="0.1524" layer="91"/>
 <label x="48.26" y="25.4" size="1.27" layer="95" rot="R180" xref="yes"/>
@@ -14344,7 +14348,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="TSTAT2_SPEAKER_OUT" class="0">
 <segment>
-<pinref part="QA8" gate="G$1" pin="D3"/>
+<pinref part="QA7" gate="G$1" pin="D3"/>
 <wire x1="83.82" y1="35.56" x2="83.82" y2="27.94" width="0.1524" layer="91"/>
 <wire x1="48.26" y1="27.94" x2="83.82" y2="27.94" width="0.1524" layer="91"/>
 <label x="48.26" y="27.94" size="1.27" layer="95" rot="R180" xref="yes"/>
@@ -14365,7 +14369,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <instance part="C1" gate="G$1" x="35.56" y="25.4"/>
 <instance part="C2" gate="G$1" x="48.26" y="25.4"/>
 <instance part="C3" gate="G$1" x="68.58" y="25.4"/>
-<instance part="C4" gate="G$1" x="58.42" y="25.4"/>
+<instance part="C16" gate="G$1" x="58.42" y="25.4"/>
 <instance part="GND2" gate="1" x="35.56" y="15.24"/>
 <instance part="GND3" gate="1" x="27.94" y="15.24"/>
 <instance part="GND4" gate="1" x="48.26" y="15.24"/>
@@ -14384,7 +14388,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <instance part="S3" gate="G$1" x="86.36" y="104.14"/>
 <instance part="GND8" gate="1" x="76.2" y="96.52"/>
 <instance part="P+1" gate="1" x="137.16" y="99.06"/>
-<instance part="C5" gate="G$1" x="137.16" y="93.98"/>
+<instance part="C4" gate="G$1" x="137.16" y="93.98"/>
 <instance part="D3" gate="G$1" x="127" y="167.64" rot="R90"/>
 <instance part="D4" gate="G$1" x="127" y="160.02" rot="R90"/>
 <instance part="D5" gate="G$1" x="127" y="152.4" rot="R90"/>
@@ -14401,7 +14405,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <instance part="S1" gate="1" x="121.92" y="93.98">
 <attribute name="DIGIKEY" x="121.92" y="93.98" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="R2422" gate="G$1" x="101.6" y="129.54" rot="R270"/>
+<instance part="R23" gate="G$1" x="101.6" y="129.54" rot="R270"/>
 <instance part="GND12" gate="1" x="101.6" y="119.38"/>
 <instance part="J3" gate="A" x="48.26" y="152.4"/>
 <instance part="GND40" gate="1" x="60.96" y="134.62"/>
@@ -14450,7 +14454,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <pinref part="C2" gate="G$1" pin="1"/>
 <wire x1="45.72" y1="50.8" x2="48.26" y2="50.8" width="0.1524" layer="91"/>
 <wire x1="48.26" y1="50.8" x2="48.26" y2="27.94" width="0.1524" layer="91"/>
-<pinref part="C4" gate="G$1" pin="+"/>
+<pinref part="C16" gate="G$1" pin="+"/>
 <wire x1="58.42" y1="27.94" x2="58.42" y2="50.8" width="0.1524" layer="91"/>
 <wire x1="58.42" y1="50.8" x2="48.26" y2="50.8" width="0.1524" layer="91"/>
 <junction x="48.26" y="50.8"/>
@@ -14485,7 +14489,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </segment>
 <segment>
 <pinref part="GND5" gate="1" pin="GND"/>
-<pinref part="C4" gate="G$1" pin="-"/>
+<pinref part="C16" gate="G$1" pin="-"/>
 <wire x1="58.42" y1="17.78" x2="58.42" y2="20.32" width="0.1524" layer="91"/>
 </segment>
 <segment>
@@ -14540,7 +14544,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <wire x1="152.4" y1="86.36" x2="165.1" y2="86.36" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="R2422" gate="G$1" pin="2"/>
+<pinref part="R23" gate="G$1" pin="2"/>
 <pinref part="GND12" gate="1" pin="GND"/>
 <wire x1="101.6" y1="121.92" x2="101.6" y2="124.46" width="0.1524" layer="91"/>
 </segment>
@@ -14654,7 +14658,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <net name="VCC" class="0">
 <segment>
 <pinref part="P+1" gate="1" pin="VCC"/>
-<pinref part="C5" gate="G$1" pin="1"/>
+<pinref part="C4" gate="G$1" pin="1"/>
 <wire x1="137.16" y1="99.06" x2="137.16" y2="96.52" width="0.1524" layer="91"/>
 </segment>
 <segment>
@@ -14707,7 +14711,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="N$18" class="0">
 <segment>
-<pinref part="C5" gate="G$1" pin="2"/>
+<pinref part="C4" gate="G$1" pin="2"/>
 <wire x1="137.16" y1="88.9" x2="137.16" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="137.16" y1="86.36" x2="144.78" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="144.78" y1="86.36" x2="144.78" y2="104.14" width="0.1524" layer="91"/>
@@ -14949,7 +14953,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <pinref part="U1" gate="G$1" pin="P5.2"/>
 <wire x1="147.32" y1="137.16" x2="101.6" y2="137.16" width="0.1524" layer="91"/>
 <label x="96.52" y="137.16" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="R2422" gate="G$1" pin="1"/>
+<pinref part="R23" gate="G$1" pin="1"/>
 <wire x1="101.6" y1="137.16" x2="96.52" y2="137.16" width="0.1524" layer="91"/>
 <wire x1="101.6" y1="134.62" x2="101.6" y2="137.16" width="0.1524" layer="91"/>
 <junction x="101.6" y="137.16"/>
@@ -15088,33 +15092,37 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <sheet>
 <description>GPIO Extenders</description>
 <plain>
-<text x="71.12" y="154.94" size="2.54" layer="97" align="bottom-center">GPIO INPUTS</text>
-<text x="71.12" y="149.86" size="2.54" layer="97" align="bottom-center">All of the buttons from the thermostats.</text>
-<text x="185.42" y="154.94" size="2.54" layer="97" align="bottom-center">GPIO OUTPUTS</text>
-<text x="185.42" y="149.86" size="2.54" layer="97" align="bottom-center">Outputs to make the thermostat think a button is pressed.</text>
+<text x="71.12" y="165.1" size="2.54" layer="97" align="bottom-center">GPIO INPUTS</text>
+<text x="71.12" y="160.02" size="2.54" layer="97" align="bottom-center">All of the buttons from the thermostats.</text>
+<text x="185.42" y="165.1" size="2.54" layer="97" align="bottom-center">GPIO OUTPUTS</text>
+<text x="185.42" y="160.02" size="2.54" layer="97" align="bottom-center">Outputs to make the thermostat think a button is pressed.</text>
 </plain>
 <instances>
 <instance part="U7" gate="G$1" x="71.12" y="104.14"/>
 <instance part="U8" gate="G$1" x="185.42" y="104.14"/>
 <instance part="GND64" gate="1" x="93.98" y="60.96"/>
 <instance part="GND65" gate="1" x="71.12" y="60.96"/>
-<instance part="P+33" gate="1" x="71.12" y="142.24"/>
+<instance part="P+33" gate="1" x="71.12" y="152.4"/>
 <instance part="P+34" gate="1" x="93.98" y="99.06"/>
-<instance part="P+36" gate="1" x="185.42" y="142.24"/>
-<instance part="R2622" gate="G$1" x="121.92" y="119.38" rot="R270"/>
+<instance part="P+36" gate="1" x="185.42" y="152.4"/>
+<instance part="R25" gate="G$1" x="121.92" y="119.38" rot="R270"/>
 <instance part="P+37" gate="1" x="116.84" y="129.54"/>
 <instance part="GND67" gate="1" x="185.42" y="60.96"/>
 <instance part="GND68" gate="1" x="208.28" y="60.96"/>
 <instance part="P+38" gate="1" x="208.28" y="99.06"/>
-<instance part="R2722" gate="G$1" x="231.14" y="116.84" rot="R270"/>
+<instance part="R26" gate="G$1" x="231.14" y="116.84" rot="R270"/>
 <instance part="P+39" gate="1" x="231.14" y="124.46"/>
 <instance part="GND69" gate="1" x="20.32" y="60.96"/>
-<instance part="R2522" gate="G$1" x="114.3" y="119.38" rot="R270"/>
+<instance part="R24" gate="G$1" x="114.3" y="119.38" rot="R270"/>
 <instance part="P+16" gate="1" x="81.28" y="33.02"/>
-<instance part="R1322" gate="G$1" x="76.2" y="22.86" rot="R270"/>
-<instance part="R1422" gate="G$1" x="86.36" y="22.86" rot="R270"/>
+<instance part="R13" gate="G$1" x="76.2" y="22.86" rot="R270"/>
+<instance part="R14" gate="G$1" x="86.36" y="22.86" rot="R270"/>
 <instance part="FRAME6" gate="G$1" x="0" y="0"/>
 <instance part="FRAME6" gate="G$2" x="147.32" y="0"/>
+<instance part="C18" gate="G$1" x="81.28" y="144.78"/>
+<instance part="GND26" gate="1" x="81.28" y="137.16"/>
+<instance part="C19" gate="G$1" x="193.04" y="144.78"/>
+<instance part="GND27" gate="1" x="193.04" y="137.16"/>
 </instances>
 <busses>
 </busses>
@@ -15156,6 +15164,14 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <wire x1="20.32" y1="83.82" x2="20.32" y2="63.5" width="0.1524" layer="91"/>
 <pinref part="GND69" gate="1" pin="GND"/>
 </segment>
+<segment>
+<pinref part="C18" gate="G$1" pin="2"/>
+<pinref part="GND26" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="C19" gate="G$1" pin="2"/>
+<pinref part="GND27" gate="1" pin="GND"/>
+</segment>
 </net>
 <net name="VCC" class="0">
 <segment>
@@ -15163,13 +15179,18 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <wire x1="68.58" y1="137.16" x2="68.58" y2="139.7" width="0.1524" layer="91"/>
 <wire x1="68.58" y1="139.7" x2="71.12" y2="139.7" width="0.1524" layer="91"/>
 <pinref part="P+33" gate="1" pin="VCC"/>
-<wire x1="71.12" y1="139.7" x2="71.12" y2="142.24" width="0.1524" layer="91"/>
+<wire x1="71.12" y1="139.7" x2="71.12" y2="149.86" width="0.1524" layer="91"/>
 <pinref part="U7" gate="G$1" pin="P1_VCC"/>
+<wire x1="71.12" y1="149.86" x2="71.12" y2="152.4" width="0.1524" layer="91"/>
 <wire x1="73.66" y1="137.16" x2="73.66" y2="139.7" width="0.1524" layer="91"/>
 <wire x1="73.66" y1="139.7" x2="71.12" y2="139.7" width="0.1524" layer="91"/>
 <junction x="71.12" y="139.7"/>
 <pinref part="U7" gate="G$1" pin="P0_VCC"/>
 <wire x1="71.12" y1="137.16" x2="71.12" y2="139.7" width="0.1524" layer="91"/>
+<pinref part="C18" gate="G$1" pin="1"/>
+<wire x1="81.28" y1="147.32" x2="81.28" y2="149.86" width="0.1524" layer="91"/>
+<wire x1="81.28" y1="149.86" x2="71.12" y2="149.86" width="0.1524" layer="91"/>
+<junction x="71.12" y="149.86"/>
 </segment>
 <segment>
 <pinref part="U7" gate="G$1" pin="ADDR0"/>
@@ -15190,13 +15211,18 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <wire x1="182.88" y1="137.16" x2="182.88" y2="139.7" width="0.1524" layer="91"/>
 <wire x1="182.88" y1="139.7" x2="185.42" y2="139.7" width="0.1524" layer="91"/>
 <pinref part="P+36" gate="1" pin="VCC"/>
-<wire x1="185.42" y1="139.7" x2="185.42" y2="142.24" width="0.1524" layer="91"/>
+<wire x1="185.42" y1="139.7" x2="185.42" y2="149.86" width="0.1524" layer="91"/>
 <pinref part="U8" gate="G$1" pin="P1_VCC"/>
+<wire x1="185.42" y1="149.86" x2="185.42" y2="152.4" width="0.1524" layer="91"/>
 <wire x1="187.96" y1="137.16" x2="187.96" y2="139.7" width="0.1524" layer="91"/>
 <wire x1="187.96" y1="139.7" x2="185.42" y2="139.7" width="0.1524" layer="91"/>
 <junction x="185.42" y="139.7"/>
 <pinref part="U8" gate="G$1" pin="P0_VCC"/>
 <wire x1="185.42" y1="137.16" x2="185.42" y2="139.7" width="0.1524" layer="91"/>
+<pinref part="C19" gate="G$1" pin="1"/>
+<wire x1="193.04" y1="147.32" x2="193.04" y2="149.86" width="0.1524" layer="91"/>
+<wire x1="193.04" y1="149.86" x2="185.42" y2="149.86" width="0.1524" layer="91"/>
+<junction x="185.42" y="149.86"/>
 </segment>
 <segment>
 <pinref part="U8" gate="G$1" pin="ADDR1"/>
@@ -15209,30 +15235,30 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <junction x="208.28" y="96.52"/>
 </segment>
 <segment>
-<pinref part="R2722" gate="G$1" pin="1"/>
+<pinref part="R26" gate="G$1" pin="1"/>
 <wire x1="231.14" y1="121.92" x2="231.14" y2="124.46" width="0.1524" layer="91"/>
 <pinref part="P+39" gate="1" pin="VCC"/>
 </segment>
 <segment>
-<pinref part="R2522" gate="G$1" pin="1"/>
+<pinref part="R24" gate="G$1" pin="1"/>
 <wire x1="114.3" y1="124.46" x2="114.3" y2="127" width="0.1524" layer="91"/>
 <wire x1="114.3" y1="127" x2="116.84" y2="127" width="0.1524" layer="91"/>
 <pinref part="P+37" gate="1" pin="VCC"/>
 <wire x1="116.84" y1="127" x2="116.84" y2="129.54" width="0.1524" layer="91"/>
 <wire x1="116.84" y1="127" x2="121.92" y2="127" width="0.1524" layer="91"/>
 <junction x="116.84" y="127"/>
-<pinref part="R2622" gate="G$1" pin="1"/>
+<pinref part="R25" gate="G$1" pin="1"/>
 <wire x1="121.92" y1="127" x2="121.92" y2="124.46" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="R1322" gate="G$1" pin="1"/>
+<pinref part="R13" gate="G$1" pin="1"/>
 <wire x1="76.2" y1="27.94" x2="76.2" y2="30.48" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="30.48" x2="81.28" y2="30.48" width="0.1524" layer="91"/>
 <pinref part="P+16" gate="1" pin="VCC"/>
 <wire x1="81.28" y1="30.48" x2="81.28" y2="33.02" width="0.1524" layer="91"/>
 <wire x1="81.28" y1="30.48" x2="86.36" y2="30.48" width="0.1524" layer="91"/>
 <junction x="81.28" y="30.48"/>
-<pinref part="R1422" gate="G$1" pin="1"/>
+<pinref part="R14" gate="G$1" pin="1"/>
 <wire x1="86.36" y1="30.48" x2="86.36" y2="27.94" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -15248,7 +15274,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <label x="208.28" y="119.38" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="R1322" gate="G$1" pin="2"/>
+<pinref part="R13" gate="G$1" pin="2"/>
 <wire x1="76.2" y1="17.78" x2="76.2" y2="15.24" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="15.24" x2="73.66" y2="15.24" width="0.1524" layer="91"/>
 <label x="73.66" y="15.24" size="1.27" layer="95" rot="R180" xref="yes"/>
@@ -15266,7 +15292,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <label x="208.28" y="116.84" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="R1422" gate="G$1" pin="2"/>
+<pinref part="R14" gate="G$1" pin="2"/>
 <wire x1="86.36" y1="17.78" x2="86.36" y2="12.7" width="0.1524" layer="91"/>
 <wire x1="86.36" y1="12.7" x2="73.66" y2="12.7" width="0.1524" layer="91"/>
 <label x="73.66" y="12.7" size="1.27" layer="95" rot="R180" xref="yes"/>
@@ -15277,7 +15303,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <pinref part="U7" gate="G$1" pin="#INT"/>
 <wire x1="91.44" y1="111.76" x2="114.3" y2="111.76" width="0.1524" layer="91"/>
 <label x="116.84" y="111.76" size="1.27" layer="95" rot="R270" xref="yes"/>
-<pinref part="R2522" gate="G$1" pin="2"/>
+<pinref part="R24" gate="G$1" pin="2"/>
 <wire x1="114.3" y1="111.76" x2="116.84" y2="111.76" width="0.1524" layer="91"/>
 <wire x1="114.3" y1="114.3" x2="114.3" y2="111.76" width="0.1524" layer="91"/>
 <junction x="114.3" y="111.76"/>
@@ -15363,7 +15389,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <net name="TSTAT_IN_I2C_RST" class="0">
 <segment>
 <pinref part="U7" gate="G$1" pin="#RESET"/>
-<pinref part="R2622" gate="G$1" pin="2"/>
+<pinref part="R25" gate="G$1" pin="2"/>
 <wire x1="91.44" y1="106.68" x2="121.92" y2="106.68" width="0.1524" layer="91"/>
 <wire x1="121.92" y1="106.68" x2="121.92" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="121.92" y1="106.68" x2="124.46" y2="106.68" width="0.1524" layer="91"/>
@@ -15374,7 +15400,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <net name="TSTAT_OUT_I2C_RST" class="0">
 <segment>
 <pinref part="U8" gate="G$1" pin="#RESET"/>
-<pinref part="R2722" gate="G$1" pin="2"/>
+<pinref part="R26" gate="G$1" pin="2"/>
 <wire x1="205.74" y1="106.68" x2="231.14" y2="106.68" width="0.1524" layer="91"/>
 <wire x1="231.14" y1="106.68" x2="231.14" y2="111.76" width="0.1524" layer="91"/>
 <label x="231.14" y="106.68" size="1.27" layer="95" rot="R270" xref="yes"/>
@@ -15514,10 +15540,10 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </instance>
 <instance part="J2" gate="G$1" x="7.62" y="33.02"/>
 <instance part="GND71" gate="1" x="96.52" y="7.62"/>
-<instance part="C12" gate="G$1" x="25.4" y="17.78"/>
-<instance part="C13" gate="G$1" x="38.1" y="17.78"/>
-<instance part="C14" gate="G$1" x="58.42" y="17.78"/>
-<instance part="C15" gate="G$1" x="48.26" y="17.78"/>
+<instance part="C11" gate="G$1" x="25.4" y="17.78"/>
+<instance part="C12" gate="G$1" x="38.1" y="17.78"/>
+<instance part="C13" gate="G$1" x="58.42" y="17.78"/>
+<instance part="C17" gate="G$1" x="48.26" y="17.78"/>
 <instance part="GND72" gate="1" x="25.4" y="7.62"/>
 <instance part="GND73" gate="1" x="17.78" y="7.62"/>
 <instance part="GND74" gate="1" x="38.1" y="7.62"/>
@@ -15528,8 +15554,8 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <attribute name="VALUE" x="33.02" y="45.72" size="1.778" layer="96" rot="R90"/>
 <attribute name="DIGIKEY" x="27.94" y="43.18" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
-<instance part="R622" gate="G$1" x="116.84" y="53.34" rot="R90"/>
-<instance part="R722" gate="G$1" x="124.46" y="53.34" rot="R90"/>
+<instance part="R6" gate="G$1" x="116.84" y="53.34" rot="R90"/>
+<instance part="R7" gate="G$1" x="124.46" y="53.34" rot="R90"/>
 <instance part="D6" gate="G$1" x="116.84" y="66.04"/>
 <instance part="D7" gate="G$1" x="124.46" y="66.04"/>
 <instance part="S4" gate="G$1" x="76.2" y="91.44"/>
@@ -15542,28 +15568,28 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <attribute name="NAME" x="231.14" y="73.66" size="1.778" layer="95" font="vector" ratio="10"/>
 <attribute name="VALUE" x="220.98" y="60.96" size="1.778" layer="96" font="vector" ratio="10"/>
 </instance>
-<instance part="R1222" gate="G$1" x="226.06" y="55.88" rot="R90"/>
+<instance part="R12" gate="G$1" x="226.06" y="55.88" rot="R90"/>
 <instance part="GND79" gate="1" x="226.06" y="45.72"/>
-<instance part="C16" gate="G$1" x="190.5" y="170.18"/>
+<instance part="C15" gate="G$1" x="190.5" y="170.18"/>
 <instance part="GND80" gate="1" x="190.5" y="160.02"/>
-<instance part="R1122" gate="G$1" x="119.38" y="116.84"/>
+<instance part="R11" gate="G$1" x="119.38" y="116.84"/>
 <instance part="P+43" gate="1" x="109.22" y="116.84"/>
-<instance part="R2822" gate="G$1" x="109.22" y="101.6" rot="R270"/>
+<instance part="R27" gate="G$1" x="109.22" y="101.6" rot="R270"/>
 <instance part="P+44" gate="1" x="109.22" y="109.22"/>
-<instance part="C17" gate="G$1" x="144.78" y="60.96"/>
+<instance part="C14" gate="G$1" x="144.78" y="60.96"/>
 <instance part="GND81" gate="1" x="144.78" y="45.72"/>
 <instance part="D8" gate="G$1" x="106.68" y="149.86"/>
-<instance part="R1022" gate="G$1" x="106.68" y="137.16" rot="R90"/>
+<instance part="R10" gate="G$1" x="106.68" y="137.16" rot="R90"/>
 <instance part="P+46" gate="1" x="106.68" y="154.94"/>
 <instance part="D9" gate="G$1" x="96.52" y="149.86"/>
-<instance part="R922" gate="G$1" x="96.52" y="137.16" rot="R90"/>
+<instance part="R9" gate="G$1" x="96.52" y="137.16" rot="R90"/>
 <instance part="P+47" gate="1" x="96.52" y="154.94"/>
 <instance part="D10" gate="G$1" x="86.36" y="149.86"/>
-<instance part="R822" gate="G$1" x="86.36" y="137.16" rot="R90"/>
+<instance part="R8" gate="G$1" x="86.36" y="137.16" rot="R90"/>
 <instance part="P+48" gate="1" x="86.36" y="154.94"/>
 <instance part="FRAME7" gate="G$1" x="0" y="0"/>
 <instance part="FRAME7" gate="G$2" x="147.32" y="0"/>
-<instance part="JP1" gate="A" x="27.94" y="106.68" rot="R180"/>
+<instance part="J4" gate="A" x="27.94" y="106.68" rot="R180"/>
 <instance part="GND19" gate="1" x="40.64" y="83.82"/>
 <instance part="P+17" gate="1" x="53.34" y="101.6"/>
 </instances>
@@ -15584,16 +15610,16 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <junction x="180.34" y="165.1"/>
 <wire x1="190.5" y1="175.26" x2="180.34" y2="175.26" width="0.1524" layer="91"/>
 <junction x="180.34" y="175.26"/>
-<pinref part="C16" gate="G$1" pin="1"/>
+<pinref part="C15" gate="G$1" pin="1"/>
 <wire x1="190.5" y1="172.72" x2="190.5" y2="175.26" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="R1122" gate="G$1" pin="1"/>
+<pinref part="R11" gate="G$1" pin="1"/>
 <wire x1="114.3" y1="116.84" x2="109.22" y2="116.84" width="0.1524" layer="91"/>
 <pinref part="P+43" gate="1" pin="VCC"/>
 </segment>
 <segment>
-<pinref part="R2822" gate="G$1" pin="1"/>
+<pinref part="R27" gate="G$1" pin="1"/>
 <pinref part="P+44" gate="1" pin="VCC"/>
 <wire x1="109.22" y1="109.22" x2="109.22" y2="106.68" width="0.1524" layer="91"/>
 </segment>
@@ -15613,7 +15639,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <wire x1="86.36" y1="154.94" x2="86.36" y2="152.4" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="JP1" gate="A" pin="1"/>
+<pinref part="J4" gate="A" pin="1"/>
 <wire x1="30.48" y1="96.52" x2="53.34" y2="96.52" width="0.1524" layer="91"/>
 <wire x1="53.34" y1="96.52" x2="53.34" y2="101.6" width="0.1524" layer="91"/>
 <pinref part="P+17" gate="1" pin="VCC"/>
@@ -15633,17 +15659,17 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </segment>
 <segment>
 <pinref part="GND74" gate="1" pin="GND"/>
-<pinref part="C13" gate="G$1" pin="2"/>
+<pinref part="C12" gate="G$1" pin="2"/>
 <wire x1="38.1" y1="10.16" x2="38.1" y2="12.7" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND72" gate="1" pin="GND"/>
-<pinref part="C12" gate="G$1" pin="2"/>
+<pinref part="C11" gate="G$1" pin="2"/>
 <wire x1="25.4" y1="10.16" x2="25.4" y2="12.7" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND76" gate="1" pin="GND"/>
-<pinref part="C14" gate="G$1" pin="2"/>
+<pinref part="C13" gate="G$1" pin="2"/>
 <wire x1="58.42" y1="10.16" x2="58.42" y2="12.7" width="0.1524" layer="91"/>
 </segment>
 <segment>
@@ -15656,7 +15682,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </segment>
 <segment>
 <pinref part="GND75" gate="1" pin="GND"/>
-<pinref part="C15" gate="G$1" pin="-"/>
+<pinref part="C17" gate="G$1" pin="-"/>
 <wire x1="48.26" y1="10.16" x2="48.26" y2="12.7" width="0.1524" layer="91"/>
 </segment>
 <segment>
@@ -15702,22 +15728,22 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <junction x="213.36" y="66.04"/>
 </segment>
 <segment>
-<pinref part="R1222" gate="G$1" pin="1"/>
+<pinref part="R12" gate="G$1" pin="1"/>
 <pinref part="GND79" gate="1" pin="GND"/>
 <wire x1="226.06" y1="48.26" x2="226.06" y2="50.8" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="C17" gate="G$1" pin="2"/>
+<pinref part="C14" gate="G$1" pin="2"/>
 <pinref part="GND81" gate="1" pin="GND"/>
 <wire x1="144.78" y1="48.26" x2="144.78" y2="55.88" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND80" gate="1" pin="GND"/>
-<pinref part="C16" gate="G$1" pin="2"/>
+<pinref part="C15" gate="G$1" pin="2"/>
 <wire x1="190.5" y1="162.56" x2="190.5" y2="165.1" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="JP1" gate="A" pin="2"/>
+<pinref part="J4" gate="A" pin="2"/>
 <wire x1="30.48" y1="99.06" x2="40.64" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="40.64" y1="99.06" x2="40.64" y2="86.36" width="0.1524" layer="91"/>
 <pinref part="GND19" gate="1" pin="GND"/>
@@ -15725,7 +15751,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="N$39" class="0">
 <segment>
-<pinref part="C12" gate="G$1" pin="1"/>
+<pinref part="C11" gate="G$1" pin="1"/>
 <pinref part="J2" gate="G$1" pin="VCC"/>
 <wire x1="25.4" y1="20.32" x2="25.4" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="25.4" y1="38.1" x2="20.32" y2="38.1" width="0.1524" layer="91"/>
@@ -15758,10 +15784,10 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <net name="N$43" class="0">
 <segment>
 <pinref part="L2" gate="G$1" pin="2"/>
-<pinref part="C13" gate="G$1" pin="1"/>
+<pinref part="C12" gate="G$1" pin="1"/>
 <wire x1="35.56" y1="43.18" x2="38.1" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="38.1" y1="43.18" x2="38.1" y2="20.32" width="0.1524" layer="91"/>
-<pinref part="C15" gate="G$1" pin="+"/>
+<pinref part="C17" gate="G$1" pin="+"/>
 <wire x1="48.26" y1="20.32" x2="48.26" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="48.26" y1="43.18" x2="38.1" y2="43.18" width="0.1524" layer="91"/>
 <junction x="38.1" y="43.18"/>
@@ -15773,7 +15799,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <net name="N$44" class="0">
 <segment>
 <pinref part="U4" gate="1" pin="CBUS0"/>
-<pinref part="R622" gate="G$1" pin="1"/>
+<pinref part="R6" gate="G$1" pin="1"/>
 <wire x1="93.98" y1="45.72" x2="116.84" y2="45.72" width="0.1524" layer="91"/>
 <wire x1="116.84" y1="45.72" x2="116.84" y2="48.26" width="0.1524" layer="91"/>
 </segment>
@@ -15781,21 +15807,21 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <net name="N$45" class="0">
 <segment>
 <pinref part="U4" gate="1" pin="CBUS1"/>
-<pinref part="R722" gate="G$1" pin="1"/>
+<pinref part="R7" gate="G$1" pin="1"/>
 <wire x1="93.98" y1="43.18" x2="124.46" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="124.46" y1="43.18" x2="124.46" y2="48.26" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$46" class="0">
 <segment>
-<pinref part="R622" gate="G$1" pin="2"/>
+<pinref part="R6" gate="G$1" pin="2"/>
 <pinref part="D6" gate="G$1" pin="C"/>
 <wire x1="116.84" y1="58.42" x2="116.84" y2="60.96" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$47" class="0">
 <segment>
-<pinref part="R722" gate="G$1" pin="2"/>
+<pinref part="R7" gate="G$1" pin="2"/>
 <pinref part="D7" gate="G$1" pin="C"/>
 <wire x1="124.46" y1="58.42" x2="124.46" y2="60.96" width="0.1524" layer="91"/>
 </segment>
@@ -15831,7 +15857,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <segment>
 <pinref part="D7" gate="G$1" pin="A"/>
 <wire x1="124.46" y1="71.12" x2="124.46" y2="68.58" width="0.1524" layer="91"/>
-<pinref part="C14" gate="G$1" pin="1"/>
+<pinref part="C13" gate="G$1" pin="1"/>
 <pinref part="U4" gate="1" pin="3V3OUT"/>
 <wire x1="58.42" y1="20.32" x2="58.42" y2="40.64" width="0.1524" layer="91"/>
 <wire x1="58.42" y1="40.64" x2="66.04" y2="40.64" width="0.1524" layer="91"/>
@@ -15867,11 +15893,11 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <wire x1="124.46" y1="73.66" x2="124.46" y2="93.98" width="0.1524" layer="91"/>
 <wire x1="124.46" y1="93.98" x2="109.22" y2="93.98" width="0.1524" layer="91"/>
 <junction x="104.14" y="93.98"/>
-<pinref part="C17" gate="G$1" pin="1"/>
+<pinref part="C14" gate="G$1" pin="1"/>
 <wire x1="109.22" y1="93.98" x2="104.14" y2="93.98" width="0.1524" layer="91"/>
 <wire x1="144.78" y1="63.5" x2="144.78" y2="73.66" width="0.1524" layer="91"/>
 <junction x="144.78" y="73.66"/>
-<pinref part="R2822" gate="G$1" pin="2"/>
+<pinref part="R27" gate="G$1" pin="2"/>
 <wire x1="109.22" y1="96.52" x2="109.22" y2="93.98" width="0.1524" layer="91"/>
 <junction x="109.22" y="93.98"/>
 </segment>
@@ -15902,14 +15928,14 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <wire x1="218.44" y1="81.28" x2="210.82" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="226.06" y1="63.5" x2="226.06" y2="60.96" width="0.1524" layer="91"/>
 <junction x="226.06" y="63.5"/>
-<pinref part="R1222" gate="G$1" pin="2"/>
+<pinref part="R12" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$54" class="0">
 <segment>
 <pinref part="U2" gate="G$1" pin="P2.5/ROSC"/>
 <wire x1="147.32" y1="116.84" x2="124.46" y2="116.84" width="0.1524" layer="91"/>
-<pinref part="R1122" gate="G$1" pin="2"/>
+<pinref part="R11" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="TSTAT1_LCD_RS_PIN" class="0">
@@ -15935,7 +15961,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="N$8" class="0">
 <segment>
-<pinref part="R1022" gate="G$1" pin="1"/>
+<pinref part="R10" gate="G$1" pin="1"/>
 <wire x1="106.68" y1="132.08" x2="106.68" y2="129.54" width="0.1524" layer="91"/>
 <wire x1="106.68" y1="129.54" x2="147.32" y2="129.54" width="0.1524" layer="91"/>
 <pinref part="U2" gate="G$1" pin="P2.0/ACLK"/>
@@ -15943,28 +15969,28 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="N$13" class="0">
 <segment>
-<pinref part="R1022" gate="G$1" pin="2"/>
+<pinref part="R10" gate="G$1" pin="2"/>
 <pinref part="D8" gate="G$1" pin="C"/>
 <wire x1="106.68" y1="144.78" x2="106.68" y2="142.24" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$53" class="0">
 <segment>
-<pinref part="R922" gate="G$1" pin="2"/>
+<pinref part="R9" gate="G$1" pin="2"/>
 <pinref part="D9" gate="G$1" pin="C"/>
 <wire x1="96.52" y1="144.78" x2="96.52" y2="142.24" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$55" class="0">
 <segment>
-<pinref part="R822" gate="G$1" pin="2"/>
+<pinref part="R8" gate="G$1" pin="2"/>
 <pinref part="D10" gate="G$1" pin="C"/>
 <wire x1="86.36" y1="144.78" x2="86.36" y2="142.24" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$56" class="0">
 <segment>
-<pinref part="R922" gate="G$1" pin="1"/>
+<pinref part="R9" gate="G$1" pin="1"/>
 <pinref part="U2" gate="G$1" pin="P2.1/TAINCLK"/>
 <wire x1="96.52" y1="132.08" x2="96.52" y2="127" width="0.1524" layer="91"/>
 <wire x1="96.52" y1="127" x2="147.32" y2="127" width="0.1524" layer="91"/>
@@ -15974,7 +16000,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <segment>
 <pinref part="U2" gate="G$1" pin="P2.2/CAOUT/TA0/BSLRX"/>
 <wire x1="147.32" y1="124.46" x2="86.36" y2="124.46" width="0.1524" layer="91"/>
-<pinref part="R822" gate="G$1" pin="1"/>
+<pinref part="R8" gate="G$1" pin="1"/>
 <wire x1="86.36" y1="124.46" x2="86.36" y2="132.08" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -15999,7 +16025,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <label x="213.36" y="129.54" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="JP1" gate="A" pin="6"/>
+<pinref part="J4" gate="A" pin="6"/>
 <wire x1="30.48" y1="109.22" x2="35.56" y2="109.22" width="0.1524" layer="91"/>
 <label x="35.56" y="109.22" size="1.27" layer="95" xref="yes"/>
 </segment>
@@ -16011,7 +16037,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <label x="213.36" y="127" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="JP1" gate="A" pin="5"/>
+<pinref part="J4" gate="A" pin="5"/>
 <wire x1="30.48" y1="106.68" x2="35.56" y2="106.68" width="0.1524" layer="91"/>
 <label x="35.56" y="106.68" size="1.27" layer="95" xref="yes"/>
 </segment>
@@ -16023,7 +16049,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <label x="213.36" y="124.46" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="JP1" gate="A" pin="4"/>
+<pinref part="J4" gate="A" pin="4"/>
 <wire x1="30.48" y1="104.14" x2="35.56" y2="104.14" width="0.1524" layer="91"/>
 <label x="35.56" y="104.14" size="1.27" layer="95" xref="yes"/>
 </segment>
@@ -16035,7 +16061,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <label x="213.36" y="121.92" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="JP1" gate="A" pin="3"/>
+<pinref part="J4" gate="A" pin="3"/>
 <wire x1="30.48" y1="101.6" x2="35.56" y2="101.6" width="0.1524" layer="91"/>
 <label x="35.56" y="101.6" size="1.27" layer="95" xref="yes"/>
 </segment>
@@ -16131,7 +16157,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <label x="144.78" y="137.16" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="JP1" gate="A" pin="7"/>
+<pinref part="J4" gate="A" pin="7"/>
 <wire x1="30.48" y1="111.76" x2="35.56" y2="111.76" width="0.1524" layer="91"/>
 <label x="35.56" y="111.76" size="1.27" layer="95" xref="yes"/>
 </segment>
@@ -16143,7 +16169,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <label x="144.78" y="134.62" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="JP1" gate="A" pin="8"/>
+<pinref part="J4" gate="A" pin="8"/>
 <wire x1="30.48" y1="114.3" x2="35.56" y2="114.3" width="0.1524" layer="91"/>
 <label x="35.56" y="114.3" size="1.27" layer="95" xref="yes"/>
 </segment>
@@ -16300,7 +16326,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <attribute name="NAME" x="40.64" y="88.9" size="1.27" layer="95" rot="MR0"/>
 <attribute name="VALUE" x="43.18" y="71.12" size="1.27" layer="96" rot="MR0"/>
 </instance>
-<instance part="RA7" gate="G$1" x="195.58" y="99.06"/>
+<instance part="RA6" gate="G$1" x="195.58" y="99.06"/>
 <instance part="GND16" gate="1" x="182.88" y="83.82"/>
 <instance part="FRAME8" gate="G$1" x="0" y="0"/>
 <instance part="FRAME8" gate="G$2" x="147.32" y="0"/>
@@ -16459,7 +16485,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <label x="30.48" y="78.74" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="RA7" gate="G$1" pin="1"/>
+<pinref part="RA6" gate="G$1" pin="1"/>
 <wire x1="185.42" y1="109.22" x2="180.34" y2="109.22" width="0.1524" layer="91"/>
 <label x="180.34" y="109.22" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -16471,7 +16497,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <label x="30.48" y="76.2" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="RA7" gate="G$1" pin="3"/>
+<pinref part="RA6" gate="G$1" pin="3"/>
 <wire x1="185.42" y1="104.14" x2="180.34" y2="104.14" width="0.1524" layer="91"/>
 <label x="180.34" y="104.14" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -16530,10 +16556,10 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <junction x="83.82" y="63.5"/>
 </segment>
 <segment>
-<pinref part="RA7" gate="G$1" pin="2"/>
+<pinref part="RA6" gate="G$1" pin="2"/>
 <wire x1="185.42" y1="106.68" x2="182.88" y2="106.68" width="0.1524" layer="91"/>
 <wire x1="182.88" y1="106.68" x2="182.88" y2="101.6" width="0.1524" layer="91"/>
-<pinref part="RA7" gate="G$1" pin="4"/>
+<pinref part="RA6" gate="G$1" pin="4"/>
 <wire x1="182.88" y1="101.6" x2="182.88" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="185.42" y1="101.6" x2="182.88" y2="101.6" width="0.1524" layer="91"/>
 <junction x="182.88" y="101.6"/>
@@ -16662,20 +16688,20 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </net>
 <net name="TSTAT2_LCD_DB6_PIN" class="0">
 <segment>
-<pinref part="RA7" gate="G$1" pin="16"/>
+<pinref part="RA6" gate="G$1" pin="16"/>
 <wire x1="205.74" y1="109.22" x2="208.28" y2="109.22" width="0.1524" layer="91"/>
 <wire x1="208.28" y1="109.22" x2="208.28" y2="106.68" width="0.1524" layer="91"/>
-<pinref part="RA7" gate="G$1" pin="15"/>
+<pinref part="RA6" gate="G$1" pin="15"/>
 <wire x1="208.28" y1="106.68" x2="205.74" y2="106.68" width="0.1524" layer="91"/>
 <label x="208.28" y="109.22" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="TSTAT2_LCD_DB7_PIN" class="0">
 <segment>
-<pinref part="RA7" gate="G$1" pin="14"/>
+<pinref part="RA6" gate="G$1" pin="14"/>
 <wire x1="205.74" y1="104.14" x2="208.28" y2="104.14" width="0.1524" layer="91"/>
 <wire x1="208.28" y1="104.14" x2="208.28" y2="101.6" width="0.1524" layer="91"/>
-<pinref part="RA7" gate="G$1" pin="13"/>
+<pinref part="RA6" gate="G$1" pin="13"/>
 <wire x1="208.28" y1="101.6" x2="205.74" y2="101.6" width="0.1524" layer="91"/>
 <label x="208.28" y="104.14" size="1.27" layer="95" xref="yes"/>
 </segment>
