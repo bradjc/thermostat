@@ -23,6 +23,36 @@ void gpio_init (uint8_t port, uint8_t pin, gpio_dir_e dir) {
 	}
 }
 
+void gpio_interrupt (uint8_t port,
+                     uint8_t pin,
+                     gpio_int_dir_e int_dir,
+                     gpio_int_cb cb) {
+
+	uint8_t clear, set_int_dir = 0;
+
+	clear = ~(1 << pin);
+
+	if (int_dir == GPIO_INT_FALLING_EDGE) {
+		set_int_dir = (1 << pin);
+	}
+
+	switch (port) {
+	  case 1:
+		P1DIR &= clear;                         // set as input
+		P1SEL &= clear;                         // set as I/O pin
+		P1IES = (P1IES & clear) | set_int_dir;  // set the transistion
+		P1IFG &= clear;                         // clear any interrupt
+		P1IE  |= (1 << pin);                    // enable the interrupt
+	  case 2:
+		P2DIR &= clear;                         // set as input
+		P2SEL &= clear;                         // set as I/O pin
+		P2IES = (P1IES & clear) | set_int_dir;  // set the transistion
+		P2IFG &= clear;                         // clear any interrupt
+		P2IE  |= (1 << pin);                    // enable the interrupt
+	}
+
+}
+
 void gpio_set_clear (uint8_t port, uint8_t pin, uint8_t set) {
 	uint8_t clear;
 
