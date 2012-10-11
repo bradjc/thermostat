@@ -3,6 +3,9 @@
 
 #include "gpio.h"
 
+// Array to hold the callback functions for the interrupt on each pin.
+// Ports 1 and 2 are interrupt pins.
+gpio_int_cb cb_array[16] = {NULL};
 
 void gpio_init (uint8_t port, uint8_t pin, gpio_dir_e dir) {
 	uint8_t set, clear;
@@ -51,6 +54,10 @@ void gpio_interrupt (uint8_t port,
 		P2IE  |= (1 << pin);                    // enable the interrupt
 	}
 
+	if (cb != NULL) {
+		cb_array[(port-1)*8 + pin] = cb;
+	}
+
 }
 
 void gpio_set_clear (uint8_t port, uint8_t pin, uint8_t set) {
@@ -96,6 +103,19 @@ uint8_t gpio_read(uint8_t port, uint8_t pin) {
 	return 0;
 }
 
+#pragma ....
+
+int () {
+	int i;
+	uint8_t iv = P1IV;
+
+	for (i=0; i<8; i++) {
+		if (iv & (1<<i)) {
+			cb_array[i]()
+			return;
+		}
+	}
+}
 
 
 
