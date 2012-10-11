@@ -5733,9 +5733,9 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <wire x1="48.514" y1="85.852" x2="50.546" y2="85.852" width="0.254" layer="1"/>
 <wire x1="50.546" y1="85.852" x2="56.896" y2="79.502" width="0.254" layer="1"/>
 <contactref element="JP1" pad="7"/>
-<wire x1="56.896" y1="79.502" x2="67.056" y2="79.502" width="0.254" layer="1"/>
-<wire x1="67.056" y1="79.502" x2="68.58" y2="77.978" width="0.254" layer="1"/>
-<wire x1="68.58" y1="77.978" x2="68.58" y2="74.676" width="0.254" layer="1"/>
+<wire x1="56.896" y1="79.502" x2="65.278" y2="79.502" width="0.254" layer="1"/>
+<wire x1="65.278" y1="79.502" x2="68.58" y2="76.2" width="0.254" layer="1"/>
+<wire x1="68.58" y1="76.2" x2="68.58" y2="74.676" width="0.254" layer="1"/>
 </signal>
 <signal name="LCDP_MOSI1">
 <contactref element="U2" pad="45"/>
@@ -5754,9 +5754,9 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <wire x1="58.928" y1="93.726" x2="59.182" y2="93.98" width="0.254" layer="16"/>
 <wire x1="59.182" y1="93.98" x2="59.182" y2="94.234" width="0.254" layer="16"/>
 <contactref element="JP1" pad="6"/>
-<wire x1="56.642" y1="78.994" x2="65.024" y2="78.994" width="0.254" layer="1"/>
-<wire x1="65.024" y1="78.994" x2="66.04" y2="77.978" width="0.254" layer="1"/>
-<wire x1="66.04" y1="77.978" x2="66.04" y2="74.676" width="0.254" layer="1"/>
+<wire x1="56.642" y1="78.994" x2="63.246" y2="78.994" width="0.254" layer="1"/>
+<wire x1="63.246" y1="78.994" x2="66.04" y2="76.2" width="0.254" layer="1"/>
+<wire x1="66.04" y1="76.2" x2="66.04" y2="74.676" width="0.254" layer="1"/>
 </signal>
 <signal name="LCDP_MISO1">
 <contactref element="U2" pad="46"/>
@@ -5771,9 +5771,9 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <wire x1="46.736" y1="84.582" x2="50.292" y2="84.582" width="0.254" layer="1"/>
 <wire x1="50.292" y1="84.582" x2="56.388" y2="78.486" width="0.254" layer="1"/>
 <contactref element="JP1" pad="5"/>
-<wire x1="56.388" y1="78.486" x2="62.992" y2="78.486" width="0.254" layer="1"/>
-<wire x1="62.992" y1="78.486" x2="63.5" y2="77.978" width="0.254" layer="1"/>
-<wire x1="63.5" y1="77.978" x2="63.5" y2="74.676" width="0.254" layer="1"/>
+<wire x1="56.388" y1="78.486" x2="61.214" y2="78.486" width="0.254" layer="1"/>
+<wire x1="61.214" y1="78.486" x2="63.5" y2="76.2" width="0.254" layer="1"/>
+<wire x1="63.5" y1="76.2" x2="63.5" y2="74.676" width="0.254" layer="1"/>
 </signal>
 <signal name="LCDP_UCLK1">
 <contactref element="U2" pad="47"/>
@@ -5848,18 +5848,18 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <wire x1="52.63" y1="86.656" x2="52.63" y2="84.53" width="0.254" layer="1"/>
 <wire x1="52.63" y1="84.53" x2="57.15" y2="80.01" width="0.254" layer="1"/>
 <contactref element="JP1" pad="8"/>
-<wire x1="57.15" y1="80.01" x2="69.088" y2="80.01" width="0.254" layer="1"/>
-<wire x1="69.088" y1="80.01" x2="71.12" y2="77.978" width="0.254" layer="1"/>
-<wire x1="71.12" y1="77.978" x2="71.12" y2="74.676" width="0.254" layer="1"/>
+<wire x1="57.15" y1="80.01" x2="67.31" y2="80.01" width="0.254" layer="1"/>
+<wire x1="67.31" y1="80.01" x2="71.12" y2="76.2" width="0.254" layer="1"/>
+<wire x1="71.12" y1="76.2" x2="71.12" y2="74.676" width="0.254" layer="1"/>
 </signal>
 <signal name="LCDP_P1.7">
 <contactref element="U2" pad="19"/>
 <wire x1="53.13" y1="86.656" x2="53.13" y2="84.792" width="0.254" layer="1"/>
 <wire x1="53.13" y1="84.792" x2="57.404" y2="80.518" width="0.254" layer="1"/>
 <contactref element="JP1" pad="9"/>
-<wire x1="57.404" y1="80.518" x2="71.12" y2="80.518" width="0.254" layer="1"/>
-<wire x1="71.12" y1="80.518" x2="73.66" y2="77.978" width="0.254" layer="1"/>
-<wire x1="73.66" y1="77.978" x2="73.66" y2="74.676" width="0.254" layer="1"/>
+<wire x1="57.404" y1="80.518" x2="69.342" y2="80.518" width="0.254" layer="1"/>
+<wire x1="69.342" y1="80.518" x2="73.66" y2="76.2" width="0.254" layer="1"/>
+<wire x1="73.66" y1="76.2" x2="73.66" y2="74.676" width="0.254" layer="1"/>
 </signal>
 <signal name="LCDP_P2.3">
 <contactref element="U2" pad="23"/>
