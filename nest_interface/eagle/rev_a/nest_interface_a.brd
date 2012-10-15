@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.2">
+<eagle version="6.3">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -449,8 +449,6 @@
 <wire x1="-10.42" y1="-3.1" x2="10.39" y2="-3.1" width="0.127" layer="21"/>
 <wire x1="10.39" y1="-3.1" x2="10.39" y2="3.1" width="0.127" layer="21"/>
 <wire x1="10.39" y1="3.1" x2="-10.42" y2="3.1" width="0.127" layer="21"/>
-<hole x="-8.89" y="-2.54" drill="1.1"/>
-<hole x="-6.35" y="-2.54" drill="1.1"/>
 <pad name="1" x="-8.89" y="0" drill="1.1"/>
 <pad name="2" x="-6.35" y="0" drill="1.1"/>
 <wire x1="-0.03" y1="-1.7" x2="-0.03" y2="-3" width="0.127" layer="21"/>
@@ -458,26 +456,18 @@
 <wire x1="-0.53" y1="-2.5" x2="0.47" y2="-2.5" width="0.127" layer="21"/>
 <wire x1="0.47" y1="-2.5" x2="-0.03" y2="-3" width="0.127" layer="21"/>
 <pad name="3" x="-3.81" y="0" drill="1.1"/>
-<hole x="-3.81" y="-2.54" drill="1.1"/>
 <text x="-10.16" y="3.81" size="1.016" layer="25" font="vector" ratio="12">&gt;NAME</text>
 <pad name="4" x="-1.27" y="0" drill="1.1"/>
 <pad name="5" x="1.27" y="0" drill="1.1"/>
 <pad name="6" x="3.81" y="0" drill="1.1"/>
 <pad name="7" x="6.35" y="0" drill="1.1"/>
-<hole x="-1.27" y="-2.54" drill="1.1"/>
-<hole x="1.27" y="-2.54" drill="1.1"/>
-<hole x="3.81" y="-2.54" drill="1.1"/>
-<hole x="6.35" y="-2.54" drill="1.1"/>
 <pad name="8" x="8.89" y="0" drill="1.1"/>
-<hole x="8.89" y="-2.54" drill="1.1"/>
 </package>
 <package name="CONN_BLOCK_7">
 <wire x1="-9.15" y1="3.1" x2="-9.15" y2="-3.1" width="0.127" layer="21"/>
 <wire x1="-9.15" y1="-3.1" x2="9.12" y2="-3.1" width="0.127" layer="21"/>
 <wire x1="9.12" y1="-3.1" x2="9.12" y2="3.1" width="0.127" layer="21"/>
 <wire x1="9.12" y1="3.1" x2="-9.15" y2="3.1" width="0.127" layer="21"/>
-<hole x="-7.62" y="-2.54" drill="1.1"/>
-<hole x="-5.08" y="-2.54" drill="1.1"/>
 <pad name="1" x="-7.62" y="0" drill="1.1"/>
 <pad name="2" x="-5.08" y="0" drill="1.1"/>
 <wire x1="-1.3" y1="-1.7" x2="-1.3" y2="-3" width="0.127" layer="21"/>
@@ -485,16 +475,11 @@
 <wire x1="-1.8" y1="-2.5" x2="-0.8" y2="-2.5" width="0.127" layer="21"/>
 <wire x1="-0.8" y1="-2.5" x2="-1.3" y2="-3" width="0.127" layer="21"/>
 <pad name="3" x="-2.54" y="0" drill="1.1"/>
-<hole x="-2.54" y="-2.54" drill="1.1"/>
 <text x="-8.89" y="3.81" size="1.016" layer="25" font="vector" ratio="12">&gt;NAME</text>
 <pad name="4" x="0" y="0" drill="1.1"/>
 <pad name="5" x="2.54" y="0" drill="1.1"/>
 <pad name="6" x="5.08" y="0" drill="1.1"/>
 <pad name="7" x="7.62" y="0" drill="1.1"/>
-<hole x="0" y="-2.54" drill="1.1"/>
-<hole x="2.54" y="-2.54" drill="1.1"/>
-<hole x="5.08" y="-2.54" drill="1.1"/>
-<hole x="7.62" y="-2.54" drill="1.1"/>
 </package>
 <package name="LSSOP-16">
 <smd name="6" x="0.9525" y="-2.667" dx="0.381" dy="1.27" layer="1"/>
@@ -513,10 +498,10 @@
 <smd name="14" x="-0.9525" y="2.667" dx="0.381" dy="1.27" layer="1"/>
 <smd name="15" x="-1.5875" y="2.667" dx="0.381" dy="1.27" layer="1"/>
 <smd name="16" x="-2.2225" y="2.667" dx="0.381" dy="1.27" layer="1"/>
-<wire x1="-3.0607" y1="1.9558" x2="-3.0607" y2="-1.9558" width="0.127" layer="21"/>
-<wire x1="-3.0607" y1="-1.9558" x2="3.0607" y2="-1.9558" width="0.127" layer="21"/>
-<wire x1="3.0607" y1="-1.9558" x2="3.0607" y2="1.9558" width="0.127" layer="21"/>
-<wire x1="3.0607" y1="1.9558" x2="-3.0607" y2="1.9558" width="0.127" layer="21"/>
+<wire x1="-2.4511" y1="1.9558" x2="-2.4511" y2="-1.9558" width="0.127" layer="21"/>
+<wire x1="-2.4511" y1="-1.9558" x2="2.4511" y2="-1.9558" width="0.127" layer="21"/>
+<wire x1="2.4511" y1="-1.9558" x2="2.4511" y2="1.9558" width="0.127" layer="21"/>
+<wire x1="2.4511" y1="1.9558" x2="-2.4511" y2="1.9558" width="0.127" layer="21"/>
 <text x="-2.54" y="3.81" size="1.016" layer="25" font="vector" ratio="12">&gt;NAME</text>
 <text x="-2.54" y="-5.08" size="1.016" layer="27" font="vector" ratio="12">&gt;VALUE</text>
 </package>
@@ -2246,7 +2231,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 <class number="0" name="default" width="0" drill="0">
 </class>
 </classes>
-<designrules>
+<designrules name="default">
 <description language="en">&lt;b&gt;EAGLE Design Rules for *2* Layer Designs (DS)&lt;/b&gt;
 &lt;p&gt;
 This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requirements for our double sided products. For questions, comments, suggestions, please contact Sunstone Customer Support: &lt;p&gt;&lt;b&gt;Email:&lt;/b&gt;  mailto:support@sunstone.com&lt;br&gt;&lt;b&gt;Phone:&lt;/b&gt; 800-228-8198.&lt;p&gt; v1.1Mod10/16/07~Layers-core reversal.Distance C/D.Restring%.Supply G%.&lt;p&gt; v1.2 Mod12/06/07~Distance C/D to 20mils.&lt;p&gt;v1.3Mod12/12/07~Supply/Annulus Value to 12.5mils&lt;p&gt;1/15/08 SSC-EAGLE-2Lyr_v1.0.0.3~For Release&lt;p&gt;10/3/08 Description Edit.&lt;p&gt;
@@ -3082,8 +3067,7 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <wire x1="87.542" y1="75.35" x2="88.011" y2="75.819" width="0.6096" layer="1"/>
 <wire x1="88.011" y1="75.819" x2="88.138" y2="75.946" width="0.6096" layer="1"/>
 <wire x1="88.138" y1="75.946" x2="88.138" y2="77.47" width="0.6096" layer="1"/>
-<wire x1="88.138" y1="77.47" x2="88.138" y2="83.59" width="0.6096" layer="1"/>
-<wire x1="88.138" y1="83.59" x2="85.864" y2="85.864" width="0.6096" layer="1"/>
+<wire x1="88.138" y1="77.47" x2="88.138" y2="88.138" width="0.6096" layer="1"/>
 <wire x1="82.55" y1="75.35" x2="80.606" y2="75.35" width="0.6096" layer="1"/>
 <via x="80.606" y="75.35" extent="1-16" drill="0.4064" diameter="0.4064"/>
 <wire x1="80.606" y1="75.35" x2="87.542" y2="75.35" width="0.6096" layer="16"/>
@@ -3141,12 +3125,9 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <wire x1="97.702" y1="21.082" x2="96.012" y2="21.082" width="0.254" layer="1"/>
 <wire x1="96.012" y1="21.082" x2="95.504" y2="21.59" width="0.254" layer="1"/>
 <wire x1="95.25" y1="95.25" x2="95.25" y2="97.028" width="0.6096" layer="1"/>
-<wire x1="95.25" y1="97.028" x2="95.25" y2="101.6" width="0.6096" layer="1"/>
-<wire x1="95.25" y1="101.6" x2="95.25" y2="106.68" width="0.6096" layer="1"/>
-<wire x1="102.362" y1="106.68" x2="99.822" y2="104.14" width="0.6096" layer="1"/>
-<wire x1="99.822" y1="104.14" x2="97.79" y2="104.14" width="0.6096" layer="1"/>
-<wire x1="97.79" y1="104.14" x2="95.25" y2="101.6" width="0.6096" layer="1"/>
-<wire x1="85.864" y1="85.864" x2="94.474" y2="94.474" width="0.6096" layer="1"/>
+<wire x1="95.25" y1="97.028" x2="95.25" y2="106.68" width="0.6096" layer="1"/>
+<wire x1="85.864" y1="85.864" x2="88.138" y2="88.138" width="0.6096" layer="1"/>
+<wire x1="88.138" y1="88.138" x2="94.474" y2="94.474" width="0.6096" layer="1"/>
 <wire x1="94.474" y1="94.474" x2="98.042" y2="94.474" width="0.6096" layer="1"/>
 <wire x1="94.474" y1="94.474" x2="95.25" y2="95.25" width="0.6096" layer="1"/>
 <wire x1="94.742" y1="97.536" x2="95.25" y2="97.028" width="0.254" layer="1"/>
@@ -3170,6 +3151,9 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <wire x1="111.6" y1="25.836" x2="111.6" y2="27.78" width="0.254" layer="1"/>
 <contactref element="JP1" pad="1"/>
 <wire x1="53.34" y1="74.93" x2="53.34" y2="74.676" width="0.6096" layer="1"/>
+<wire x1="102.362" y1="106.68" x2="100.584" y2="104.902" width="0.6096" layer="1"/>
+<wire x1="100.584" y1="104.902" x2="97.028" y2="104.902" width="0.6096" layer="1"/>
+<wire x1="97.028" y1="104.902" x2="95.25" y2="106.68" width="0.6096" layer="1"/>
 </signal>
 <signal name="GND">
 <contactref element="C2" pad="2"/>
