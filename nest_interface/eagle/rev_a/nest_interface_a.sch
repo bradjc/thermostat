@@ -2849,6 +2849,69 @@
 <vertex x="4.2418" y="10.1346"/>
 </polygon>
 </symbol>
+<symbol name="SPST-NC-4">
+<description>Analog Switches - 4x SPST - normally closed</description>
+<circle x="-27.94" y="0" radius="0.3175" width="0.254" layer="94"/>
+<wire x1="-27.94" y1="0" x2="-24.892" y2="2.032" width="0.254" layer="94"/>
+<circle x="-25.4" y="2.54" radius="0.3175" width="0.254" layer="94"/>
+<pin name="COM1" x="-30.48" y="0" visible="off" length="short"/>
+<pin name="NC1" x="-22.86" y="2.54" visible="off" length="short" rot="R180"/>
+<polygon width="0.254" layer="94">
+<vertex x="-26.67" y="1.27"/>
+<vertex x="-26.67" y="2.286"/>
+<vertex x="-27.686" y="1.27"/>
+</polygon>
+<wire x1="-27.178" y1="1.778" x2="-27.94" y2="2.54" width="0.254" layer="94"/>
+<pin name="IN1" x="-30.48" y="2.54" visible="off" length="short"/>
+<wire x1="-10.16" y1="0" x2="-7.112" y2="2.032" width="0.254" layer="94"/>
+<pin name="COM2" x="-12.7" y="0" visible="off" length="short"/>
+<pin name="NC2" x="-5.08" y="2.54" visible="off" length="short" rot="R180"/>
+<polygon width="0.254" layer="94">
+<vertex x="-8.89" y="1.27"/>
+<vertex x="-8.89" y="2.286"/>
+<vertex x="-9.906" y="1.27"/>
+</polygon>
+<wire x1="-9.398" y1="1.778" x2="-10.16" y2="2.54" width="0.254" layer="94"/>
+<pin name="IN2" x="-12.7" y="2.54" visible="off" length="short"/>
+<wire x1="7.62" y1="0" x2="10.668" y2="2.032" width="0.254" layer="94"/>
+<pin name="COM3" x="5.08" y="0" visible="off" length="short"/>
+<pin name="NC3" x="12.7" y="2.54" visible="off" length="short" rot="R180"/>
+<polygon width="0.254" layer="94">
+<vertex x="8.89" y="1.27"/>
+<vertex x="8.89" y="2.286"/>
+<vertex x="7.874" y="1.27"/>
+</polygon>
+<wire x1="8.382" y1="1.778" x2="7.62" y2="2.54" width="0.254" layer="94"/>
+<pin name="IN3" x="5.08" y="2.54" visible="off" length="short"/>
+<wire x1="25.4" y1="0" x2="28.448" y2="2.032" width="0.254" layer="94"/>
+<pin name="COM4" x="22.86" y="0" visible="off" length="short"/>
+<pin name="NC4" x="30.48" y="2.54" visible="off" length="short" rot="R180"/>
+<polygon width="0.254" layer="94">
+<vertex x="26.67" y="1.27"/>
+<vertex x="26.67" y="2.286"/>
+<vertex x="25.654" y="1.27"/>
+</polygon>
+<wire x1="26.162" y1="1.778" x2="25.4" y2="2.54" width="0.254" layer="94"/>
+<pin name="IN4" x="22.86" y="2.54" visible="off" length="short"/>
+<wire x1="38.1" y1="5.08" x2="38.1" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="38.1" y1="-5.08" x2="45.72" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="45.72" y1="-5.08" x2="45.72" y2="5.08" width="0.254" layer="94"/>
+<wire x1="45.72" y1="5.08" x2="38.1" y2="5.08" width="0.254" layer="94"/>
+<pin name="VCC" x="48.26" y="2.54" visible="pin" length="short" rot="R180"/>
+<pin name="GND" x="48.26" y="-2.54" visible="pin" length="short" rot="R180"/>
+<text x="38.1" y="7.62" size="1.27" layer="95">&gt;NAME</text>
+<text x="38.1" y="-7.62" size="1.27" layer="96">&gt;VALUE</text>
+<circle x="-25.4" y="-2.54" radius="0.3175" width="0.254" layer="94"/>
+<circle x="-7.62" y="-2.54" radius="0.3175" width="0.254" layer="94"/>
+<circle x="10.16" y="-2.54" radius="0.3175" width="0.254" layer="94"/>
+<circle x="27.94" y="-2.54" radius="0.3175" width="0.254" layer="94"/>
+<circle x="27.94" y="2.54" radius="0.3175" width="0.254" layer="94"/>
+<circle x="25.4" y="0" radius="0.3175" width="0.254" layer="94"/>
+<circle x="10.16" y="2.54" radius="0.3175" width="0.254" layer="94"/>
+<circle x="7.62" y="0" radius="0.3175" width="0.254" layer="94"/>
+<circle x="-7.62" y="2.54" radius="0.3175" width="0.254" layer="94"/>
+<circle x="-10.16" y="0" radius="0.3175" width="0.254" layer="94"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="RT314524" prefix="RE">
@@ -3366,6 +3429,36 @@ LETTER landscape</description>
 <device name="_LARGE" package="UMICH_SOLID_350MIL">
 <technologies>
 <technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="TS12A44515DR" prefix="SA">
+<gates>
+<gate name="G$1" symbol="SPST-NC-4" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SOIC-14">
+<connects>
+<connect gate="G$1" pin="COM1" pad="2"/>
+<connect gate="G$1" pin="COM2" pad="4"/>
+<connect gate="G$1" pin="COM3" pad="9"/>
+<connect gate="G$1" pin="COM4" pad="10"/>
+<connect gate="G$1" pin="GND" pad="7"/>
+<connect gate="G$1" pin="IN1" pad="13"/>
+<connect gate="G$1" pin="IN2" pad="5"/>
+<connect gate="G$1" pin="IN3" pad="6"/>
+<connect gate="G$1" pin="IN4" pad="12"/>
+<connect gate="G$1" pin="NC1" pad="1"/>
+<connect gate="G$1" pin="NC2" pad="3"/>
+<connect gate="G$1" pin="NC3" pad="8"/>
+<connect gate="G$1" pin="NC4" pad="11"/>
+<connect gate="G$1" pin="VCC" pad="14"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIGIKEY" value="296-24790-1-ND"/>
+</technology>
 </technologies>
 </device>
 </devices>
@@ -12205,6 +12298,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <part name="GND27" library="supply1" deviceset="GND" device=""/>
 <part name="JP1" library="pinhead" deviceset="PINHD-1X10" device=""/>
 <part name="U$1" library="nest_interface" deviceset="UMICH_SOLID" device="_LARGE"/>
+<part name="SA1" library="nest_interface" deviceset="TS12A44515DR" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -13508,6 +13602,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <instance part="P+45" gate="1" x="205.74" y="116.84"/>
 <instance part="FRAME4" gate="G$1" x="0" y="0"/>
 <instance part="FRAME4" gate="G$2" x="147.32" y="0"/>
+<instance part="SA1" gate="G$1" x="175.26" y="63.5"/>
 </instances>
 <busses>
 </busses>
@@ -13600,6 +13695,28 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <junction x="76.2" y="38.1"/>
 <pinref part="QA7" gate="G$1" pin="G4"/>
 <wire x1="88.9" y1="40.64" x2="91.44" y2="40.64" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="SA1" gate="G$1" pin="IN1"/>
+<wire x1="144.78" y1="66.04" x2="142.24" y2="66.04" width="0.1524" layer="91"/>
+<pinref part="SA1" gate="G$1" pin="IN2"/>
+<wire x1="142.24" y1="66.04" x2="139.7" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="162.56" y1="66.04" x2="160.02" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="160.02" y1="66.04" x2="160.02" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="160.02" y1="68.58" x2="142.24" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="142.24" y1="68.58" x2="142.24" y2="66.04" width="0.1524" layer="91"/>
+<junction x="142.24" y="66.04"/>
+<pinref part="SA1" gate="G$1" pin="IN4"/>
+<wire x1="198.12" y1="66.04" x2="195.58" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="195.58" y1="66.04" x2="195.58" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="195.58" y1="68.58" x2="177.8" y2="68.58" width="0.1524" layer="91"/>
+<junction x="160.02" y="68.58"/>
+<pinref part="SA1" gate="G$1" pin="IN3"/>
+<wire x1="177.8" y1="68.58" x2="160.02" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="180.34" y1="66.04" x2="177.8" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="177.8" y1="66.04" x2="177.8" y2="68.58" width="0.1524" layer="91"/>
+<junction x="177.8" y="68.58"/>
+<label x="139.7" y="66.04" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -13984,6 +14101,91 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <wire x1="83.82" y1="35.56" x2="83.82" y2="27.94" width="0.1524" layer="91"/>
 <wire x1="48.26" y1="27.94" x2="83.82" y2="27.94" width="0.1524" layer="91"/>
 <label x="48.26" y="27.94" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="TSTAT1_ON/OFF_OUT_PIN" class="0">
+<segment>
+<pinref part="SA1" gate="G$1" pin="COM1"/>
+<wire x1="144.78" y1="63.5" x2="144.78" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="144.78" y1="60.96" x2="139.7" y2="60.96" width="0.1524" layer="91"/>
+<label x="139.7" y="60.96" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="N$42" class="0">
+<segment>
+<pinref part="SA1" gate="G$1" pin="COM2"/>
+<wire x1="162.56" y1="63.5" x2="160.02" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="160.02" y1="63.5" x2="160.02" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="160.02" y1="58.42" x2="139.7" y2="58.42" width="0.1524" layer="91"/>
+<label x="139.7" y="58.42" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="N$59" class="0">
+<segment>
+<pinref part="SA1" gate="G$1" pin="COM3"/>
+<wire x1="180.34" y1="63.5" x2="177.8" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="177.8" y1="63.5" x2="177.8" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="177.8" y1="55.88" x2="139.7" y2="55.88" width="0.1524" layer="91"/>
+<label x="139.7" y="55.88" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="N$61" class="0">
+<segment>
+<pinref part="SA1" gate="G$1" pin="COM4"/>
+<wire x1="198.12" y1="63.5" x2="195.58" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="195.58" y1="63.5" x2="195.58" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="195.58" y1="53.34" x2="139.7" y2="53.34" width="0.1524" layer="91"/>
+<label x="139.7" y="53.34" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="N$62" class="0">
+<segment>
+<pinref part="SA1" gate="G$1" pin="NC1"/>
+<wire x1="152.4" y1="66.04" x2="154.94" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="154.94" y1="66.04" x2="154.94" y2="71.12" width="0.1524" layer="91"/>
+<wire x1="154.94" y1="71.12" x2="139.7" y2="71.12" width="0.1524" layer="91"/>
+<label x="139.7" y="71.12" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="N$63" class="0">
+<segment>
+<pinref part="SA1" gate="G$1" pin="NC2"/>
+<wire x1="170.18" y1="66.04" x2="172.72" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="172.72" y1="66.04" x2="172.72" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="172.72" y1="73.66" x2="139.7" y2="73.66" width="0.1524" layer="91"/>
+<label x="139.7" y="73.66" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="N$64" class="0">
+<segment>
+<pinref part="SA1" gate="G$1" pin="NC3"/>
+<wire x1="187.96" y1="66.04" x2="190.5" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="190.5" y1="66.04" x2="190.5" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="190.5" y1="76.2" x2="139.7" y2="76.2" width="0.1524" layer="91"/>
+<label x="139.7" y="76.2" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="N$66" class="0">
+<segment>
+<pinref part="SA1" gate="G$1" pin="NC4"/>
+<wire x1="205.74" y1="66.04" x2="208.28" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="208.28" y1="66.04" x2="208.28" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="208.28" y1="78.74" x2="139.7" y2="78.74" width="0.1524" layer="91"/>
+<label x="139.7" y="78.74" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="N$67" class="0">
+<segment>
+<pinref part="SA1" gate="G$1" pin="VCC"/>
+<wire x1="223.52" y1="66.04" x2="226.06" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="226.06" y1="66.04" x2="226.06" y2="68.58" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$68" class="0">
+<segment>
+<pinref part="SA1" gate="G$1" pin="GND"/>
+<wire x1="223.52" y1="60.96" x2="226.06" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="226.06" y1="60.96" x2="226.06" y2="58.42" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

@@ -2886,6 +2886,9 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <attribute name="VALUE" x="52.07" y="71.501" size="1.27" layer="27"/>
 </element>
 <element name="U$1" library="nest_interface" package="UMICH_SOLID_350MIL" value="UMICH_SOLID_LARGE" x="119.38" y="58.674"/>
+<element name="SA1" library="nest_interface" package="SOIC-14" value="TS12A44515DR" x="-5.08" y="5.08">
+<attribute name="DIGIKEY" value="296-24790-1-ND" x="-5.08" y="5.08" size="1.778" layer="27" display="off"/>
+</element>
 </elements>
 <signals>
 <signal name="VCC">
@@ -4123,6 +4126,14 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <wire x1="118.618" y1="58.166" x2="118.618" y2="62.23" width="0.254" layer="1"/>
 <wire x1="118.618" y1="62.23" x2="117.856" y2="62.992" width="0.254" layer="1"/>
 <wire x1="117.856" y1="62.992" x2="115.824" y2="62.992" width="0.254" layer="1"/>
+<contactref element="SA1" pad="13"/>
+<contactref element="SA1" pad="5"/>
+<contactref element="SA1" pad="12"/>
+<contactref element="SA1" pad="6"/>
+<wire x1="-2.54" y1="2.413" x2="76.835" y2="38.1" width="0" layer="19" extent="1-1"/>
+<wire x1="-3.81" y1="2.413" x2="-2.54" y2="2.413" width="0" layer="19" extent="1-1"/>
+<wire x1="-6.35" y1="7.747" x2="-3.81" y2="2.413" width="0" layer="19" extent="1-1"/>
+<wire x1="-7.62" y1="7.747" x2="-6.35" y2="7.747" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="TSTAT1_ON/OFF_IN">
 <contactref element="QA4" pad="3"/>
@@ -4958,6 +4969,8 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <contactref element="RA3" pad="1"/>
 <wire x1="98.7425" y1="54.737" x2="102.235" y2="58.2295" width="0.254" layer="1"/>
 <wire x1="102.235" y1="58.2295" x2="102.235" y2="59.436" width="0.254" layer="1"/>
+<contactref element="SA1" pad="2"/>
+<wire x1="-7.62" y1="2.413" x2="98.7425" y2="54.737" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="TSTAT1_MENU_OUT_PIN">
 <contactref element="U8" pad="5"/>
@@ -6140,6 +6153,33 @@ This Sunstone Circuits 2 Layer .DRU has been set to cover our minimum requiremen
 <wire x1="103.632" y1="78.74" x2="102.362" y2="80.01" width="0.254" layer="16"/>
 <via x="102.362" y="80.01" extent="1-16" drill="0.4064" diameter="0.4064"/>
 <wire x1="102.362" y1="80.01" x2="100.711" y2="80.01" width="0.254" layer="1"/>
+</signal>
+<signal name="N$42">
+<contactref element="SA1" pad="4"/>
+</signal>
+<signal name="N$59">
+<contactref element="SA1" pad="9"/>
+</signal>
+<signal name="N$61">
+<contactref element="SA1" pad="10"/>
+</signal>
+<signal name="N$62">
+<contactref element="SA1" pad="1"/>
+</signal>
+<signal name="N$63">
+<contactref element="SA1" pad="3"/>
+</signal>
+<signal name="N$64">
+<contactref element="SA1" pad="8"/>
+</signal>
+<signal name="N$66">
+<contactref element="SA1" pad="11"/>
+</signal>
+<signal name="N$67">
+<contactref element="SA1" pad="14"/>
+</signal>
+<signal name="N$68">
+<contactref element="SA1" pad="7"/>
 </signal>
 </signals>
 </board>
