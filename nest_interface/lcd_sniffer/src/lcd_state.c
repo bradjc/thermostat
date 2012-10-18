@@ -1,39 +1,14 @@
+#include "utility.h"
+#include "lcd_state.h"
+
 //
 // Known issues:
 // - no way to note the thermostat is not cooling the room anymore
 //
 
 
-#define FALSE 0
-#define TRUE  0
-typdef bool uint8_t;
-
-//                         01234567890123456789012345678901
-char lcds_str_off[]     = "Unit is OFF     by I/O key      ";
-char lcds_str_status[]  = " ~~~F    ~~ %RH ~~~~~~~~~       ";
-char lcds_str_temp_sp[] = "TEMP SETPT";
-
-char lcds_str_cooling[] = "COOLING";
-char lcds_str_alarms[]  = "NO ALARMS";
-
-struct {
-	uint8_t on;          // 1 if on, 0 if the thermostat is off
-	uint8_t cooling;     // 1 if the thermostat is cooling
-	uint8_t alarms;      // 1 if the alarm is on
-	uint8_t temperature; // room temp
-	uint8_t humidity;    // room relative humidity
-	uint8_t temp_sp;     // current temperature setting of the room
-} lcds_tstat_status_t;
-
-struct {
-	// array to hold the current contents of the lcd display
-	uint8_t lcd_chars[32];
-	uint8_t lcd_idx;
-} lcds_lcd_buf;
-
 lcds_tstat_status_t tstat_st[2] = {{0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}};
-
-lcds_lcd_buf lcd[2];
+lcds_lcd_buf        lcd[2];
 
 // returns true if the stings are the same.
 // use the ~ character for a wildcard (matches anything)
@@ -62,9 +37,13 @@ uint8_t str_to_num (char* s, uint8_t len) {
 	return num;
 }
 
-//void lcds_init () {
+void lcds_init () {
+	uint8_t i;
+
+//	for (i=0; i<2; i++) {
 //
-//}
+//	}
+}
 
 // Call this at the start of a new screen write to reset and clear buffers
 void lcds_start_new_screen (tstat_e tstat) {
@@ -126,6 +105,21 @@ void lcds_process_screen (tstat_e tstat) {
 		tstat_st[tstat].temp_sp = tsp;
 
 	}
+
+}
+
+uint8_t lcds_get_info (tstat_e tstat, tstat_st_e tstat_status) {
+
+	switch (tstat_status) {
+		case TSTAT_ON_OFF: return tstat_st[tstat].on;
+		case TSTAT_COOLING: return tstat_st[tstat].cooling;
+		case TSTAT_ALARMS: return tstat_st[tstat].alarms;
+		case TSTAT_TEMPERATURE: return tstat_st[tstat].temperature;
+		case TSTAT_HUMIDITY: return tstat_st[tstat].humidity;
+		case TSTAT_TEMPERATURE_SETPOINT: return tstat_st[tstat].temp_sp;
+	}
+
+	return 0xff;
 
 }
 
