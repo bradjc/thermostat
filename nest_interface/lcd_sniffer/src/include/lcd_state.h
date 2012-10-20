@@ -4,11 +4,6 @@
 #include <msp430.h>
 #include <inttypes.h>
 
-typedef enum tstat {
-	TSTAT1,
-	TSTAT2,
-} tstat_e;
-
 typedef enum tstat_st {
 	TSTAT_ON_OFF,
 	TSTAT_COOLING,

@@ -1,40 +1,7 @@
 
 #include "msp430.h"
 
-#define TSTAT1_LCD_RS_PORT ??
-#define TSTAT1_LCD_RS_PIN ??
-#define TSTAT1_LCD_E_PORT
-#define TSTAT1_LCD_E_PIN
-#define TSTAT1_LCD_RW_PORT
-#define TSTAT1_LCD_RW_PIN
-#define TSTAT1_LCD_DB4_PORT
-#define TSTAT1_LCD_DB4_PIN
-#define TSTAT1_LCD_DB5_PORT
-#define TSTAT1_LCD_DB5_PIN
-#define TSTAT1_LCD_DB6_PORT
-#define TSTAT1_LCD_DB6_PIN
-#define TSTAT1_LCD_DB7_PORT
-#define TSTAT1_LCD_DB7_PIN
 
-#define TSTAT2_LCD_RS_PORT ??
-#define TSTAT2_LCD_RS_PIN ??
-#define TSTAT2_LCD_E_PORT
-#define TSTAT2_LCD_E_PIN
-#define TSTAT2_LCD_RW_PORT
-#define TSTAT2_LCD_RW_PIN
-#define TSTAT2_LCD_DB4_PORT
-#define TSTAT2_LCD_DB4_PIN
-#define TSTAT2_LCD_DB5_PORT
-#define TSTAT2_LCD_DB5_PIN
-#define TSTAT2_LCD_DB6_PORT
-#define TSTAT2_LCD_DB6_PIN
-#define TSTAT2_LCD_DB7_PORT
-#define TSTAT2_LCD_DB7_PIN
-
-typedef enum tstat {
-	TSTAT1 = 0,
-	TSTAT2 = 1,
-} tstat_e;
 
 // Samples the 4 data wires and returns the values in the lower 4 bits
 uint8_t get_raw_tstat_data (tstat_e tstat) {
@@ -58,12 +25,95 @@ uint8_t get_raw_tstat_data (tstat_e tstat) {
 }
 
 
+void handle_i2c_req (uint8_t addr) {
+	uint8_t data;
+
+	data = lcds_get_info(addr);
+
+	i2c_send(data);
+
+}
+
+uint8_t char_idx[2]  = {0}; // counter of half words, so one screen is 64 counts
+char    char_last[2] = {0};
+
+
+void handle_tstat_int (tstat_e tstat) {
+	uint8_t rs, rw;
+	uint8_t raw_data;
+
+	if (tstat == TSTAT1) {
+		rs = gpio_read(TSTAT1_LCD_RS_PORT, TSTAT1_LCD_RS_PIN);
+		rw = gpio_read(TSTAT1_LCD_RW_PORT, TSTAT1_LCD_RW_PIN);
+	} else {
+		rs = gpio_read(TSTAT2_LCD_RS_PORT, TSTAT2_LCD_RS_PIN);
+		rw = gpio_read(TSTAT2_LCD_RW_PORT, TSTAT2_LCD_RW_PIN);
+	}
+
+	if (rs == 0) {
+		char_idx[tstat] = 0;
+		lcds_start_new_screen(tstat);
+
+	} else {
+		raw_data = get_raw_tstat_data(tstat);
+
+		if (char_idx[tstat] & 0x1) {
+			// if we are on an odd char_idx, then we need to add the four
+			//  new bits and save the character to the lcd_state
+			char_last[tstat] = (char_last[tstat] << 4) | raw_data;
+			lcds_add_char(tstat, char_last[tstat]);
+
+		} else {
+			// save these bits for later
+			char_last[tstat] = raw_data;
+		}
+
+		char_idx[tstat]++;
+	}
+
+}
+
+void handle_tstat1_int () {
+	handle_tstat_int(TSTAT1);
+}
+
+void handle_tstat2_int () {
+	handle_tstat_int(TSTAT2);
+}
 
 
 int main () {
 
 
 	board_init();
+
+	i2c_init();
+	i2c_set_slave(LCD_SNIFF_I2C_ADDR);
+	i2c_set_receive_callback(handle_i2c_req);
+
+	gpio_init(TSTAT1_LCD_RS_PORT,  TSTAT1_LCD_RS_PIN,  GPIO_IN);
+	gpio_init(TSTAT1_LCD_E_PORT,   TSTAT1_LCD_E_PIN,   GPIO_IN);
+	gpio_init(TSTAT1_LCD_RW_PORT,  TSTAT1_LCD_RW_PIN,  GPIO_IN);
+	gpio_init(TSTAT1_LCD_DB4_PORT, TSTAT1_LCD_DB4_PIN, GPIO_IN);
+	gpio_init(TSTAT1_LCD_DB5_PORT, TSTAT1_LCD_DB5_PIN, GPIO_IN);
+	gpio_init(TSTAT1_LCD_DB6_PORT, TSTAT1_LCD_DB6_PIN, GPIO_IN);
+	gpio_init(TSTAT1_LCD_DB7_PORT, TSTAT1_LCD_DB7_PIN, GPIO_IN);
+	gpio_interrupt(TSTAT1_LCD_E_PORT,
+	               TSTAT1_LCD_E_PIN,
+	               GPIO_INT_FALLING_EDGE,
+	               handle_tstat1_int);
+
+	gpio_init(TSTAT2_LCD_RS_PORT,  TSTAT2_LCD_RS_PIN,  GPIO_IN);
+	gpio_init(TSTAT2_LCD_E_PORT,   TSTAT2_LCD_E_PIN,   GPIO_IN);
+	gpio_init(TSTAT2_LCD_RW_PORT,  TSTAT2_LCD_RW_PIN,  GPIO_IN);
+	gpio_init(TSTAT2_LCD_DB4_PORT, TSTAT2_LCD_DB4_PIN, GPIO_IN);
+	gpio_init(TSTAT2_LCD_DB5_PORT, TSTAT2_LCD_DB5_PIN, GPIO_IN);
+	gpio_init(TSTAT2_LCD_DB6_PORT, TSTAT2_LCD_DB6_PIN, GPIO_IN);
+	gpio_init(TSTAT2_LCD_DB7_PORT, TSTAT2_LCD_DB7_PIN, GPIO_IN);
+	gpio_interrupt(TSTAT2_LCD_E_PORT,
+	               TSTAT2_LCD_E_PIN,
+	               GPIO_INT_FALLING_EDGE,
+	               handle_tstat2_int);
 
 
 
