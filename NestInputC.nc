@@ -9,8 +9,10 @@ configuration NestInputC {
 }
 
 implementation {
-  component NestInputP;
-  component MainC;
+  components NestInputP;
+  components MainC;
+
+  NestInputP.Init <- MainC;
 
   components HplMsp430InterruptC as Interrupt;
   components HplMsp430GeneralIOC as GpIO;

@@ -5,11 +5,10 @@
 module NestInputP {
   provides {
     interface NestInput;
+    interface Init;
   }
 
   uses {
-    interface Init;
-
     interface HplMsp430GeneralIO as NestFan;
     interface HplMsp430GeneralIO as NestCooling1;
     interface HplMsp430GeneralIO as NestCooling2;
@@ -28,7 +27,7 @@ module NestInputP {
 
 implementation {
 
-  command Init.init () {
+  command error_t Init.init () {
     call NestFan.selectIOFunc();
     call NestFan.makeInput();
     call NestCooling1.selectIOFunc();
@@ -65,6 +64,8 @@ implementation {
     call NestHeating1IRQ.enable();
     call NestHeating2IRQ.enable();
     call NestStarIRQ.enable();
+
+    return SUCCESS;
   }
 
   async event void NestFanIRQ.fired () {
@@ -109,57 +110,57 @@ implementation {
     signal NestInput.StarStatus(!pin_high);
   }
 
-  command NestInput.FanEnable () {
+  command void NestInput.FanEnable () {
     call NestFanIRQ.clear();
     call NestFanIRQ.enable();
   }
 
-  command NestInput.Cool1Enable () {
-    call NestCool1IRQ.clear();
-    call NestCool1IRQ.enable();
+  command void NestInput.Cool1Enable () {
+    call NestCooling1IRQ.clear();
+    call NestCooling1IRQ.enable();
   }
 
-  command NestInput.Cool2Enable () {
-    call NestCool2IRQ.clear();
-    call NestCool2IRQ.enable();
+  command void NestInput.Cool2Enable () {
+    call NestCooling2IRQ.clear();
+    call NestCooling2IRQ.enable();
   }
 
-  command NestInput.Heat1Enable () {
-    call NestHeat1IRQ.clear();
-    call NestHeat1IRQ.enable();
+  command void NestInput.Heat1Enable () {
+    call NestHeating1IRQ.clear();
+    call NestHeating1IRQ.enable();
   }
 
-  command NestInput.Heat2Enable () {
-    call NestHeat2IRQ.clear();
-    call NestHeat2IRQ.enable();
+  command void NestInput.Heat2Enable () {
+    call NestHeating2IRQ.clear();
+    call NestHeating2IRQ.enable();
   }
 
-  command NestInput.StarEnable () {
+  command void NestInput.StarEnable () {
     call NestStarIRQ.clear();
     call NestStarIRQ.enable();
   }
 
-  command NestInput.FanDisable () {
+  command void NestInput.FanDisable () {
     call NestFanIRQ.disable();
   }
 
-  command NestInput.Cool1Disable () {
-    call NestCool1IRQ.disable();
+  command void NestInput.Cool1Disable () {
+    call NestCooling1IRQ.disable();
   }
 
-  command NestInput.Cool2Disable () {
-    call NestCool2IRQ.disable();
+  command void NestInput.Cool2Disable () {
+    call NestCooling2IRQ.disable();
   }
 
-  command NestInput.Heat1Disable () {
-    call NestHeat1IRQ.disable();
+  command void NestInput.Heat1Disable () {
+    call NestHeating1IRQ.disable();
   }
 
-  command NestInput.Heat2Disable () {
-    call NestHeat2IRQ.disable();
+  command void NestInput.Heat2Disable () {
+    call NestHeating2IRQ.disable();
   }
 
-  command NestInput.StarDisable () {
+  command void NestInput.StarDisable () {
     call NestStarIRQ.disable();
   }
 
