@@ -12,7 +12,7 @@ configuration ThermostatButtonsOutputC {
 implementation {
   components ThermostatButtonsOutputP;
 
-  components new NxpPca9575C(PCA9575_GPIO_IN_ADDR) as I2cExtender;
+  components new NxpPca9575C(PCA9575_GPIO_OUT_ADDR) as I2cExtender;
 
   components new Msp430I2CC();
   I2cExtender.I2CPacket -> Msp430I2CC.I2CBasicAddr;

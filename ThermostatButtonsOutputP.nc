@@ -41,6 +41,7 @@ implementation {
   }
 
   command error_t Init.init () {
+ //   call GpioExtender.set_address(PCA9575_GPIO_OUT_ADDR);
     call GpioExtender.setup(&i2c_extender_config);
     return SUCCESS;
   }

@@ -17,7 +17,7 @@ module ThermostatButtonsInputP {
 
 implementation {
 
-  nxppca9575_config_t i2c_extender_config = {
+  nxppca9575_config_t i2c_extender_config_in = {
     0x00, // REG2, polarity inversion port 0 register, no inversion
     0x00, // REG3, polarity inversion port 1 register, no inversion
     0x02, // REG4, pullup/pulldown bank 0, allow pull up/down to be enabled
@@ -31,11 +31,13 @@ implementation {
   };
 
   task void read_interrupts () {
+
     call ReadInterrupts.read();
   }
 
   command error_t Init.init () {
-    call GpioExtender.setup(&i2c_extender_config);
+   // call GpioExtender.set_address(PCA9575_GPIO_IN_ADDR);
+    call GpioExtender.setup(&i2c_extender_config_in);
     call InterruptPin.selectIOFunc();
     call InterruptPin.makeInput();
     call InterruptInt.edge(FALSE); // falling edge interrupt
@@ -45,6 +47,8 @@ implementation {
   }
 
   async event void InterruptInt.fired () {
+    call InterruptInt.disable();
+
     // read the interrupt vector to find which button was pressed
     post read_interrupts();
   }
@@ -84,8 +88,24 @@ implementation {
     // Clear the interrupt at this point to minimize the chance of another
     //  interrupt while processing which button was pressed
     call InterruptInt.clear();
+    call InterruptInt.enable();
 
   }
+
+  default async event void TStat1Buttons.OnOffPressed () {}
+  default async event void TStat1Buttons.MenuPressed () {}
+  default async event void TStat1Buttons.UpPressed () {}
+  default async event void TStat1Buttons.EscPressed () {}
+  default async event void TStat1Buttons.HelpPressed () {}
+  default async event void TStat1Buttons.DownPressed () {}
+  default async event void TStat1Buttons.EnterPressed () {}
+  default async event void TStat2Buttons.OnOffPressed () {}
+  default async event void TStat2Buttons.MenuPressed () {}
+  default async event void TStat2Buttons.UpPressed () {}
+  default async event void TStat2Buttons.EscPressed () {}
+  default async event void TStat2Buttons.HelpPressed () {}
+  default async event void TStat2Buttons.DownPressed () {}
+  default async event void TStat2Buttons.EnterPressed () {}
 
 
 }
