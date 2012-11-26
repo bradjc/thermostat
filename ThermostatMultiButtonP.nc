@@ -21,6 +21,11 @@ implementation {
     button_e button;
 
     if (button_index >= button_array_len) {
+      if (tstat == 1) {
+        signal TStat1MButton.pressMultipleButtonsDone();
+      } else if (tstat == 2) {
+        signal TStat2MButton.pressMultipleButtonsDone();
+      }
       return;
     }
 
@@ -49,7 +54,7 @@ implementation {
     }
   }
 
-  command void TStat1MButton.PressMultipleButtons (button_e* b, uint8_t len) {
+  command void TStat1MButton.pressMultipleButtons (button_e* b, uint8_t len) {
     if (len > 0) {
       button_array     = b;
       button_index     = 0;
@@ -60,7 +65,7 @@ implementation {
     }
   }
 
-  command void TStat2MButton.PressMultipleButtons (button_e* b, uint8_t len) {
+  command void TStat2MButton.pressMultipleButtons (button_e* b, uint8_t len) {
     if (len > 0) {
       button_array     = b;
       button_index     = 0;
@@ -71,21 +76,21 @@ implementation {
     }
   }
 
-  event void TStat1MButton.PressOnOffDone () { post press_next(); }
-  event void TStat1MButton.PressMenuDone  () { post press_next(); }
-  event void TStat1MButton.PressUpDone    () { post press_next(); }
-  event void TStat1MButton.PressEscDone   () { post press_next(); }
-  event void TStat1MButton.PressHelpDone  () { post press_next(); }
-  event void TStat1MButton.PressDownDone  () { post press_next(); }
-  event void TStat1MButton.PressEnterDone () { post press_next(); }
+  event void TStat1ButtonsOut.PressOnOffDone () { post press_next(); }
+  event void TStat1ButtonsOut.PressMenuDone  () { post press_next(); }
+  event void TStat1ButtonsOut.PressUpDone    () { post press_next(); }
+  event void TStat1ButtonsOut.PressEscDone   () { post press_next(); }
+  event void TStat1ButtonsOut.PressHelpDone  () { post press_next(); }
+  event void TStat1ButtonsOut.PressDownDone  () { post press_next(); }
+  event void TStat1ButtonsOut.PressEnterDone () { post press_next(); }
 
-  event void TStat2MButton.PressOnOffDone () { post press_next(); }
-  event void TStat2MButton.PressMenuDone  () { post press_next(); }
-  event void TStat2MButton.PressUpDone    () { post press_next(); }
-  event void TStat2MButton.PressEscDone   () { post press_next(); }
-  event void TStat2MButton.PressHelpDone  () { post press_next(); }
-  event void TStat2MButton.PressDownDone  () { post press_next(); }
-  event void TStat2MButton.PressEnterDone () { post press_next(); }
+  event void TStat2ButtonsOut.PressOnOffDone () { post press_next(); }
+  event void TStat2ButtonsOut.PressMenuDone  () { post press_next(); }
+  event void TStat2ButtonsOut.PressUpDone    () { post press_next(); }
+  event void TStat2ButtonsOut.PressEscDone   () { post press_next(); }
+  event void TStat2ButtonsOut.PressHelpDone  () { post press_next(); }
+  event void TStat2ButtonsOut.PressDownDone  () { post press_next(); }
+  event void TStat2ButtonsOut.PressEnterDone () { post press_next(); }
 
 
 }

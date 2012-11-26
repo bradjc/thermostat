@@ -31,12 +31,12 @@ implementation {
     Down1,
     Enter1,
     OnOff2,
-    Menu,
+    Menu2,
     Up2,
     Esc2,
     Help2,
     Down2,
-    Enter,
+    Enter2,
   } button_e;
 
   nxppca9575_config_t i2c_extender_config = {
@@ -96,7 +96,7 @@ implementation {
   }
 
   event void SetPins.setDone () {
-    post next_set();    
+    post next_set();
   }
 
   event void TimerButtonPress.fired () {
@@ -104,7 +104,6 @@ implementation {
   }
 
   command error_t Init.init () {
- //   call GpioExtender.set_address(PCA9575_GPIO_OUT_ADDR);
     call GpioExtender.setup(&i2c_extender_config);
     return SUCCESS;
   }

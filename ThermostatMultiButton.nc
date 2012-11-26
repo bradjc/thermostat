@@ -3,6 +3,8 @@
 
 interface ThermostatMultiButton {
 
-  command void PressMultipleButtons (button_e* b, uint8_t len);
+  command void pressMultipleButtons (button_e* b, uint8_t len);
+
+  event void pressMultipleButtonsDone ();
 
 }
