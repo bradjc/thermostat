@@ -5,6 +5,7 @@ module ThermostatButtonsInputP {
   provides {
     interface ThermostatButtonsInput as TStat1Buttons;
     interface ThermostatButtonsInput as TStat2Buttons;
+    interface Enable as ButtonsControl;
     interface Init;
   }
   uses {
@@ -90,6 +91,14 @@ implementation {
     call InterruptInt.clear();
     call InterruptInt.enable();
 
+  }
+
+  command void ButtonsControl.enable () {
+    call InterruptInt.enable();
+  }
+
+  command void ButtonsControl.disable () {
+    call InterruptInt.disable();
   }
 
   default async event void TStat1Buttons.OnOffPressed () {}

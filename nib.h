@@ -27,6 +27,6 @@
 #define TSTAT2_BUTTON_DOWN  (1 << 13)
 #define TSTAT2_BUTTON_ENTER (1 << 14)
 
-#define BUTTON_PRESS_DURATION 300 // ms
+#define BUTTON_PRESS_DURATION 200 // ms
 
 #endif

@@ -5,6 +5,7 @@ configuration ThermostatButtonsInputC {
   provides {
     interface ThermostatButtonsInput as TStat1Buttons;
     interface ThermostatButtonsInput as TStat2Buttons;
+    interface Enable as ButtonsControl;
     interface Init;
   }
 }
@@ -36,9 +37,11 @@ implementation {
   ThermostatButtonsInputP.ReadInterrupts -> I2cExtenderIn.ReadInterrupts;
 
   // External interfaces
-  Init          = ThermostatButtonsInputP.Init;
-  TStat1Buttons = ThermostatButtonsInputP.TStat1Buttons;
-  TStat2Buttons = ThermostatButtonsInputP.TStat2Buttons;
+  Init           = ThermostatButtonsInputP.Init;
+  TStat1Buttons  = ThermostatButtonsInputP.TStat1Buttons;
+  TStat2Buttons  = ThermostatButtonsInputP.TStat2Buttons;
+  ButtonsControl = ThermostatButtonsInputP.ButtonsControl;
+
 
 
 }
