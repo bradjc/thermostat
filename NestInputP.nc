@@ -1,7 +1,4 @@
 
-
-
-
 module NestInputP {
   provides {
     interface NestInput;

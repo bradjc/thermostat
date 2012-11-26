@@ -1,7 +1,5 @@
 
 
-
-
 configuration NestInputC {
   provides {
     interface NestInput;
