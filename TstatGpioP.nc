@@ -1,9 +1,9 @@
 #include "nib.h"
+#include "NxpPca9575.h"
 
-
-module ThermostatGpioP {
+module TstatGpioP {
   provides {
-    interface ThermostatGpio;
+    interface TstatGpio;
     interface Init;
   }
   uses {
@@ -38,7 +38,7 @@ implementation {
 //  }
 
   event void SetPins.setDone () {
-    signal ThermostatGpio.buttonDone();
+    signal TstatGpio.buttonDone();
   }
 
   command error_t Init.init () {
@@ -46,7 +46,7 @@ implementation {
     return SUCCESS;
   }
 
-  command ThermostatGpio.setButton (button_e b, thermostat_e tid) {
+  command TstatGpio.setButton (button_e b, thermostat_e tid) {
     uint16_t pins;
 
     if (tid == TSTAT1) {
@@ -82,7 +82,7 @@ implementation {
   }
 
   // Clear the bits of the relevant thermostat
-  command ThermostatGpio.clearButton (thermostat_e tid) {
+  command TstatGpio.clearButton (thermostat_e tid) {
     if (tid == TSTAT1) {
       gpio_pins &= (0xFF << 8);
     } else if (tid == TSTAT2) {

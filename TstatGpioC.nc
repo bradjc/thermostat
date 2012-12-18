@@ -9,15 +9,15 @@
 // where you would add them.
 
 
-configuration ThermostatGpioC {
+configuration TstatGpioC {
   provides {
-    interface ThermostatGpio;
+    interface TstatGpio;
     interface Init;
   }
 }
 
 implementation {
-  components ThermostatGpioP;
+  components TstatGpioP;
 
   components new NxpPca9575C(PCA9575_GPIO_OUT_ADDR) as I2cExtender;
 
@@ -33,10 +33,10 @@ implementation {
   I2cExtender.ExtenderReset -> MspGpioPort51.GeneralIO;
 
   // Connection to I2C GPIO Extender chip
-  ThermostatGpioP.GpioExtender -> I2cExtender.GpioExtender;
-  ThermostatGpioP.SetPins      -> I2cExtender.SetPins;
+  TstatGpioP.GpioExtender -> I2cExtender.GpioExtender;
+  TstatGpioP.SetPins      -> I2cExtender.SetPins;
 
   // External interfaces
-  Init           = ThermostatGpioP.Init;
-  ThermostatGpio = ThermostatGpioP.ThermostatGpio;
+  Init           = TstatGpioP.Init;
+  ThermostatGpio = TstatGpioP.ThermostatGpio;
 }
