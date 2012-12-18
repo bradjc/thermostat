@@ -46,10 +46,10 @@ implementation {
     return SUCCESS;
   }
 
-  command ThermostatGpio.setButton (button_e b, uint8_t thermostat_id) {
+  command ThermostatGpio.setButton (button_e b, thermostat_e tid) {
     uint16_t pins;
 
-    if (thermostat_id == TSTAT1) {
+    if (tid == TSTAT1) {
 
       switch (b) {
         case OnOff: pins = TSTAT1_BUTTON_ONOFF; break;
@@ -61,7 +61,7 @@ implementation {
         case Enter: pins = TSTAT1_BUTTON_ENTER; break;
       }
 
-    } else if (thermostat_id == TSTAT2) {
+    } else if (tid == TSTAT2) {
 
       switch (b) {
         case OnOff: pins = TSTAT2_BUTTON_ONOFF; break;
@@ -78,6 +78,17 @@ implementation {
     gpio_pins |= pins;
 
   //  press_buttons();
+    call SetPins.set(gpio_pins);
+  }
+
+  // Clear the bits of the relevant thermostat
+  command ThermostatGpio.clearButton (thermostat_e tid) {
+    if (tid == TSTAT1) {
+      gpio_pins &= (0xFF << 8);
+    } else if (tid == TSTAT2) {
+      gpio_pins &= (0xFF);
+    }
+
     call SetPins.set(gpio_pins);
   }
 

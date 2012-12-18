@@ -32,6 +32,10 @@
 
 #define BUTTON_PRESS_DURATION 200 // ms
 
+typedef enum thermostat {
+  TSTAT1,
+  TSTAT2,
+} thermostat_e;
 
 typedef enum button {
   OnOff,
