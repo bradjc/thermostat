@@ -10,7 +10,7 @@ configuration ThermostatMultiButtonC {
 implementation {
   components ThermostatMultiButtonP;
 
-  components ThermostatButtonsOutputC as ButtonsOut;
+  components TButtonsOutputCondC as ButtonsOut;
   ThermostatMultiButtonP.TStat1ButtonsOut -> ButtonsOut.TStat1Buttons;
   ThermostatMultiButtonP.TStat2ButtonsOut -> ButtonsOut.TStat2Buttons;
 

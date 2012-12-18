@@ -1,5 +1,5 @@
 
-#include "multi_button.h"
+#include "nib.h"
 
 interface ThermostatMultiButton {
 

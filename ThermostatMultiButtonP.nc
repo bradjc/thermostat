@@ -1,12 +1,14 @@
 
+#include "nib.h"
+
 module ThermostatMultiButtonP {
   provides {
     interface ThermostatMultiButton as TStat1MButton;
     interface ThermostatMultiButton as TStat2MButton;
   }
   uses {
-    interface ThermostatButtonsOutput as TStat1ButtonsOut;
-    interface ThermostatButtonsOutput as TStat2ButtonsOut;
+    interface TButtonsOutputCond as TStat1ButtonsOut;
+    interface TButtonsOutputCond as TStat2ButtonsOut;
   }
 }
 
@@ -21,9 +23,9 @@ implementation {
     button_e button;
 
     if (button_index >= button_array_len) {
-      if (tstat == 1) {
+      if (tstat == TSTAT1) {
         signal TStat1MButton.pressMultipleButtonsDone();
-      } else if (tstat == 2) {
+      } else if (tstat == TSTAT2) {
         signal TStat2MButton.pressMultipleButtonsDone();
       }
       return;
@@ -31,26 +33,10 @@ implementation {
 
     button = button_array[button_index++];
 
-    if (tstat == 1) {
-      switch (button) {
-        case OnOff: call TStat1ButtonsOut.PressOnOff(); break;
-        case Menu:  call TStat1ButtonsOut.PressMenu(); break;
-        case Up:    call TStat1ButtonsOut.PressUp(); break;
-        case Esc:   call TStat1ButtonsOut.PressEsc(); break;
-        case Help:  call TStat1ButtonsOut.PressHelp(); break;
-        case Down:  call TStat1ButtonsOut.PressDown(); break;
-        case Enter: call TStat1ButtonsOut.PressEnter(); break;
-      }
-    } else if (tstat == 2) {
-      switch (button) {
-        case OnOff: call TStat2ButtonsOut.PressOnOff(); break;
-        case Menu:  call TStat2ButtonsOut.PressMenu(); break;
-        case Up:    call TStat2ButtonsOut.PressUp(); break;
-        case Esc:   call TStat2ButtonsOut.PressEsc(); break;
-        case Help:  call TStat2ButtonsOut.PressHelp(); break;
-        case Down:  call TStat2ButtonsOut.PressDown(); break;
-        case Enter: call TStat2ButtonsOut.PressEnter(); break;
-      }
+    if (tstat == TSTAT1) {
+      call TStat1ButtonsOut.PressButton(button);
+    } else if (tstat == TSTAT2) {
+      call TStat2ButtonsOut.PressButton(button);
     }
   }
 
@@ -59,7 +45,7 @@ implementation {
       button_array     = b;
       button_index     = 0;
       button_array_len = len;
-      tstat            = 1;
+      tstat            = TSTAT1;
 
       post press_next();
     }
@@ -70,12 +56,21 @@ implementation {
       button_array     = b;
       button_index     = 0;
       button_array_len = len;
-      tstat            = 2;
+      tstat            = TSTAT2;
 
       post press_next();
     }
   }
 
+  event void TStat1ButtonsOut.PressButtonDone (button_e b) {
+    post press_next();
+  }
+
+  event void TStat2ButtonsOut.PressButtonDone (button_e b) {
+    post press_next();
+  }
+
+/*
   event void TStat1ButtonsOut.PressOnOffDone () { post press_next(); }
   event void TStat1ButtonsOut.PressMenuDone  () { post press_next(); }
   event void TStat1ButtonsOut.PressUpDone    () { post press_next(); }
@@ -91,7 +86,7 @@ implementation {
   event void TStat2ButtonsOut.PressHelpDone  () { post press_next(); }
   event void TStat2ButtonsOut.PressDownDone  () { post press_next(); }
   event void TStat2ButtonsOut.PressEnterDone () { post press_next(); }
-
+*/
 
 }
 

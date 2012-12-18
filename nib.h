@@ -11,6 +11,9 @@
 #define PCA9575_GPIO_IN_ADDR 0x27
 #define PCA9575_GPIO_OUT_ADDR 0x23
 
+#define TSTAT1 1
+#define TSTAT2 2
+
 #define TSTAT1_BUTTON_ONOFF (1 << 6)
 #define TSTAT1_BUTTON_MENU  (1 << 5)
 #define TSTAT1_BUTTON_UP    (1 << 4)
@@ -28,5 +31,16 @@
 #define TSTAT2_BUTTON_ENTER (1 << 14)
 
 #define BUTTON_PRESS_DURATION 200 // ms
+
+
+typedef enum button {
+  OnOff,
+  Menu,
+  Up,
+  Esc,
+  Help,
+  Down,
+  Enter
+} button_e;
 
 #endif
