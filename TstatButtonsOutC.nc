@@ -14,11 +14,11 @@ implementation {
 
   // Button Press Timer
   components new TimerMilliC() as TimerButtonPress;
-  TButtonsOutputCondP.TimerButtonPress -> TimerButtonPress;
+  TstatButtonsOutP.TimerButtonPress -> TimerButtonPress;
 
   // Gpio Buttons
   components TstatGpioC;
-  TstatButtonsOutP.TstatGpio <- TstatGpioC.TstatGpio;
+  TstatButtonsOutP.TstatGpio -> TstatGpioC.TstatGpio;
 
   // External interfaces
   TstatButtonsOut = TstatButtonsOutP.TstatButtonsOut;

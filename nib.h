@@ -11,8 +11,8 @@
 #define PCA9575_GPIO_IN_ADDR 0x27
 #define PCA9575_GPIO_OUT_ADDR 0x23
 
-#define TSTAT1 1
-#define TSTAT2 2
+//#define TSTAT1 1
+//#define TSTAT2 2
 
 #define TSTAT1_BUTTON_ONOFF (1 << 6)
 #define TSTAT1_BUTTON_MENU  (1 << 5)

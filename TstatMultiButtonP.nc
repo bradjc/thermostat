@@ -25,7 +25,7 @@ implementation {
     }
 
     button = button_array[button_index++];
-    call TstatButtonsOut.PressButton(button);
+    call TstatButtonsOut.pressButton(button);
   }
 
   command void TstatMultiButton.pressMultipleButtons (button_e* b, uint8_t len) {
@@ -38,7 +38,7 @@ implementation {
     }
   }
 
-  event void TstatButtonsOut.PressButtonDone (button_e b) {
+  event void TstatButtonsOut.pressButtonDone (button_e b) {
     post press_next();
   }
 

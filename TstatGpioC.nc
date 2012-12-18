@@ -37,6 +37,6 @@ implementation {
   TstatGpioP.SetPins      -> I2cExtender.SetPins;
 
   // External interfaces
-  Init           = TstatGpioP.Init;
-  ThermostatGpio = TstatGpioP.ThermostatGpio;
+  Init      = TstatGpioP.Init;
+  TstatGpio = TstatGpioP.TstatGpio;
 }

@@ -46,7 +46,7 @@ implementation {
     return SUCCESS;
   }
 
-  command TstatGpio.setButton (button_e b, thermostat_e tid) {
+  command void TstatGpio.setButton (button_e b, thermostat_e tid) {
     uint16_t pins;
 
     if (tid == TSTAT1) {
@@ -82,7 +82,7 @@ implementation {
   }
 
   // Clear the bits of the relevant thermostat
-  command TstatGpio.clearButton (thermostat_e tid) {
+  command void TstatGpio.clearButtons (thermostat_e tid) {
     if (tid == TSTAT1) {
       gpio_pins &= (0xFF << 8);
     } else if (tid == TSTAT2) {

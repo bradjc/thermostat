@@ -33,7 +33,7 @@ implementation {
       case SET_ST_CLEAR:
         // After a period of time, clear the output again.
         // This simulates a button press.
-        call TstatGpio.clearButtons();
+        call TstatGpio.clearButtons(tid);
         set_state = SET_ST_DONE;
         break;
 
@@ -47,14 +47,14 @@ implementation {
     post next_set();
   }
 
-  event void TstatButtonsOut.pressButtonDone () {
+  event void TstatGpio.buttonDone () {
     post next_set();
   }
 
   command void TstatButtonsOut.pressButton (button_e b) {
     button_pressed = b;
     set_state      = SET_ST_NEW;
-    call TstatGpio.setButton(b);
+    call TstatGpio.setButton(b, tid);
   }
 
 }
