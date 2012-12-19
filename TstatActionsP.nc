@@ -140,7 +140,7 @@ implementation {
 
       case ENTER_PASSWORD2:
         state = ret_state;
-        if (current_display == Password) {
+        if (current_display == Password || 1) {
           call TstatMultiButton.pressMultipleButtons(password, 10);
         } else {
           post action_next();
@@ -169,6 +169,7 @@ implementation {
 
   event void TstatState.getCurrentDisplayDone (lcd_display_e display) {
     current_display = display;
+    post action_next();
   }
 
 
