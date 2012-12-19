@@ -13,6 +13,9 @@ implementation {
   components new TstatMultiButtonC(tid) as MButton;
   TstatActionsP.TstatMultiButton -> MButton.TstatMultiButton;
 
+  components TstatStateC;
+  TstatActionsP.TstatState -> TstatStateC;
+
   TstatActions = TstatActionsP.TstatActions;
 }
 

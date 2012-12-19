@@ -11,6 +11,8 @@
 #define PCA9575_GPIO_IN_ADDR 0x27
 #define PCA9575_GPIO_OUT_ADDR 0x23
 
+#define LCD_SNIFFER_ADDR 0x11
+
 //#define TSTAT1 1
 //#define TSTAT2 2
 

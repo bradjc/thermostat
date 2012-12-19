@@ -1,5 +1,6 @@
 
 #include "nib.h"
+#include "lcdsniffer.h"
 
 generic module TstatActionsP (thermostat_e tid) {
   provides {
@@ -7,6 +8,7 @@ generic module TstatActionsP (thermostat_e tid) {
   }
   uses {
     interface TstatMultiButton;
+    interface LcdSniffer as TstatState;
   }
 }
 
@@ -17,6 +19,9 @@ implementation {
   button_e escapes[]   = {Esc, Esc, Esc, Esc, Esc, Esc, Esc, Esc, Esc, Esc};
   button_e password[]  = {Up, Enter, Up, Up, Enter, Up, Up, Up, Enter, Enter};
   button_e set_temp2[20];
+
+  uint8_t tstat_status;
+  lcd_display_e current_display;
 
   uint8_t current_temperature;
   uint8_t desired_temperature;
@@ -66,8 +71,8 @@ implementation {
       case SET_TEMP4:
         // get the current temperature so we know how much to adjust it
         state = SET_TEMP5;
-//        call TstatStatus.getTemperature();
-post action_next();
+        call TstatState.getStatus(tid, TemperatureSetPoint);
+//post action_next();
         break;
 
       case SET_TEMP5:
@@ -107,40 +112,40 @@ post action_next();
       case GOTO_MAIN_MENU1:
         state = GOTO_MAIN_MENU2;
         // get on/off state
-  //    call TstatStatus.getStatus(statusType_Power)
-post action_next();
+        call TstatState.getStatus(tid, Power);
+//post action_next();
         break;
 
       case GOTO_MAIN_MENU2:
         // Check if the unit is on. If so, we are at the main menu, if not,
         // hit escape a bunch of times
         state = ret_state;
-//        if (tstat_status == status_On) {
+        if (tstat_status == 1) {
           // If we are on, just hammer the escape button to get back to the
           // home screen.
-//          call TstatMultiButton.pressMultipleButtons(escapes, 10);
-//        } else {
+          call TstatMultiButton.pressMultipleButtons(escapes, 10);
+        } else {
           // Turning the unit on automatically resets it to the home screen
-//          call TstatMultiButton.pressMultipleButtons(turn_on, 1);
-//        }
-post action_next();
+          call TstatMultiButton.pressMultipleButtons(turn_on, 1);
+        }
+//post action_next();
         break;
 
       case ENTER_PASSWORD1:
         state = ENTER_PASSWORD2;
         // get current screen
-  //    call TstatStatus.getCurrentDisplay()
-post action_next();
+        call TstatState.getCurrentDisplay(tid);
+//post action_next();
         break;
 
       case ENTER_PASSWORD2:
         state = ret_state;
-//        if (current_display == lcd_password) {
-//          call TstatMultiButton.pressMultipleButtons(password, 10);
-//        } else {
-//          post action_next();
-//        }
-post action_next();
+        if (current_display == Password) {
+          call TstatMultiButton.pressMultipleButtons(password, 10);
+        } else {
+          post action_next();
+        }
+//post action_next();
         break;
 
       case DONE:
@@ -154,14 +159,17 @@ post action_next();
     post action_next();
   }
 
-//  event void TstatStatus.status (tstatus_e stat, uint8_t result) {
-//    tstat_status = result;
-//    post action_next();
-//  }
+  event void TstatState.getStatusDone (lcd_status_e status, uint8_t value, error_t e) {
+    if (e != SUCCESS) {
+      // uh oh, need to push buttons until this screen comes up
+    }
+    tstat_status = value;
+    post action_next();
+  }
 
-//  event void TstatStatus.getTemperatureDone (uint8_t temp) {
-//    current_temperature = temp;
-//  }
+  event void TstatState.getCurrentDisplayDone (lcd_display_e display) {
+    current_display = display;
+  }
 
 
   command void TstatActions.setTemperature (uint8_t temp) {
