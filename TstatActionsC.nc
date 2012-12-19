@@ -1,7 +1,7 @@
 
 #include "nib.h"
 
-generic configuration ThermostatActionsC (thermostat_e tid) {
+generic configuration TstatActionsC (thermostat_e tid) {
   provides {
     interface TstatActions;
   }

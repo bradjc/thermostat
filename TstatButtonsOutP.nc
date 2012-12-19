@@ -17,6 +17,7 @@ implementation {
   typedef enum {
     SET_ST_NEW,
     SET_ST_CLEAR,
+    SET_ST_WAIT,
     SET_ST_DONE,
   } set_state_e;
 
@@ -34,6 +35,12 @@ implementation {
         // After a period of time, clear the output again.
         // This simulates a button press.
         call TstatGpio.clearButtons(tid);
+        set_state = SET_ST_WAIT;
+        break;
+
+      case SET_ST_WAIT:
+        // Pause after pressing a button
+        call TimerButtonPress.startOneShot(BUTTON_WAIT_DURATION);
         set_state = SET_ST_DONE;
         break;
 

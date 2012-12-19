@@ -33,6 +33,7 @@
 #define TSTAT2_BUTTON_ENTER (1 << 14)
 
 #define BUTTON_PRESS_DURATION 200 // ms
+#define BUTTON_WAIT_DURATION 10 // ms
 
 typedef enum thermostat {
   TSTAT1,
