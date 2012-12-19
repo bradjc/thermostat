@@ -47,7 +47,7 @@ implementation {
   }
 
   command void TstatGpio.setButton (button_e b, thermostat_e tid) {
-    uint16_t pins;
+    uint16_t pins = 0;
 
     if (tid == TSTAT1) {
 

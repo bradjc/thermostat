@@ -12,11 +12,11 @@ generic module TstatActionsP (thermostat_e tid) {
 
 implementation {
 
-  button_e* turn_on[]   = {OnOff};
-  button_e* set_temp1[] = {Menu, Enter, Enter};
-  button_e* escapes[]   = {Esc, Esc, Esc, Esc, Esc, Esc, Esc, Esc, Esc, Esc};
-  button_e* password[]  = {Up, Enter, Up, Up, Enter, Up, Up, Up, Enter, Enter}
-  button_e* set_temp2[20];
+  button_e turn_on[]   = {OnOff};
+  button_e set_temp1[] = {Menu, Enter, Enter};
+  button_e escapes[]   = {Esc, Esc, Esc, Esc, Esc, Esc, Esc, Esc, Esc, Esc};
+  button_e password[]  = {Up, Enter, Up, Up, Enter, Up, Up, Up, Enter, Enter};
+  button_e set_temp2[20];
 
   uint8_t current_temperature;
   uint8_t desired_temperature;
@@ -50,9 +50,9 @@ implementation {
         break;
 
       case SET_TEMP2:
-        action_state  = SET_TEMP3;
+        state = SET_TEMP3;
         // navigate first menu until possible password prompt
-        TstatMultiButton.pressMultipleButtons(set_temp, 3);
+        call TstatMultiButton.pressMultipleButtons(set_temp1, 3);
         break;
 
       case SET_TEMP3:
@@ -66,7 +66,8 @@ implementation {
       case SET_TEMP4:
         // get the current temperature so we know how much to adjust it
         state = SET_TEMP5;
-        call TstatStatus.getTemperature();
+//        call TstatStatus.getTemperature();
+post action_next();
         break;
 
       case SET_TEMP5:
@@ -74,8 +75,9 @@ implementation {
         // now actually set the temperature
         {
           uint8_t diff;
-          uint8_t up_down;
+          uint8_t up_down = 0;
           uint8_t i;
+          current_temperature = 70;
           if (desired_temperature > current_temperature) {
             diff    = desired_temperature - current_temperature;
             up_down = 1;
@@ -106,43 +108,49 @@ implementation {
         state = GOTO_MAIN_MENU2;
         // get on/off state
   //    call TstatStatus.getStatus(statusType_Power)
+post action_next();
         break;
 
       case GOTO_MAIN_MENU2:
         // Check if the unit is on. If so, we are at the main menu, if not,
         // hit escape a bunch of times
         state = ret_state;
-        if (tstat_status == status_On) {
+//        if (tstat_status == status_On) {
           // If we are on, just hammer the escape button to get back to the
           // home screen.
-          call TstatMultiButton.pressMultipleButtons(escapes, 10);
-        } else {
+//          call TstatMultiButton.pressMultipleButtons(escapes, 10);
+//        } else {
           // Turning the unit on automatically resets it to the home screen
-          call TstatMultiButton.pressMultipleButtons(turn_on, 1);
-        }
+//          call TstatMultiButton.pressMultipleButtons(turn_on, 1);
+//        }
+post action_next();
+        break;
 
       case ENTER_PASSWORD1:
         state = ENTER_PASSWORD2;
         // get current screen
   //    call TstatStatus.getCurrentDisplay()
+post action_next();
         break;
 
       case ENTER_PASSWORD2:
         state = ret_state;
-        if (current_display == lcd_password) {
-          call TstatMultiButton.pressMultipleButtons(password, 10);
-        } else {
-          post action_next();
-        }
+//        if (current_display == lcd_password) {
+//          call TstatMultiButton.pressMultipleButtons(password, 10);
+//        } else {
+//          post action_next();
+//        }
+post action_next();
         break;
 
       case DONE:
+        signal TstatActions.actionDone();
         break;
     }
   }
 
 
-  event void TstatMultiButton.pressMultipleButtonsDone (button_e b) {
+  event void TstatMultiButton.pressMultipleButtonsDone () {
     post action_next();
   }
 
@@ -151,9 +159,9 @@ implementation {
 //    post action_next();
 //  }
 
-  event void TstatStatus.getTemperatureDone (uint8_t temp) {
-    current_temperature = temp;
-  }
+//  event void TstatStatus.getTemperatureDone (uint8_t temp) {
+//    current_temperature = temp;
+//  }
 
 
   command void TstatActions.setTemperature (uint8_t temp) {
