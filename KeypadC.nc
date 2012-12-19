@@ -8,6 +8,9 @@ configuration KeypadC {
 
 implementation {
   components KeypadP;
+  components MainC;
+
+  KeypadP.Init <- MainC;
 
   components HplMsp430GeneralIOC as GpIO;
   KeypadP.KeypadEnable_N -> GpIO.Port52;
