@@ -14,7 +14,7 @@ generic module TstatActionsP (thermostat_e tid) {
 
 implementation {
 
-  button_e turn_on[]   = {OnOff};
+  button_e power[]     = {OnOff};
   button_e set_temp1[] = {Menu, Enter, Enter};
   button_e escapes[]   = {Esc, Esc, Esc, Esc, Esc, Esc, Esc, Esc, Esc, Esc};
   button_e password[]  = {Up, Enter, Up, Up, Enter, Up, Up, Up, Enter, Enter};
@@ -32,6 +32,10 @@ implementation {
     SET_TEMP3,
     SET_TEMP4,
     SET_TEMP5,
+    TURN_ON1,
+    TURN_ON2,
+    TURN_OFF1,
+    TURN_OFF2,
     GOTO_MAIN_MENU1,
     GOTO_MAIN_MENU2,
     ENTER_PASSWORD1,
@@ -108,6 +112,34 @@ implementation {
         }
         break;
 
+      case TURN_ON1:
+        state = TURN_ON2;
+        call TstatState.getStatus(tid, Power);
+        break;
+
+      case TURN_ON2:
+        state = DONE;
+        if (tstat_status == 0) {
+          // it is currently off, so press 1 button
+          // off button works from any screen
+          call TstatMultiButton.pressMultipleButtons(power, 1);
+        }
+        break;
+
+      case TURN_OFF1:
+        state = TURN_OFF2;
+        call TstatState.getStatus(tid, Power);
+        break;
+
+      case TURN_OFF2:
+        state = DONE;
+        if (tstat_status == 1) {
+          // it is currently on, so press 1 button
+          // off button works from any screen
+          call TstatMultiButton.pressMultipleButtons(power, 1);
+        }
+        break;
+
 
       case GOTO_MAIN_MENU1:
         state = GOTO_MAIN_MENU2;
@@ -126,7 +158,7 @@ implementation {
           call TstatMultiButton.pressMultipleButtons(escapes, 10);
         } else {
           // Turning the unit on automatically resets it to the home screen
-          call TstatMultiButton.pressMultipleButtons(turn_on, 1);
+          call TstatMultiButton.pressMultipleButtons(power, 1);
         }
 //post action_next();
         break;
@@ -176,6 +208,16 @@ implementation {
   command void TstatActions.setTemperature (uint8_t temp) {
     desired_temperature = temp;
     state = SET_TEMP1;
+    post action_next();
+  }
+
+  command void TstatActions.turnOn () {
+    state = TURN_ON1;
+    post action_next();
+  }
+
+  command void TstatActions.turnOff () {
+    state = TURN_OFF1;
     post action_next();
   }
 
