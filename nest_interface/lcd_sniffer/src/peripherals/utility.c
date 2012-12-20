@@ -81,7 +81,7 @@ void util_boardInit(void) {
     // .XT2OFF = 1; disable the external oscillator for SCLK and MCLK
     // .XTS = 0; set low frequency mode for LXFT1
     // .DIVA = 0; set the divisor on ACLK to 1
-    // .RSEL, do not modify
+    // .RSEL, do noto modify
     BCSCTL1 = XT2OFF | (BCSCTL1 & (RSEL2|RSEL1|RSEL0));
 
     BCSCTL1 |= RSEL0 + RSEL1 + RSEL2;
@@ -93,6 +93,8 @@ void util_boardInit(void) {
     // .DIVS = 2; set the divisor of SCLK to 4
     // .DCOR = 1; select internal resistor for DCO
     //BCSCTL2 = DIVS1 | DCOR;
+
+    BCSCTL2 = DIVS1;
 
 
 }

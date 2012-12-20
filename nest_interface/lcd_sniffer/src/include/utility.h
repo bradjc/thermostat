@@ -3,9 +3,32 @@
 
 #include <msp430.h>
 #include <inttypes.h>
+#include <stdio.h>
+
+
+#define IDLE_CYCLES 4
+// Used by the coding state machine to identify
+// long and short pulses.
+#define THRESHOLD 4
+#define DELTAT 13
+
+
+// Disables the watchdog timer
+void util_disableWatchdog(void);
+void util_boardInit(void);
+void util_enableInterrupt(void);
+void util_disableInterrupt(void);
+void util_delayMs(uint16_t ms);
+
+// DO NOT USE THIS FUNCTION
+// unless you want to delay less than a MS
+void util_delayCycles (uint16_t cycles);
+
+
+#define LCD_SNIFF_I2C_ADDR 0x44
 
 #define FALSE 0
-#define TRUE  0
+#define TRUE  1
 
 #define TSTAT1_LCD_RS_PORT  1
 #define TSTAT1_LCD_RS_PIN   5
@@ -27,7 +50,7 @@
 #define TSTAT2_LCD_E_PORT   1
 #define TSTAT2_LCD_E_PIN    2
 #define TSTAT2_LCD_RW_PORT  1
-#define TSTAT2_LCD_RW_PIN   1
+#define TSTAT2_LCD_RW_PIN   6
 #define TSTAT2_LCD_DB4_PORT 4
 #define TSTAT2_LCD_DB4_PIN  4
 #define TSTAT2_LCD_DB5_PORT 4
@@ -37,14 +60,12 @@
 #define TSTAT2_LCD_DB7_PORT 4
 #define TSTAT2_LCD_DB7_PIN  7
 
-typdef bool uint8_t;
+typedef uint8_t bool;
 
-#define LCD_SNIFF_I2C_ADDR 0x44;
-
-typedef enum tstat {
+typedef enum {
 	TSTAT1 = 0,
 	TSTAT2 = 1,
-} tstat_e;
+} thermostat_e;
 
 
 #endif

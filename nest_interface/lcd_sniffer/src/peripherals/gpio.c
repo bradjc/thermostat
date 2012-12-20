@@ -1,11 +1,12 @@
 #include <msp430.h>
 #include <inttypes.h>
+#include <stddef.h>
 
 #include "gpio.h"
 
 // Array to hold the callback functions for the interrupt on each pin.
 // Ports 1 and 2 are interrupt pins.
-gpio_int_cb cb_array[16] = {NULL};
+gpio_int_cb* cb_array[16] = {NULL};
 
 void gpio_init (uint8_t port, uint8_t pin, gpio_dir_e dir) {
 	uint8_t set, clear;
@@ -103,19 +104,18 @@ uint8_t gpio_read(uint8_t port, uint8_t pin) {
 	return 0;
 }
 
-#pragma ....
 
-int () {
-	int i;
-	uint8_t iv = P1IV;
+#pragma vector=PORT1_VECTOR
+__interrupt void Port_1(void) {
 
-	for (i=0; i<8; i++) {
-		if (iv & (1<<i)) {
-			cb_array[i]()
-			return;
-		}
+	uint8_t pin_int;
+	pin_int = (P1IFG >> 1);
+	if (cb_array[pin_int] != NULL) {
+		cb_array[pin_int]();
 	}
 }
+
+
 
 
 

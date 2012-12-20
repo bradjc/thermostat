@@ -1,7 +1,9 @@
 #ifndef __I2C_H__
 #define __I2C_H__
 
-typedef void i2c_cb(uint8_t address, uint8_t length, uint8_t* data);
+#include <stdint.h>
+
+typedef void i2c_callback (uint8_t* data, uint8_t length);
 
 typedef enum i2c_mode {
 	I2C_SLAVE,
@@ -11,6 +13,7 @@ typedef enum i2c_mode {
 
 void i2c_init ();
 
+/*
 void i2c_read (uint8_t address,
                uint8_t length,
                uint8_t* data,
@@ -20,7 +23,8 @@ void i2c_write (uint8_t address,
                 uint8_t length,
                 uint8_t* data,
                 i2c_cb callback);
+*/
 
-
+void i2c_set_slave (uint8_t address, uint8_t* buffer, i2c_callback* cb);
 
 #endif

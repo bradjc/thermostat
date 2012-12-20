@@ -1,3 +1,5 @@
+#include <string.h>
+
 #include "utility.h"
 #include "lcd_state.h"
 
@@ -7,12 +9,21 @@
 //
 
 
+//                         01234567890123456789012345678901
+unsigned char lcds_str_off[]     = "Unit is OFF     by I/O key      ";
+unsigned char lcds_str_status[]  = " ~~~F    ~~ %RH ~~~~~~~~~       ";
+unsigned char lcds_str_temp_sp[] = "TEMP SETPT";
+
+unsigned char lcds_str_cooling[] = "COOLING";
+unsigned char lcds_str_alarms[]  = "NO ALARMS";
+
+
 lcds_tstat_status_t tstat_st[2] = {{0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}};
 lcds_lcd_buf        lcd[2];
 
 // returns true if the stings are the same.
 // use the ~ character for a wildcard (matches anything)
-bool str_same (char* a, char* b, uint8_t len) {
+bool str_same (unsigned char* a, unsigned char* b, uint8_t len) {
 	uint8_t i;
 
 	for (i=0; i<len; i++) {
@@ -28,7 +39,7 @@ bool str_same (char* a, char* b, uint8_t len) {
 	return TRUE;
 }
 
-uint8_t str_to_num (char* s, uint8_t len) {
+uint8_t str_to_num (unsigned char* s, uint8_t len) {
 	uint8_t i;
 	uint8_t num = 0;
 	for (i=0; i<len; i++) {
@@ -38,7 +49,7 @@ uint8_t str_to_num (char* s, uint8_t len) {
 }
 
 void lcds_init () {
-	uint8_t i;
+//	uint8_t i;
 
 //	for (i=0; i<2; i++) {
 //
@@ -46,17 +57,17 @@ void lcds_init () {
 }
 
 // Call this at the start of a new screen write to reset and clear buffers
-void lcds_start_new_screen (tstat_e tstat) {
-	memclr(lcd[tstat].lcd_chars, 16*sizeof(uint8_t));
+void lcds_start_new_screen (thermostat_e tstat) {
+	memset(lcd[tstat].lcd_chars, 0, 16*sizeof(uint8_t));
 	lcd[tstat].lcd_idx = 16;
 }
 
 // Add a character that was drawn to the lcd to the array. This function will
 //  automatically update the index in the correct order.
 // char = ascii character
-void lcds_add_char (tstat_e tstat, uint8_t char) {
+void lcds_add_char (thermostat_e tstat, uint8_t character) {
 
-	lcd[tstat].lcd_chars[lcd[tstat].lcd_idx++] = char;
+	lcd[tstat].lcd_chars[lcd[tstat].lcd_idx++] = character;
 
 	// The lcd driver on the thermostats write the bottom line first and then
 	//  the top line. We'll just put it in the buffer in a more logical way,
@@ -67,7 +78,7 @@ void lcds_add_char (tstat_e tstat, uint8_t char) {
 
 }
 
-void lcds_process_screen (tstat_e tstat) {
+void lcds_process_screen (thermostat_e tstat) {
 	uint8_t* c = lcd[tstat].lcd_chars;
 
 	// check if unit is now off
@@ -108,7 +119,7 @@ void lcds_process_screen (tstat_e tstat) {
 
 }
 
-uint8_t lcds_get_info (tstat_e tstat, tstat_st_e tstat_status) {
+uint8_t lcds_get_info (thermostat_e tstat, tstat_st_e tstat_status) {
 
 	switch (tstat_status) {
 		case TSTAT_ON_OFF: return tstat_st[tstat].on;
