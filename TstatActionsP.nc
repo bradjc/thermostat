@@ -40,6 +40,9 @@ implementation {
     GOTO_MAIN_MENU2,
     ENTER_PASSWORD1,
     ENTER_PASSWORD2,
+    ENTER_PASSWORD3,
+    ENTER_PASSWORD4,
+    ENTER_PASSWORD5,
     DONE,
   } action_state_e;
 
@@ -80,7 +83,10 @@ implementation {
         break;
 
       case SET_TEMP5:
-        state = DONE;
+//        state = DONE;
+
+        state = ENTER_PASSWORD1;
+        ret_state = DONE;
         // now actually set the temperature
         {
           uint8_t diff;
@@ -171,13 +177,32 @@ implementation {
         break;
 
       case ENTER_PASSWORD2:
-        state = ret_state;
-        if (current_display == Password || 1) {
-          call TstatMultiButton.pressMultipleButtons(password, 10);
-        } else {
-          post action_next();
-        }
+      //  state = ret_state;
+        state = ENTER_PASSWORD3;
+
+        call TstatState.getCurrentDisplay(tid);
+
+  //      if (current_display == Password || 1) {
+  //        call TstatMultiButton.pressMultipleButtons(password, 10);
+  //      } else {
+  //        post action_next();
+  //      }
 //post action_next();
+        break;
+
+      case ENTER_PASSWORD3:
+        state = ENTER_PASSWORD5;
+        call TstatState.getCurrentDisplay(tid);
+        break;
+
+      case ENTER_PASSWORD4:
+        state = ENTER_PASSWORD5;
+        call TstatMultiButton.pressMultipleButtons(power, 1);
+        break;
+
+      case ENTER_PASSWORD5:
+        state = ret_state;
+        call TstatState.getCurrentDisplay(tid);
         break;
 
       case DONE:

@@ -11,7 +11,7 @@
 #define PCA9575_GPIO_IN_ADDR 0x27
 #define PCA9575_GPIO_OUT_ADDR 0x23
 
-#define LCD_SNIFFER_ADDR 0x11
+#define LCD_SNIFFER_ADDR 0x44
 
 //#define TSTAT1 1
 //#define TSTAT2 2
@@ -36,8 +36,8 @@
 #define BUTTON_WAIT_DURATION 10 // ms
 
 typedef enum thermostat {
-  TSTAT1,
-  TSTAT2,
+  TSTAT1 = 1,
+  TSTAT2 = 2,
 } thermostat_e;
 
 typedef enum button {
