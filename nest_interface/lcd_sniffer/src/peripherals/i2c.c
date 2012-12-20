@@ -10,7 +10,8 @@
 uint8_t* receive_buffer;
 uint8_t receive_buffer_idx;
 
-i2c_callback* i2c_receive_cb;
+i2c_callback_r* i2c_receive_cb;
+i2c_callback_t* i2c_transmit_cb;
 
 uint8_t ret = 10;
 
@@ -46,10 +47,14 @@ void i2c_init (i2c_mode_e mode) {
 
 }
 
-void i2c_set_slave (uint8_t address, uint8_t* buffer, i2c_callback* cb) {
+void i2c_set_slave (uint8_t address,
+	                uint8_t* buffer,
+	                i2c_callback_r* rcb,
+	                i2c_callback_t* tcb) {
 	receive_buffer = buffer;
 	receive_buffer_idx = 0;
-	i2c_receive_cb = cb;
+	i2c_receive_cb = rcb;
+	i2c_transmit_cb = tcb;
 
 	// disable peripheral
 	U0CTL &= ~I2CEN;
@@ -100,22 +105,22 @@ __interrupt void I2C_ISR(void) {
 	  case  6: break;                          // Own Address
 	  case  8: break;                          // Register Access Ready
 	  case 10:
-	//  	receive_buffer[receive_buffer_idx++] = I2CDRB;
+	  	receive_buffer[receive_buffer_idx++] = I2CDRB;
 	//  	receive_buffer[0] = I2CDRB;
-  		t = I2CDRB;
+  	//	t = I2CDRB;
 	//  	gpio_set(2, 1);
 //		if (I2CTCTL & I2CSTP) {
 	  	if (!(I2CDCTL & I2CBB)) {
 			uint8_t len = receive_buffer_idx;
 			receive_buffer_idx = 0;
 			I2CIE = TXRDYIE;
-			gpio_clear(2, 1);
-		//	i2c_receive_cb(receive_buffer, len);
+		//	gpio_clear(2, 1);
+			i2c_receive_cb(receive_buffer, len);
 		}
 	  	break;                                 // Receive Ready
 	  case 12:                                 // Transmit Ready
 	//	I2CDRB = TXData++;                     // Load I2CDRB and increment
-		I2CDRB = ret++;
+		I2CDRB = i2c_transmit_cb();
 		if (!(I2CDCTL & I2CBB)) {
 			I2CIE = RXRDYIE;
 		//	i2c_receive_cb(receive_buffer, 0);

@@ -3,7 +3,8 @@
 
 #include <stdint.h>
 
-typedef void i2c_callback (uint8_t* data, uint8_t length);
+typedef void i2c_callback_r (uint8_t* data, uint8_t length);
+typedef uint8_t i2c_callback_t ();
 
 typedef enum i2c_mode {
 	I2C_SLAVE,
@@ -25,6 +26,9 @@ void i2c_write (uint8_t address,
                 i2c_cb callback);
 */
 
-void i2c_set_slave (uint8_t address, uint8_t* buffer, i2c_callback* cb);
+void i2c_set_slave (uint8_t address,
+	                uint8_t* buffer,
+	                i2c_callback_r* rcb,
+	                i2c_callback_t* tcb);
 
 #endif

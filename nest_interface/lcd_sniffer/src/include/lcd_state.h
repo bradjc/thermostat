@@ -6,6 +6,9 @@
 
 #include "utility.h"
 
+#define LCD_REQUEST_STATUS 1
+#define LCD_REQUEST_DISPLAY 2
+
 typedef enum tstat_st {
 	TSTAT_ON_OFF,
 	TSTAT_COOLING,
@@ -50,9 +53,9 @@ void lcds_add_char (thermostat_e tstat, uint8_t character);
 
 void lcds_process_screen (thermostat_e tstat);
 
-uint8_t lcds_get_info (thermostat_e tstat, tstat_st_e tstat_status);
+uint8_t lcds_get_status (thermostat_e tstat, tstat_st_e tstat_status);
 
-
+uint8_t lcds_get_current_display (thermostat_e tstat);
 
 
 #endif

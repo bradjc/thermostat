@@ -21,6 +21,8 @@ unsigned char lcds_str_alarms[]  = "NO ALARMS";
 lcds_tstat_status_t tstat_st[2] = {{0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}};
 lcds_lcd_buf        lcd[2];
 
+
+
 // returns true if the stings are the same.
 // use the ~ character for a wildcard (matches anything)
 bool str_same (unsigned char* a, unsigned char* b, uint8_t len) {
@@ -119,7 +121,7 @@ void lcds_process_screen (thermostat_e tstat) {
 
 }
 
-uint8_t lcds_get_info (thermostat_e tstat, tstat_st_e tstat_status) {
+uint8_t lcds_get_status (thermostat_e tstat, tstat_st_e tstat_status) {
 
 	switch (tstat_status) {
 		case TSTAT_ON_OFF: return tstat_st[tstat].on;
@@ -132,6 +134,10 @@ uint8_t lcds_get_info (thermostat_e tstat, tstat_st_e tstat_status) {
 
 	return 0xff;
 
+}
+
+uint8_t lcds_get_current_display (thermostat_e tstat) {
+	return 0x5;
 }
 
 

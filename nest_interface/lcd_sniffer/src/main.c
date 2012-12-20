@@ -11,6 +11,13 @@ uint8_t i2c_buf[100];
 
 volatile uint8_t a = 0;
 
+uint8_t request_tstat;
+// whether the main processor wants to know whats on the display or some
+//  status value
+uint8_t request_type;
+// if the processor wants to know the status, what status does it want
+uint8_t request_val;
+
 // Samples the 4 data wires and returns the values in the lower 4 bits
 uint8_t get_raw_tstat_data (thermostat_e tstat) {
 
@@ -33,16 +40,31 @@ uint8_t get_raw_tstat_data (thermostat_e tstat) {
 }
 
 
-void handle_i2c_req (uint8_t* buf, uint8_t len) {
-//	uint8_t data;
+void handle_i2c_receive (uint8_t* buf, uint8_t len) {
 
-//	data = lcds_get_info(addr);
+	request_tstat = buf[0];
 
-//	i2c_send(data);
+	if (len == 2) {
+		// set only the req type
+		request_type = buf[1];
+	} else if (len == 3) {
+		request_type = buf[1];
+		request_val  = buf[2];
+	}
 
-//	gpio_clear(2, 1);
+}
 
-	a = 5;
+
+uint8_t handle_i2c_transmit () {
+
+	if (request_type == LCD_REQUEST_DISPLAY) {
+		return lcds_get_current_display(request_tstat);
+	} else if (request_type == LCD_REQUEST_STATUS) {
+		return lcds_get_status(request_tstat, request_val);
+	}
+
+	// if nothing better to do return the error code
+	return 0xff;
 
 }
 
@@ -102,7 +124,7 @@ int main () {
 	util_enableInterrupt();
 
 	i2c_init();
-	i2c_set_slave(LCD_SNIFF_I2C_ADDR, i2c_buf, handle_i2c_req);
+	i2c_set_slave(LCD_SNIFF_I2C_ADDR, i2c_buf, handle_i2c_receive, handle_i2c_transmit);
 //	i2c_set_slave(0x44, i2c_buf, handle_i2c_req);
 //	i2c_set_receive_callback(handle_i2c_req);
 
