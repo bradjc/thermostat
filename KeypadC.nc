@@ -1,4 +1,8 @@
 
+/* Keypad control on the nest board.
+ * This module controls whether or not the buttons on the thermostat keypad
+ * should work.
+ */
 
 configuration KeypadC {
   provides {

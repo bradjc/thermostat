@@ -1,6 +1,7 @@
+/* Interface for button press events.
+ */
 
-
-interface ThermostatButtonsInput {
+interface TstatButtonsIn {
 
   async event void OnOffPressed ();
   async event void MenuPressed ();
@@ -11,4 +12,3 @@ interface ThermostatButtonsInput {
   async event void EnterPressed ();
 
 }
-
