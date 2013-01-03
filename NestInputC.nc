@@ -1,4 +1,6 @@
-
+/* Module that wires to the NEST thermostat. Provides events when the nest
+ * turns on or off each HVAC circuit.
+ */
 
 configuration NestInputC {
   provides {
@@ -32,4 +34,3 @@ implementation {
   NestInput = NestInputP.NestInput;
 
 }
-

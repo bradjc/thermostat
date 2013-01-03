@@ -1,4 +1,3 @@
-
 /* This layer sits above the GPIO extender module. It is essentially a HAL.
  * This module provides the general setOutputButtons function that the generic
  * thermostat modules call to set the output buttons. This module handles the

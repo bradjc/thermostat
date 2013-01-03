@@ -1,6 +1,8 @@
+/* Pass through module for retreiving the thermostat state from the lcd.
+ */
 
 configuration TstatStateC {
-	provides {
+  provides {
     interface LcdSniffer;
   }
 }

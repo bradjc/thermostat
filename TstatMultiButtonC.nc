@@ -1,4 +1,6 @@
-
+/* Generic module for pressing a sequence of buttons. Probably don't want to
+ * wire directly to this, use TstatActionsC instead.
+ */
 
 generic configuration TstatMultiButtonC (thermostat_e tid) {
   provides {
@@ -15,4 +17,3 @@ implementation {
   TstatMultiButton = TstatMultiButtonP.TstatMultiButton;
 
 }
-
