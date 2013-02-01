@@ -15,6 +15,9 @@ module TstatGpioP {
 
     interface NxpPca9575 as GpioExtenderIn;
     interface Read<uint16_t> as ReadInterrupts;
+
+    interface HplMsp430GeneralIO as InterruptPin;
+    interface HplMsp430Interrupt as InterruptInt;
   }
 }
 

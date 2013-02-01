@@ -3,12 +3,12 @@
 
 interface TstatButtonsIn {
 
-  async event void OnOffPressed ();
-  async event void MenuPressed ();
-  async event void UpPressed ();
-  async event void EscPressed ();
-  async event void HelpPressed ();
-  async event void DownPressed ();
-  async event void EnterPressed ();
+  event void OnOffPressed ();
+  event void MenuPressed ();
+  event void UpPressed ();
+  event void EscPressed ();
+  event void HelpPressed ();
+  event void DownPressed ();
+  event void EnterPressed ();
 
 }

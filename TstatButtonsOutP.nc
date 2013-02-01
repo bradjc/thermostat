@@ -64,4 +64,6 @@ implementation {
     call TstatGpio.setButton(b, tid);
   }
 
+  event void TstatGpio.buttonPressed (button_e b, thermostat_e thermid) { }
+
 }

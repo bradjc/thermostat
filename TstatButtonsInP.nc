@@ -26,4 +26,6 @@ implementation {
     }
   }
 
+  event void TstatGpio.buttonDone () { }
+
 }
