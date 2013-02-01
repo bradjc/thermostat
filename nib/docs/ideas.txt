@@ -1,5 +1,0 @@
-
-Create the left hand side of the nest board so any home thermostat can connect. Then we
-can watch the response characteristics of various thermostats.
-
-
