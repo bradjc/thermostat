@@ -1,0 +1,62 @@
+<html>
+<head>
+	<title>4908CSE</title>
+	<link rel="stylesheet" href="ocss.css" type="text/css">
+	<script src="http://inductor.eecs.umich.edu/js/socket.io-0.8.7.js"></script>
+	<script src="http://inductor.eecs.umich.edu/js/jquery-1.7.1.min.js"></script>
+	<script src="http://inductor.eecs.umich.edu/js/jsIP.js"></script>
+	<script src="http://inductor.eecs.umich.edu/js/underscore.js"></script>
+	<script src="http://inductor.eecs.umich.edu/js/flot/jquery.flot.js"></script>
+	<script src="http://inductor.eecs.umich.edu/js/jquery.grapher.js"></script>
+	<script type=text/javascript>WEB_SOCKET_SWF_LOCATION='misc/WebSocketMain.swf'</script>
+	<script src="js/window_display.js"></script>
+	<script src="js/jquery.timeago.js"></script>
+</head>
+
+<body>
+	<h1>#4908cse Status</h1>
+	<table style="width:100%; padding:0; margin:0;">
+		<tr>
+			<td valign="top" style="width:1005px; margin:0; padding:0 10px 0 0;">
+				<h3>Written Lines in .tex Files</h3>
+				<div style="text-align:center">
+					<table>
+						<tr>
+							<td>
+								<table id="users_lines" style="font-size:13px">
+									<thead style="font-weight:bold; border-bottom: 1px solid #002070">
+										<tr>
+											<td>User</td>
+											<td>Total Lines</td>
+										</tr>
+									</thead>
+									<tbody></tbody>
+								</table>
+							</td>
+							<td>
+								<img id="lines_graph" src="lines.png" />
+							</td>
+						</tr>
+					</table>
+				</div>
+				<br /><br />
+				<div>
+					<h3>Realtime Computer Resource Usage</h3>
+					<div id="nuclear_graph" style="width:1000px; height:500px"></div>
+				</div>
+
+			</td>
+			<td valign="top" style="margin:0; border-left: 1px dashed gray;">
+				<h3>LaTeX Commit Log</h3>
+				<div id="latex_commit_log" style="width:420px; margin: 0;">
+				</div>
+			</td>
+			<td valign="top" style="margin:0; padding: 0 10px; border-left: 1px dashed gray;">
+				<h3>Recent Commits in /shed</h3>
+				<div id="general_commit_log" style="width:340px; height: 1090px; margin:0; overflow:hidden;">
+					<ul style="list-style-type:none; margin:0; padding:0"></ul>
+				</div>
+		</tr>
+	</table>
+</body>
+</html>

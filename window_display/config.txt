@@ -1,0 +1,8 @@
+chart.loc_per_author.lineStroke=4
+chart.loc_per_author.width=800
+chart.loc_per_author.height=500
+
+chart.activity_time.width=600
+chart.activity_day.width=600
+chart.activity_time.height=370
+chart.activity_day.height=408
