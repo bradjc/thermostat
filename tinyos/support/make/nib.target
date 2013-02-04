@@ -1,5 +1,4 @@
 #-*-Makefile-*-
-#$Id: hemera.target,v 1.5 2010-02-26 23:36:34 bradjc Exp $
 
 PLATFORM ?= nib
 
@@ -21,10 +20,10 @@ PFLAGS += -DCC2420_DEF_CHANNEL=$(CC2420_CHANNEL)
 endif
 
 # add this to let ncc figure things out
-PFLAGS += -I$(TOSROOTN)/tos/platforms/nib
-PFLAGS += -I$(TOSROOTN)/tos/chips/nxppca9575
-PFLAGS += -I$(TOSROOTN)/tos/chips/lcdsniffer
-PFLAGS += -I$(TOSROOTN)/tos/interfaces
+PFLAGS += -I$(TOSROOTTSTAT)/tos/platforms/nib
+PFLAGS += -I$(TOSROOTTSTAT)/tos/chips/nxppca9575
+PFLAGS += -I$(TOSROOTTSTAT)/tos/chips/lcdsniffer
+PFLAGS += -I$(TOSROOTTSTAT)/tos/interfaces
 
 
 # add this because this is basically epic.
