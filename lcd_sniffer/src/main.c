@@ -124,7 +124,10 @@ int main () {
 	util_enableInterrupt();
 
 	i2c_init();
-	i2c_set_slave(LCD_SNIFF_I2C_ADDR, i2c_buf, handle_i2c_receive, handle_i2c_transmit);
+	i2c_set_slave(LCD_SNIFF_I2C_ADDR,
+		          i2c_buf,
+		          handle_i2c_receive,
+		          handle_i2c_transmit);
 //	i2c_set_slave(0x44, i2c_buf, handle_i2c_req);
 //	i2c_set_receive_callback(handle_i2c_req);
 
@@ -163,11 +166,7 @@ int main () {
 */
 
 
-	while (1) {
-		if (a == 5) {
-			gpio_set(2, 0);
-		}
-	}
+	while (1);
 
 	return 0;
 
