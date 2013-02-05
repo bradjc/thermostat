@@ -12,12 +12,12 @@ configuration TstatGpioC {
   provides {
     interface TstatGpio;
     interface Enable as DetectKeypadInput;
-    interface Init;
   }
 }
 
 implementation {
   components TstatGpioP;
+  components MainC;
 
   components new NxpPca9575C(PCA9575_GPIO_OUT_ADDR) as I2cExtenderOut;
   components new NxpPca9575C(PCA9575_GPIO_IN_ADDR) as I2cExtenderIn;
@@ -54,8 +54,10 @@ implementation {
   TstatGpioP.GpioExtenderIn -> I2cExtenderIn.GpioExtender;
   TstatGpioP.ReadInterrupts -> I2cExtenderIn.ReadInterrupts;
 
+  // Init
+  MainC.SoftwareInit -> TstatGpioP.Init;
+
   // External interfaces
-  Init              = TstatGpioP.Init;
   TstatGpio         = TstatGpioP.TstatGpio;
   DetectKeypadInput = TstatGpioP.DetectKeypadInput;
 }
