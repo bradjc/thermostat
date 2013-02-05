@@ -41,6 +41,7 @@ uint8_t get_raw_tstat_data (thermostat_e tstat) {
 
 
 void handle_i2c_receive (uint8_t* buf, uint8_t len) {
+	gpio_clear(2, 1);
 
 	request_tstat = buf[0];
 
@@ -60,7 +61,8 @@ uint8_t handle_i2c_transmit () {
 	if (request_type == LCD_REQUEST_DISPLAY) {
 		return lcds_get_current_display(request_tstat);
 	} else if (request_type == LCD_REQUEST_STATUS) {
-		return lcds_get_status(request_tstat, request_val);
+		//return lcds_get_status(request_tstat, request_val);
+		return 1;
 	}
 
 	// if nothing better to do return the error code
@@ -128,6 +130,9 @@ int main () {
 		          i2c_buf,
 		          handle_i2c_receive,
 		          handle_i2c_transmit);
+
+
+
 //	i2c_set_slave(0x44, i2c_buf, handle_i2c_req);
 //	i2c_set_receive_callback(handle_i2c_req);
 
@@ -166,7 +171,9 @@ int main () {
 */
 
 
-	while (1);
+	while (1) {
+		_BIS_SR(LPM3_bits + GIE);
+	}
 
 	return 0;
 

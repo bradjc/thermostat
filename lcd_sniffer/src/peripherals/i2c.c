@@ -64,7 +64,8 @@ void i2c_set_slave (uint8_t address,
 
 	// Enable some interrupts
 //	I2CIE = TXRDYIE+RXRDYIE;
-	I2CIE = RXRDYIE;
+//	I2CIE = RXRDYIE;
+	I2CIE = RXRDYIE | TXRDYIE;
 //	I2CIE = TXRDYIE;
 
 	// set as slave
@@ -110,23 +111,27 @@ __interrupt void I2C_ISR(void) {
   	//	t = I2CDRB;
 	//  	gpio_set(2, 1);
 //		if (I2CTCTL & I2CSTP) {
+//	  	util_delayMs(1);
 	  	if (!(I2CDCTL & I2CBB)) {
 			uint8_t len = receive_buffer_idx;
 			receive_buffer_idx = 0;
-			I2CIE = TXRDYIE;
+		//	I2CIE = TXRDYIE;
+		//	_BIC_SR_IRQ(CPUOFF);
 		//	gpio_clear(2, 1);
+		//	util_delayCycles(50);
 			i2c_receive_cb(receive_buffer, len);
 		}
 	  	break;                                 // Receive Ready
 	  case 12:                                 // Transmit Ready
 	//	I2CDRB = TXData++;                     // Load I2CDRB and increment
+	//  	I2CDRB = receive_buffer[0];
 		I2CDRB = i2c_transmit_cb();
-		if (!(I2CDCTL & I2CBB)) {
+	/*	if (!(I2CDCTL & I2CBB)) {
 			I2CIE = RXRDYIE;
 		//	i2c_receive_cb(receive_buffer, 0);
 		//	U0CTL = 0;
 		//	U0CTL = I2C + SYNC + I2CEN;
-		}
+		}*/
 		break;
 	  case 14: break;                          // General Call
 	  case 16: break;                          // Start Condition
