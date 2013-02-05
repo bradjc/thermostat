@@ -127,23 +127,26 @@ implementation {
 
   command error_t LcdSniffer.getStatus (thermostat_e tstat,
                                         lcd_status_e status) {
-//    request[0] = (uint8_t) tstat;
-//    request[1] = 1;
-//    request[2] = (uint8_t) status;
-//    i2c_state = I2C_ST_GET_STATUS1;
-//    return call I2CResource.request();
 
+    request[0] = (uint8_t) tstat;
+    request[1] = LCD_I2C_TYPE_STATUS;
+    request[2] = (uint8_t) status;
+    i2c_state = I2C_ST_GET_STATUS1;
+    return call I2CResource.request();
+
+/*
     if (status == TemperatureSetPoint) {
       signal LcdSniffer.getStatusDone(TemperatureSetPoint, 70, SUCCESS);
     } else if (status == Power) {
       signal LcdSniffer.getStatusDone(Power, 1, SUCCESS);
     }
     return SUCCESS;
+ */
   }
 
   command error_t LcdSniffer.getCurrentDisplay (thermostat_e tstat) {
     request[0] = (uint8_t) tstat;
-    request[1] = 2;
+    request[1] = LCD_I2C_TYPE_DISPLAY;
     i2c_state = I2C_ST_GET_DISPLAY1;
     return call I2CResource.request();
 

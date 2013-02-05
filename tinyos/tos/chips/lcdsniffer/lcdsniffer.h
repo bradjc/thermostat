@@ -1,6 +1,9 @@
 #ifndef __LCD_SNIFFER_H__
 #define __LCD_SNIFFER_H__
 
+#define LCD_I2C_TYPE_STATUS 0x1
+#define LCD_I2C_TYPE_DISPLAY 0x2
+
 typedef enum {
   Power = 1,               // 1 if the unit is on, else 0
   Cooling = 2,             // 1 if the unit is cooling
