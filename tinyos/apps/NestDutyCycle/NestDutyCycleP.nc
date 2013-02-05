@@ -58,6 +58,7 @@ implementation {
   async event void NestInput.FanStatus (bool on) { }
 
   async event void NestInput.Cool1Status (bool on) {
+    call Leds.led2Toggle();
     atomic {
       unit1_turn_on = on;
     }
