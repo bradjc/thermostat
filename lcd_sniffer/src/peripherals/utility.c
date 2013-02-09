@@ -66,7 +66,6 @@ void util_boardInit(void) {
 	P4DIR = 0x00;
 
 	P5OUT = 0x00;
-
 	//P5DIR = 0x20;
 	P5DIR = 0x00;
 
@@ -82,10 +81,13 @@ void util_boardInit(void) {
     // .XTS = 0; set low frequency mode for LXFT1
     // .DIVA = 0; set the divisor on ACLK to 1
     // .RSEL, do noto modify
-    BCSCTL1 = XT2OFF | (BCSCTL1 & (RSEL2|RSEL1|RSEL0));
+//    BCSCTL1 = XT2OFF | (BCSCTL1 & (RSEL2|RSEL1|RSEL0));
+//    BCSCTL1 |= RSEL0 + RSEL1 + RSEL2;
 
-    BCSCTL1 |= RSEL0 + RSEL1 + RSEL2;
-    DCOCTL |= DCO0 + DCO1 + DCO2;
+	BCSCTL1 = XT2OFF | 0x7;
+
+//    DCOCTL |= DCO0 + DCO1 + DCO2;
+    DCOCTL = (0x7 << 5);
     // BCSCTL2
     // .SELM = 0; select DCOCLK as source for MCLK
     // .DIVM = 0; set the divisor of MCLK to 1

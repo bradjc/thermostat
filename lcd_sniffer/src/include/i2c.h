@@ -4,7 +4,7 @@
 #include <stdint.h>
 
 typedef void i2c_callback_r (uint8_t* data, uint8_t length);
-typedef uint8_t i2c_callback_t ();
+typedef uint8_t* i2c_callback_t ();
 
 typedef enum i2c_mode {
 	I2C_SLAVE,

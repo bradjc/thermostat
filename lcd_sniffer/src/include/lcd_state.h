@@ -6,8 +6,11 @@
 
 #include "utility.h"
 
+#define NUM_OF_LCD_DISPLAYS 2
+
 #define LCD_REQUEST_STATUS 1
 #define LCD_REQUEST_DISPLAY 2
+#define LCD_REQUEST_LCD_CHARS 3
 
 typedef enum tstat_st {
 	TSTAT_ON_OFF,
@@ -30,9 +33,9 @@ typedef struct {
 
 typedef struct {
 	// array to hold the current contents of the lcd display
-	uint8_t lcd_chars[32];
+	uint8_t lcd_chars[500];
 	uint8_t lcd_idx;
-} lcds_lcd_buf;
+} lcds_lcd_buf_t;
 
 
 // Compare len characters of two strings. This is a fancy compare, because
@@ -56,6 +59,8 @@ void lcds_process_screen (thermostat_e tstat);
 uint8_t lcds_get_status (thermostat_e tstat, tstat_st_e tstat_status);
 
 uint8_t lcds_get_current_display (thermostat_e tstat);
+
+uint8_t* lcds_get_lcd (thermostat_e tstat);
 
 
 #endif

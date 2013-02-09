@@ -7,6 +7,7 @@
 // Array to hold the callback functions for the interrupt on each pin.
 // Ports 1 and 2 are interrupt pins.
 gpio_int_cb* cb_array[16] = {NULL};
+gpio_int_cb* main_cb;
 
 void gpio_init (uint8_t port, uint8_t pin, gpio_dir_e dir) {
 	uint8_t set, clear;
@@ -59,6 +60,8 @@ void gpio_interrupt (uint8_t port,
 		cb_array[(port-1)*8 + pin] = cb;
 	}
 
+//	main_cb = cb;
+
 }
 
 void gpio_set_clear (uint8_t port, uint8_t pin, uint8_t set) {
@@ -104,12 +107,52 @@ uint8_t gpio_read(uint8_t port, uint8_t pin) {
 	return 0;
 }
 
+uint8_t one_hot_to_binary (uint8_t a) {
+	switch (a) {
+		case 0x0: return 0;
+		case 0x1: return 1;
+		case 0x2: return 2;
+		case 0x4: return 3;
+		case 0x8: return 4;
+		case 0x10: return 5;
+		case 0x20: return 6;
+		case 0x40: return 7;
+		case 0x80: return 8;
+	}
+	return 0;
+}
 
+/*
 #pragma vector=PORT1_VECTOR
 __interrupt void Port_1(void) {
+	uint8_t pin;
+	uint8_t pin_int;
+
+	P1IFG = 0;
+	main_cb();
+
+//	P2OUT ^= 0x10;
+	return;
+
+	pin = P1IFG;
+	P1IFG = 0;
+	if (pin == 0x08) {
+		cb_array[4]();
+		return;
+	}
+
+	pin_int = one_hot_to_binary(pin) - 1;
+	if (cb_array[pin_int] != NULL) {
+		cb_array[pin_int]();
+	}
+}
+*/
+#pragma vector=PORT2_VECTOR
+__interrupt void Port_2(void) {
 
 	uint8_t pin_int;
-	pin_int = (P1IFG >> 1);
+	pin_int = one_hot_to_binary(P2IFG) + 7;
+	P2IFG = 0;
 	if (cb_array[pin_int] != NULL) {
 		cb_array[pin_int]();
 	}

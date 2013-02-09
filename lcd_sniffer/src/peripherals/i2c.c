@@ -3,12 +3,16 @@
 #include "i2c.h"
 #include "gpio.h"
 #include <stdint.h>
+#include <stddef.h>
 
 
 //i2c_mode_e 12c_mode_current = NOTINIT;
 
 uint8_t* receive_buffer;
 uint8_t receive_buffer_idx;
+
+uint8_t* transmit_buffer = NULL;
+uint8_t transmit_buffer_idx = 0;
 
 i2c_callback_r* i2c_receive_cb;
 i2c_callback_t* i2c_transmit_cb;
@@ -65,7 +69,7 @@ void i2c_set_slave (uint8_t address,
 	// Enable some interrupts
 //	I2CIE = TXRDYIE+RXRDYIE;
 //	I2CIE = RXRDYIE;
-	I2CIE = RXRDYIE | TXRDYIE;
+	I2CIE = RXRDYIE | TXRDYIE | OAIE;
 //	I2CIE = TXRDYIE;
 
 	// set as slave
@@ -103,7 +107,10 @@ __interrupt void I2C_ISR(void) {
 	switch (I2CIV) {
 	  case  2: break;                          // Arbitration lost
 	  case  4: break;                          // No Acknowledge
-	  case  6: break;                          // Own Address
+	  case  6:
+		transmit_buffer = NULL;
+		transmit_buffer_idx = 0;
+	    break;                          // Own Address
 	  case  8: break;                          // Register Access Ready
 	  case 10:
 	  	receive_buffer[receive_buffer_idx++] = I2CDRB;
@@ -125,13 +132,18 @@ __interrupt void I2C_ISR(void) {
 	  case 12:                                 // Transmit Ready
 	//	I2CDRB = TXData++;                     // Load I2CDRB and increment
 	//  	I2CDRB = receive_buffer[0];
-		I2CDRB = i2c_transmit_cb();
-	/*	if (!(I2CDCTL & I2CBB)) {
-			I2CIE = RXRDYIE;
+	  	if (transmit_buffer == NULL) {
+	  		transmit_buffer = i2c_transmit_cb();
+	  	}
+		I2CDRB = transmit_buffer[transmit_buffer_idx++];
+		if (!(I2CDCTL & I2CBB)) {
+		//	I2CIE = RXRDYIE;
 		//	i2c_receive_cb(receive_buffer, 0);
 		//	U0CTL = 0;
 		//	U0CTL = I2C + SYNC + I2CEN;
-		}*/
+			transmit_buffer = NULL;
+			transmit_buffer_idx = 0;
+		}
 		break;
 	  case 14: break;                          // General Call
 	  case 16: break;                          // Start Condition

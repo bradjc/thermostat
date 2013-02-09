@@ -9,7 +9,7 @@
 //
 
 
-//                         01234567890123456789012345678901
+//                                  01234567890123456789012345678901
 unsigned char lcds_str_off[]     = "Unit is OFF     by I/O key      ";
 unsigned char lcds_str_status[]  = " ~~~F    ~~ %RH ~~~~~~~~~       ";
 unsigned char lcds_str_temp_sp[] = "TEMP SETPT";
@@ -18,8 +18,10 @@ unsigned char lcds_str_cooling[] = "COOLING";
 unsigned char lcds_str_alarms[]  = "NO ALARMS";
 
 
-lcds_tstat_status_t tstat_st[2] = {{0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}};
-lcds_lcd_buf        lcd[2];
+lcds_tstat_status_t tstat_st[NUM_OF_LCD_DISPLAYS] = {
+	{0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}
+};
+lcds_lcd_buf_t      lcd[NUM_OF_LCD_DISPLAYS];
 
 
 
@@ -51,16 +53,16 @@ uint8_t str_to_num (unsigned char* s, uint8_t len) {
 }
 
 void lcds_init () {
-//	uint8_t i;
-
-//	for (i=0; i<2; i++) {
-//
-//	}
+	int i;
+	for (i=0; i<NUM_OF_LCD_DISPLAYS; i++) {
+		memset(lcd[i].lcd_chars, 0x44, 32*sizeof(uint8_t));
+		lcd[i].lcd_idx = 16;
+	}
 }
 
 // Call this at the start of a new screen write to reset and clear buffers
 void lcds_start_new_screen (thermostat_e tstat) {
-	memset(lcd[tstat].lcd_chars, 0, 16*sizeof(uint8_t));
+	memset(lcd[tstat].lcd_chars, 0x0F, 32*sizeof(uint8_t));
 	lcd[tstat].lcd_idx = 16;
 }
 
@@ -74,7 +76,7 @@ void lcds_add_char (thermostat_e tstat, uint8_t character) {
 	// The lcd driver on the thermostats write the bottom line first and then
 	//  the top line. We'll just put it in the buffer in a more logical way,
 	//  however.
-	if (lcd[tstat].lcd_idx == 32) {
+	if (lcd[tstat].lcd_idx >= 32) {
 		lcd[tstat].lcd_idx = 0;
 	}
 
@@ -140,6 +142,10 @@ uint8_t lcds_get_current_display (thermostat_e tstat) {
 	return 0x5;
 }
 
+
+uint8_t* lcds_get_lcd (thermostat_e tstat) {
+	return lcd[0].lcd_chars;
+}
 
 
 
