@@ -13,6 +13,9 @@ interface LcdSniffer {
   //  is on.
   command error_t getCurrentDisplay (thermostat_e tstat);
 
+  command error_t getLcdChars (thermostat_e tstat);
+
   event void getStatusDone (lcd_status_e status, uint8_t value, error_t e);
   event void getCurrentDisplayDone (lcd_display_e display);
+  event void getLcdCharsDone (uint8_t* chars);
 }

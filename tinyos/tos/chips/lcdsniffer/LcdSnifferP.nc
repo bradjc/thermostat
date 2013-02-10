@@ -2,7 +2,7 @@
 #include "lcdsniffer.h"
 #include "nib.h"
 
-generic module LcdSnifferP(uint8_t i2c_address) {
+generic module LcdSnifferP (uint8_t i2c_address) {
   provides {
     interface LcdSniffer;
   }
@@ -22,13 +22,16 @@ implementation {
     I2C_ST_GET_DISPLAY1,
     I2C_ST_GET_DISPLAY2,
     I2C_ST_GET_DISPLAY3,
+    I2C_ST_GET_LCD_CHARS1,
+    I2C_ST_GET_LCD_CHARS2,
+    I2C_ST_GET_LCD_CHARS3,
     I2C_ST_DONE,
   } i2c_state_e;
 
   static uint8_t request[3]  = {0};
 
   uint8_t i2c_state;
-  uint8_t i2c_read_buffer[25];
+  uint8_t i2c_read_buffer[50];
 
   lcd_status_e retrieve_status;
 
@@ -97,6 +100,30 @@ implementation {
         i2c_state = I2C_ST_DONE;
         break;
 
+      case I2C_ST_GET_LCD_CHARS1:
+        call I2CPacket.write((I2C_START | I2C_STOP),
+                             i2c_address,
+                             2,
+                             request);
+        i2c_state = I2C_ST_GET_LCD_CHARS2;
+        break;
+
+      case I2C_ST_GET_LCD_CHARS2:
+        // read the interrupt mask values
+        call I2CPacket.read((I2C_START | I2C_STOP),
+                            i2c_address,
+                            32,
+                            i2c_read_buffer);
+        i2c_state = I2C_ST_GET_LCD_CHARS3;
+        break;
+
+      case I2C_ST_GET_LCD_CHARS3:
+        // process the pressed button
+        call I2CResource.release();
+        signal LcdSniffer.getLcdCharsDone(i2c_read_buffer);
+        i2c_state = I2C_ST_DONE;
+        break;
+
 
       case I2C_ST_DONE:
         call I2CResource.release();
@@ -128,7 +155,7 @@ implementation {
   command error_t LcdSniffer.getStatus (thermostat_e tstat,
                                         lcd_status_e status) {
 
-    request[0] = (uint8_t) tstat;
+    request[0] = (uint8_t) tstat - 1;
     request[1] = LCD_I2C_TYPE_STATUS;
     request[2] = (uint8_t) status;
     i2c_state = I2C_ST_GET_STATUS1;
@@ -145,13 +172,20 @@ implementation {
   }
 
   command error_t LcdSniffer.getCurrentDisplay (thermostat_e tstat) {
-    request[0] = (uint8_t) tstat;
+    request[0] = (uint8_t) tstat - 1;
     request[1] = LCD_I2C_TYPE_DISPLAY;
     i2c_state = I2C_ST_GET_DISPLAY1;
     return call I2CResource.request();
 
   //  signal LcdSniffer.getCurrentDisplayDone(Password);
   //  return SUCCESS;
+  }
+
+  command error_t LcdSniffer.getLcdChars (thermostat_e tstat) {
+    request[0] = (uint8_t) tstat - 1;
+    request[1] = LCD_I2C_TYPE_LCD_CHARS;
+    i2c_state = I2C_ST_GET_LCD_CHARS1;
+    return call I2CResource.request();
   }
 
 }

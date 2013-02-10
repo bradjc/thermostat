@@ -178,4 +178,7 @@ implementation {
     call InterruptInt.disable();
   }
 
+  default event void TstatGpio.buttonPressed (button_e b, thermostat_e tid) {}
+  default event void TstatGpio.buttonDone () {}
+
 }

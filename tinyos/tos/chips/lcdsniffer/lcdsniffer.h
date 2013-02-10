@@ -3,6 +3,7 @@
 
 #define LCD_I2C_TYPE_STATUS 0x1
 #define LCD_I2C_TYPE_DISPLAY 0x2
+#define LCD_I2C_TYPE_LCD_CHARS 0x3
 
 typedef enum {
   Power = 1,               // 1 if the unit is on, else 0
