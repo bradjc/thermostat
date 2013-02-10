@@ -9,11 +9,12 @@
 //
 
 
-//                                  01234567890123456789012345678901
-unsigned char lcds_str_off[]     = "Unit is OFF     by ~/O key      ";
-unsigned char lcds_str_status[]  = " ~~~F    ~~ %RH ~~~~~~~~~       ";
-unsigned char lcds_str_temp_sp[] = "TEMP SETPT";
+//                                  0123456789abcdef
+unsigned char lcds_str_off_1[]   = "Unit is OFF     ";
+unsigned char lcds_str_off_2[]   = "by ~/O key      ";
+unsigned char lcds_str_status[]  = " ~~~F    ~~ %RH ";
 
+unsigned char lcds_str_temp_sp[] = "TEMP SETPT";
 unsigned char lcds_str_cooling[] = "COOLING";
 unsigned char lcds_str_alarms[]  = "NO ALARMS";
 
@@ -21,9 +22,8 @@ unsigned char lcds_str_alarms[]  = "NO ALARMS";
 lcds_tstat_status_t tstat_st[NUM_OF_LCD_DISPLAYS] = {
 	{0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}
 };
-lcds_lcd_buf_t      lcd[NUM_OF_LCD_DISPLAYS];
 
-lcds_state_e state;
+lcds_lcd_buf_t lcd[NUM_OF_LCD_DISPLAYS];
 
 
 // returns true if the stings are the same.
@@ -58,33 +58,14 @@ uint8_t str_to_num (unsigned char* s, uint8_t len) {
 void lcds_init () {
 	int i;
 	for (i=0; i<NUM_OF_LCD_DISPLAYS; i++) {
-		memset(lcd[i].lcd_chars, 0xFE, 32*sizeof(uint8_t));
-		lcd[i].lcd_idx = 16;
+		memset(lcd[i].lcd_chars, 0xFE, 16*sizeof(uint8_t));
+		lcd[i].lcd_idx = 0;
 	}
-
-	state = LCDS_ST_RESET1;
-}
-
-void lcds_process_buffer (thermostat_e tstat, uint8_t* buf) {
-	memcpy(lcd[tstat].lcd_chars, buf+16, 16);
-	memcpy(lcd[tstat].lcd_chars+16, buf, 16);
 }
 
 // Call this when rs==0 to reset the index for a new line.
-// The logic is a little flexible in case an interrupt gets missed.
 void lcds_start_line (thermostat_e tstat) {
-	switch (state) {
-		case LCDS_ST_RESET1:
-		case LCDS_ST_LINE2:
-			lcd[tstat].lcd_idx = 16;
-			state = LCDS_ST_RESET1;
-			break;
-		case LCDS_ST_LINE1:
-		case LCDS_ST_RESET2:
-			lcd[tstat].lcd_idx = 0;
-			state = LCDS_ST_RESET2;
-			break;
-	}
+	lcd[tstat].lcd_idx = 0;
 }
 
 // Add a character that was drawn to the lcd to the array. This function will
@@ -94,28 +75,19 @@ void lcds_add_char (thermostat_e tstat, uint8_t character) {
 
 	lcd[tstat].lcd_chars[lcd[tstat].lcd_idx++] = character;
 
-	switch (state) {
-		case LCDS_ST_RESET1:
-			state = LCDS_ST_LINE1;
-			break;
-		case LCDS_ST_RESET2:
-			state = LCDS_ST_LINE2;
-			break;
-	}
-
 	if (lcd[tstat].lcd_idx == 16) {
-		lcds_process_screen(tstat);
+		lcds_process_line(tstat);
 	}
 
 }
 
-void lcds_process_screen (thermostat_e tstat) {
+void lcds_process_line (thermostat_e tstat) {
 	uint8_t* c = lcd[tstat].lcd_chars;
 
 	P1OUT ^= 0x80;
 
 	// check if unit is now off
-	if (str_same(c, lcds_str_off, 16) || str_same(c+16, lcds_str_off, 16)) {
+	if (str_same(c, lcds_str_off_1, 16) || str_same(c, lcds_str_off_2, 16)) {
 		// unit is off
 		tstat_st[tstat].on = FALSE;
 		return;
@@ -125,7 +97,7 @@ void lcds_process_screen (thermostat_e tstat) {
 	tstat_st[tstat].on = TRUE;
 
 	// check for the different screens
-	if (str_same(c, lcds_str_status, 32)) {
+	if (str_same(c, lcds_str_status, 16)) {
 		// basic status screen
 		// get temp and relative humidity
 		uint8_t temp, humidity;
@@ -135,13 +107,13 @@ void lcds_process_screen (thermostat_e tstat) {
 		tstat_st[tstat].temperature = temp;
 		tstat_st[tstat].humidity    = humidity;
 
-		if (str_same(c+16, lcds_str_cooling, 7)) {
-			// thermostat is currently cooling the room
-			tstat_st[tstat].cooling = TRUE;
-		} else if (str_same(c+16, lcds_str_alarms, 9)) {
-			// there are no alarms on in the room
-			tstat_st[tstat].alarms = FALSE;
-		}
+	} else if (str_same(c, lcds_str_cooling, 7)) {
+		// thermostat is currently cooling the room
+		tstat_st[tstat].cooling = TRUE;
+
+	} else if (str_same(c, lcds_str_alarms, 9)) {
+		// there are no alarms on in the room
+		tstat_st[tstat].alarms = FALSE;
 
 	} else if (str_same(c, lcds_str_temp_sp, 10)) {
 		// showing the current temperature set point
@@ -173,6 +145,7 @@ uint8_t lcds_get_current_display (thermostat_e tstat) {
 
 
 uint8_t* lcds_get_lcd (thermostat_e tstat) {
+	memcpy(lcd[tstat].lcd_chars+16, &tstat_st[tstat], 6);
 	return lcd[tstat].lcd_chars;
 }
 

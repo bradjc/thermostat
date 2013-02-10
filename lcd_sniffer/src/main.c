@@ -138,52 +138,29 @@ __interrupt void Port_1(void) {
 	uint8_t int_pin;
 	uint8_t p1, p4;
 
-//	util_disableInterrupt();
-
+	// get and clear interrupt
 	int_pin = P1IFG;
 	P1IFG = 0;
-
 
 	p1 = P1IN;
 	p4 = P4IN;
 
-
-	//P1OUT ^= 0x80;
-
-
 	if (int_pin & 0x08) {
-
-
-
 		// tstat 1
 		if (!((p1 >> TSTAT1_LCD_RS_PIN) & 0x01)) {
+			// rs is low, start a new line
 			lcds_start_line(TSTAT1);
-		//	if (nib_ctr_tstat1 >= 64) {
-				nib_ctr_tstat1 = 0;
-		//	}
-		//	P2OUT ^= 0x10;
-		//	P2OUT ^= 0x10;
-
+			nib_ctr_tstat1 = 0;
 		} else {
 
 			if (nib_ctr_tstat1 & 0x1) {
 				char_tstat1 |= (p4 & 0x0f);
 				lcds_add_char(TSTAT1, char_tstat1);
-			//	char_tstat1[nib_ctr_tstat1/2] |= (p4 & 0x0f);
-		//		P2OUT ^= 0x10;
-
 			} else {
-			//	char_tstat1[nib_ctr_tstat1/2] = p4 << 4;
 				char_tstat1 = p4 << 4;
-	//			P2OUT ^= 0x10;
 			}
 
-		//	nib_ctr_tstat1++;
 			nib_ctr_tstat1 ^= 0x1;
-
-		//	if (nib_ctr_tstat1 >= 64) {
-		//		lcds_process_buffer(TSTAT1, char_tstat1);
-		//	}
 		}
 
 	} else if (int_pin & 0x04) {
