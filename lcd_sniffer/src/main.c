@@ -67,8 +67,7 @@ uint8_t* handle_i2c_transmit () {
 		transmit_storage = lcds_get_status(request_tstat, request_val);
 		//return 1;
 	} else if (request_type == LCD_REQUEST_LCD_CHARS) {
-		//return lcds_get_lcd(request_tstat);
-		return characters;
+		return lcds_get_lcd(request_tstat);
 	} else {
 		transmit_storage = 0xff;
 	}
@@ -215,6 +214,8 @@ int main () {
 	gpio_init(TSTAT1_LCD_DB7_PORT, TSTAT1_LCD_DB7_PIN, GPIO_IN);
 	gpio_init(2, 4, GPIO_OUT);
 	gpio_clear(2,4);
+	gpio_init(1, 7, GPIO_OUT);
+	gpio_clear(1,7);
 	gpio_interrupt(TSTAT1_LCD_E_PORT,
 	               TSTAT1_LCD_E_PIN,
 	               GPIO_INT_FALLING_EDGE,
@@ -243,55 +244,84 @@ int main () {
 
 }
 
-uint8_t nib;
-
+uint8_t char_tstat1, char_tstat2;
+uint8_t nib_ctr_tstat1=0, nib_ctr_tstat2;
 
 #pragma vector=PORT1_VECTOR
 __interrupt void Port_1(void) {
+	uint8_t int_pin;
 	uint8_t p1, p4;
-	uint8_t db4, db5, db6, db7;
-	uint8_t prev_nib;
 
+//	util_disableInterrupt();
+
+	int_pin = P1IFG;
 	P1IFG = 0;
 
 
-
 	p1 = P1IN;
-	if (!((p1 >> TSTAT1_LCD_RS_PIN) & 0x01)) {
-		if (index >= 64) {
-			index = 0;
-		}
-		return;
-	}
-
 	p4 = P4IN;
-	P2OUT ^= 0x10;
-
-	if (index & 0x1) {
-	/*	prev_nib = characters[index/2];
-		db4 = (prev_nib >> TSTAT1_LCD_DB4_PIN) & 0x1;
-		db5 = (prev_nib >> TSTAT1_LCD_DB5_PIN) & 0x1;
-		db6 = (prev_nib >> TSTAT1_LCD_DB6_PIN) & 0x1;
-		db7 = (prev_nib >> TSTAT1_LCD_DB7_PIN) & 0x1;
-
-		characters[index/2] = (db4 << 7) | (db5 << 6) | (db6 << 5) | (db7 << 4);
-
-		db4 = (p4 >> TSTAT1_LCD_DB4_PIN) & 0x1;
-		db5 = (p4 >> TSTAT1_LCD_DB5_PIN) & 0x1;
-		db6 = (p4 >> TSTAT1_LCD_DB6_PIN) & 0x1;
-		db7 = (p4 >> TSTAT1_LCD_DB7_PIN) & 0x1;
-
-		characters[index/2] |=  (db4 << 3) | (db5 << 2) | (db6 << 1) | db7;
-*/
-		characters[index/2] |= (p4 & 0x0f);
 
 
-	} else {
-		characters[index/2] = p4 << 4;
+	P1OUT ^= 0x80;
+
+
+	if (int_pin & 0x08) {
+
+
+
+		// tstat 1
+		if (!((p1 >> TSTAT1_LCD_RS_PIN) & 0x01)) {
+			lcds_start_line(TSTAT1);
+		//	if (nib_ctr_tstat1 >= 64) {
+				nib_ctr_tstat1 = 0;
+		//	}
+		//	P2OUT ^= 0x10;
+		//	P2OUT ^= 0x10;
+
+		} else {
+
+			if (nib_ctr_tstat1 & 0x1) {
+				char_tstat1 |= (p4 & 0x0f);
+				lcds_add_char(TSTAT1, char_tstat1);
+			//	char_tstat1[nib_ctr_tstat1/2] |= (p4 & 0x0f);
+		//		P2OUT ^= 0x10;
+
+			} else {
+			//	char_tstat1[nib_ctr_tstat1/2] = p4 << 4;
+				char_tstat1 = p4 << 4;
+				P2OUT ^= 0x10;
+			}
+
+		//	nib_ctr_tstat1++;
+			nib_ctr_tstat1 ^= 0x1;
+
+		//	if (nib_ctr_tstat1 >= 64) {
+		//		lcds_process_buffer(TSTAT1, char_tstat1);
+		//	}
+		}
+
+	} else if (int_pin & 0x04) {
+		// tstat 2
+/*		if (!(p1 & 0x01)) {
+			// rs line is low, clear things
+			lcds_start_line(TSTAT2);
+			nib_ctr_tstat2 = 0;
+			return;
+		} else {
+
+			if (nib_ctr_tstat2) {
+				char_tstat2 |= (p4 >> 4);
+				lcds_add_char(TSTAT2, char_tstat2);
+			} else {
+				char_tstat2 = p4 & 0xf0;
+			}
+
+			nib_ctr_tstat2 ^= 0x1;
+		}*/
 	}
 
-	index++;
 
+//	util_enableInterrupt();
 
 }
 

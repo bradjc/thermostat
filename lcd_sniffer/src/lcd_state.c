@@ -10,7 +10,7 @@
 
 
 //                                  01234567890123456789012345678901
-unsigned char lcds_str_off[]     = "Unit is OFF     by I/O key      ";
+unsigned char lcds_str_off[]     = "Unit is OFF     by ~/O key      ";
 unsigned char lcds_str_status[]  = " ~~~F    ~~ %RH ~~~~~~~~~       ";
 unsigned char lcds_str_temp_sp[] = "TEMP SETPT";
 
@@ -23,6 +23,7 @@ lcds_tstat_status_t tstat_st[NUM_OF_LCD_DISPLAYS] = {
 };
 lcds_lcd_buf_t      lcd[NUM_OF_LCD_DISPLAYS];
 
+lcds_state_e state;
 
 
 // returns true if the stings are the same.
@@ -55,15 +56,33 @@ uint8_t str_to_num (unsigned char* s, uint8_t len) {
 void lcds_init () {
 	int i;
 	for (i=0; i<NUM_OF_LCD_DISPLAYS; i++) {
-		memset(lcd[i].lcd_chars, 0x44, 32*sizeof(uint8_t));
+		memset(lcd[i].lcd_chars, 0xFE, 32*sizeof(uint8_t));
 		lcd[i].lcd_idx = 16;
 	}
+
+	state = LCDS_ST_RESET1;
 }
 
-// Call this at the start of a new screen write to reset and clear buffers
-void lcds_start_new_screen (thermostat_e tstat) {
-	memset(lcd[tstat].lcd_chars, 0x0F, 32*sizeof(uint8_t));
-	lcd[tstat].lcd_idx = 16;
+void lcds_process_buffer (thermostat_e tstat, uint8_t* buf) {
+	memcpy(lcd[tstat].lcd_chars, buf+16, 16);
+	memcpy(lcd[tstat].lcd_chars+16, buf, 16);
+}
+
+// Call this when rs==0 to reset the index for a new line.
+// The logic is a little flexible in case an interrupt gets missed.
+void lcds_start_line (thermostat_e tstat) {
+	switch (state) {
+		case LCDS_ST_RESET1:
+		case LCDS_ST_LINE2:
+			lcd[tstat].lcd_idx = 16;
+			state = LCDS_ST_RESET1;
+			break;
+		case LCDS_ST_LINE1:
+		case LCDS_ST_RESET2:
+			lcd[tstat].lcd_idx = 0;
+			state = LCDS_ST_RESET2;
+			break;
+	}
 }
 
 // Add a character that was drawn to the lcd to the array. This function will
@@ -73,11 +92,17 @@ void lcds_add_char (thermostat_e tstat, uint8_t character) {
 
 	lcd[tstat].lcd_chars[lcd[tstat].lcd_idx++] = character;
 
-	// The lcd driver on the thermostats write the bottom line first and then
-	//  the top line. We'll just put it in the buffer in a more logical way,
-	//  however.
-	if (lcd[tstat].lcd_idx >= 32) {
-		lcd[tstat].lcd_idx = 0;
+	switch (state) {
+		case LCDS_ST_RESET1:
+			state = LCDS_ST_LINE1;
+			break;
+		case LCDS_ST_RESET2:
+			state = LCDS_ST_LINE2;
+			break;
+	}
+
+	if (lcd[tstat].lcd_idx == 16) {
+		lcds_process_screen(tstat);
 	}
 
 }
