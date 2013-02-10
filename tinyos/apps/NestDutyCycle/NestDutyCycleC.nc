@@ -22,6 +22,9 @@ implementation {
   components NestInputC;
   App.NestInput -> NestInputC;
 
+//  components TstatStateC;
+//  App.LcdSniffer -> TstatStateC.LcdSniffer;
+
   components new TstatButtonsInC(TSTAT1) as Tstat1In;
   components new TstatButtonsInC(TSTAT2) as Tstat2In;
   App.Tstat1In -> Tstat1In.TstatButtonsIn;

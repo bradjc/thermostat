@@ -127,7 +127,7 @@ implementation {
         state = DONE;
         if (tstat_status == 0) {
           // it is currently off, so press 1 button
-          // off button works from any screen
+          // on button works from any screen
           call TstatMultiButton.pressMultipleButtons(power, 1);
         }
         break;
@@ -216,17 +216,24 @@ implementation {
     post action_next();
   }
 
-  event void TstatState.getStatusDone (lcd_status_e status, uint8_t value, error_t e) {
+  event void TstatState.getStatusDone (lcd_status_e status,
+                                       uint8_t value,
+                                       error_t e) {
     if (e != SUCCESS) {
       // uh oh, need to push buttons until this screen comes up
+      tstat_status = 0xff;
+    } else {
+      tstat_status = value;
     }
-    tstat_status = value;
     post action_next();
   }
 
   event void TstatState.getCurrentDisplayDone (lcd_display_e display) {
     current_display = display;
     post action_next();
+  }
+
+  event void TstatState.getLcdCharsDone (uint8_t* chars) {
   }
 
 

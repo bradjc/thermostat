@@ -21,6 +21,8 @@ module NestDutyCycleP {
 
     interface SplitControl as RadioControl;
     interface UDP;
+
+//    interface LcdSniffer;
   }
 }
 
@@ -58,9 +60,13 @@ implementation {
   async event void NestInput.FanStatus (bool on) { }
 
   async event void NestInput.Cool1Status (bool on) {
-    call Leds.led2Toggle();
     atomic {
       unit1_turn_on = on;
+    }
+    if (unit1_turn_on) {
+      call Leds.led2On();
+    } else {
+      call Leds.led2Off();
     }
     post power_cycle();
   }
@@ -93,7 +99,9 @@ implementation {
                            void *data,
                            uint16_t len,
                            struct ip6_metadata *meta) { }
-  event void RadioControl.startDone (error_t e) { }
+  event void RadioControl.startDone (error_t e) {
+  //  call Timer0.startPeriodic(3000);
+  }
   event void RadioControl.stopDone (error_t e) { }
 
 }

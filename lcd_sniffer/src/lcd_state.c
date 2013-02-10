@@ -115,7 +115,7 @@ void lcds_process_screen (thermostat_e tstat) {
 	P1OUT ^= 0x80;
 
 	// check if unit is now off
-	if (str_same(c, lcds_str_off, 32)) {
+	if (str_same(c, lcds_str_off, 16) || str_same(c+16, lcds_str_off, 16)) {
 		// unit is off
 		tstat_st[tstat].on = FALSE;
 		return;
