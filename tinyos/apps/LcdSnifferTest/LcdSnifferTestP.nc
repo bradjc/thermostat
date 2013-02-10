@@ -61,7 +61,7 @@ implementation {
   }
 
   event void Timer1.fired () {
-    call LcdSniffer.getStatus(TSTAT1, Power);
+    call LcdSniffer.getStatus(TSTAT1, Humidity);
   }
 
   event void LcdSniffer.getStatusDone (lcd_status_e status,
@@ -69,7 +69,11 @@ implementation {
                                        error_t e) {
     pkt.type = 1;
     pkt.stat = (uint8_t) status;
-    pkt.val  = value;
+    if (e == SUCCESS) {
+      pkt.val = value;
+    } else {
+      pkt.val = 0xff;
+    }
     call UDP.sendto(&dest, &pkt, sizeof(packet_data_t));
   }
 

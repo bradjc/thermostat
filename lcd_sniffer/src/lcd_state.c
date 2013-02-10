@@ -44,11 +44,13 @@ bool str_same (unsigned char* a, unsigned char* b, uint8_t len) {
 	return TRUE;
 }
 
+uint8_t powers_of_ten[3] = {1, 10, 100};
+
 uint8_t str_to_num (unsigned char* s, uint8_t len) {
 	uint8_t i;
 	uint8_t num = 0;
 	for (i=0; i<len; i++) {
-		num += ((s[i] - 0x30) * (10 * (len - i - 1)));
+		num += (s[i] - 0x30) * powers_of_ten[len - i - 1];
 	}
 	return num;
 }
