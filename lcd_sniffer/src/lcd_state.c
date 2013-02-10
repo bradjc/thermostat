@@ -33,9 +33,9 @@ bool str_same (unsigned char* a, unsigned char* b, uint8_t len) {
 
 	for (i=0; i<len; i++) {
 		// handle all of the special cases first
-		if (a[i] != '~' || b[i] != '~') continue;  // wildcard
-		if (a[i] == ' ' && b[i] == 0x80) continue; // both spaces
-		if (a[i] == 0x80 && b[i] == ' ') continue; // both spaces
+		if (a[i] == '~' || b[i] == '~') continue;  // wildcard
+	//	if (a[i] == ' ' && b[i] == 0x80) continue; // both spaces
+	//	if (a[i] == 0x80 && b[i] == ' ') continue; // both spaces
 
 		if (a[i] != b[i]) {
 			return FALSE;
@@ -110,6 +110,8 @@ void lcds_add_char (thermostat_e tstat, uint8_t character) {
 void lcds_process_screen (thermostat_e tstat) {
 	uint8_t* c = lcd[tstat].lcd_chars;
 
+	P1OUT ^= 0x80;
+
 	// check if unit is now off
 	if (str_same(c, lcds_str_off, 32)) {
 		// unit is off
@@ -169,7 +171,7 @@ uint8_t lcds_get_current_display (thermostat_e tstat) {
 
 
 uint8_t* lcds_get_lcd (thermostat_e tstat) {
-	return lcd[0].lcd_chars;
+	return lcd[tstat].lcd_chars;
 }
 
 

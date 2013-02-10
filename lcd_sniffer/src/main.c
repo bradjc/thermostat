@@ -18,27 +18,6 @@ uint8_t request_type;
 // if the processor wants to know the status, what status does it want
 uint8_t request_val;
 
-// Samples the 4 data wires and returns the values in the lower 4 bits
-uint8_t get_raw_tstat_data (thermostat_e tstat) {
-
-	uint8_t ret_nib = 0;
-
-	if (tstat == TSTAT1) {
-		ret_nib =  gpio_read(TSTAT1_LCD_DB4_PORT, TSTAT1_LCD_DB4_PIN) << 3;
-		ret_nib |= gpio_read(TSTAT1_LCD_DB5_PORT, TSTAT1_LCD_DB5_PIN) << 2;
-		ret_nib |= gpio_read(TSTAT1_LCD_DB6_PORT, TSTAT1_LCD_DB6_PIN) << 1;
-		ret_nib |= gpio_read(TSTAT1_LCD_DB7_PORT, TSTAT1_LCD_DB7_PIN);
-	} else if (tstat == TSTAT2) {
-		ret_nib =  gpio_read(TSTAT2_LCD_DB4_PORT, TSTAT2_LCD_DB4_PIN) << 3;
-		ret_nib |= gpio_read(TSTAT2_LCD_DB5_PORT, TSTAT2_LCD_DB5_PIN) << 2;
-		ret_nib |= gpio_read(TSTAT2_LCD_DB6_PORT, TSTAT2_LCD_DB6_PIN) << 1;
-		ret_nib |= gpio_read(TSTAT2_LCD_DB7_PORT, TSTAT2_LCD_DB7_PIN);
-	}
-
-	return ret_nib;
-
-}
-
 
 void handle_i2c_receive (uint8_t* buf, uint8_t len) {
 	request_tstat = buf[0];
@@ -77,99 +56,6 @@ uint8_t* handle_i2c_transmit () {
 
 
 }
-
-uint8_t char_idx[2]  = {0}; // counter of half words, so one screen is 64 counts
-char    char_last[2] = {0};
-
-
-
-void handle_tstat_int (thermostat_e tstat) {
-	uint8_t rs;
-//	uint8_t rw;
-	uint8_t raw_data;
-
-	uint8_t p1, p4;
-
-	uint8_t db4, db5, db6, db7;
-	uint8_t nib;
-	uint8_t prev_nib;
-
-	//P5OUT ^= 0x10;
-	gpio_toggle(2, 4);
-
-	p1 = P1IN;
-	if (!((p1 >> TSTAT1_LCD_RS_PIN) & 0x01)) {
-		index = 0;
-		return;
-	}
-
-	p4 = P4IN;
-	characters[index++] = p4;
-	return;
-	db4 = (p4 << TSTAT1_LCD_DB4_PIN) & 0x1;
-	db5 = (p4 << TSTAT1_LCD_DB5_PIN) & 0x1;
-	db6 = (p4 << TSTAT1_LCD_DB6_PIN) & 0x1;
-	db7 = (p4 << TSTAT1_LCD_DB7_PIN) & 0x1;
-
-	nib = (db4 << 3) | (db5 << 2) | (db6 << 1) | db7;
-
-	if (index & 0x1) {
-		characters[index/2] = prev_nib | nib;
-	} else {
-		prev_nib = nib << 4;
-	}
-	index++;
-//	characters[index++] = index;
-	return;
-
-
-
-
-	if (tstat == TSTAT1) {
-		rs = gpio_read(TSTAT1_LCD_RS_PORT, TSTAT1_LCD_RS_PIN);
-//		rw = gpio_read(TSTAT1_LCD_RW_PORT, TSTAT1_LCD_RW_PIN);
-	} else {
-		rs = gpio_read(TSTAT2_LCD_RS_PORT, TSTAT2_LCD_RS_PIN);
-//		rw = gpio_read(TSTAT2_LCD_RW_PORT, TSTAT2_LCD_RW_PIN);
-	}
-
-	if (rs == 0) {
-		gpio_clear(2,1);
-		char_idx[tstat] = 0;
-		lcds_start_new_screen(tstat);
-
-	} else {
-		raw_data = get_raw_tstat_data(tstat);
-
-		if (char_idx[tstat] & 0x1) {
-			// if we are on an odd char_idx, then we need to add the four
-			//  new bits and save the character to the lcd_state
-			char_last[tstat] = (char_last[tstat] << 4) | raw_data;
-			lcds_add_char(tstat, char_last[tstat]);
-
-		} else {
-			// save these bits for later
-			char_last[tstat] = raw_data;
-		}
-
-		if (char_idx[tstat] == 31) {
-			gpio_clear(2, 0);
-		}
-
-		char_idx[tstat]++;
-	}
-
-}
-
-void handle_tstat1_int () {
-//	handle_tstat_int(TSTAT1);
-	P2OUT ^= 0x10;
-}
-
-void handle_tstat2_int () {
-	handle_tstat_int(TSTAT2);
-}
-
 
 
 int main () {
@@ -262,7 +148,7 @@ __interrupt void Port_1(void) {
 	p4 = P4IN;
 
 
-	P1OUT ^= 0x80;
+	//P1OUT ^= 0x80;
 
 
 	if (int_pin & 0x08) {
@@ -289,7 +175,7 @@ __interrupt void Port_1(void) {
 			} else {
 			//	char_tstat1[nib_ctr_tstat1/2] = p4 << 4;
 				char_tstat1 = p4 << 4;
-				P2OUT ^= 0x10;
+	//			P2OUT ^= 0x10;
 			}
 
 		//	nib_ctr_tstat1++;
