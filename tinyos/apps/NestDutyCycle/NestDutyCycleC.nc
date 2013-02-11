@@ -50,4 +50,6 @@ implementation {
   components SerialStartC;
 #endif
 
+  components LcdSnifferTestC;
+
 }

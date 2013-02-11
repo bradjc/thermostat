@@ -49,8 +49,8 @@ implementation {
     0x00,
   };
 
-  uint8_t i2c_state;
-  uint8_t i2c_read_buffer[25];
+  i2c_state_e i2c_state = I2C_ST_DONE;
+  uint8_t     i2c_read_buffer[25];
 
   task void i2c_NXPTASK () {
 

@@ -30,8 +30,8 @@ implementation {
 
   static uint8_t request[3]  = {0};
 
-  uint8_t i2c_state;
-  uint8_t i2c_read_buffer[50];
+  i2c_state_e i2c_state = I2C_ST_DONE;
+  uint8_t     i2c_read_buffer[50];
 
   lcd_status_e retrieve_status;
 
@@ -109,7 +109,6 @@ implementation {
         break;
 
       case I2C_ST_GET_LCD_CHARS2:
-        // read the interrupt mask values
         call I2CPacket.read((I2C_START | I2C_STOP),
                             i2c_address,
                             32,
@@ -118,7 +117,6 @@ implementation {
         break;
 
       case I2C_ST_GET_LCD_CHARS3:
-        // process the pressed button
         call I2CResource.release();
         signal LcdSniffer.getLcdCharsDone(i2c_read_buffer);
         i2c_state = I2C_ST_DONE;
@@ -154,7 +152,6 @@ implementation {
 
   command error_t LcdSniffer.getStatus (thermostat_e tstat,
                                         lcd_status_e status) {
-
     request[0] = (uint8_t) tstat - 1;
     request[1] = LCD_I2C_TYPE_STATUS;
     request[2] = (uint8_t) status;

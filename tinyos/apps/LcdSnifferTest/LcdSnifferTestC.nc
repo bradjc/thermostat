@@ -16,10 +16,7 @@ implementation {
   components new TimerMilliC() as Timer0;
   App.Timer0 -> Timer0;
 
-  components new TimerMilliC() as Timer1;
-  App.Timer1 -> Timer1;
-
-  components TstatStateC;
+  components new TstatStateC();
   App.LcdSniffer -> TstatStateC.LcdSniffer;
 
   components TstatGpioC;

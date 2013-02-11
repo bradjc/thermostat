@@ -77,6 +77,7 @@ implementation {
   async event void NestInput.StarStatus (bool on) { }
 
   event void TstatActions1.actionDone () {
+    call Leds.led0Toggle();
     call Leds.led1Toggle();
   }
 

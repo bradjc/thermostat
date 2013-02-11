@@ -47,9 +47,9 @@ implementation {
   } action_state_e;
 
 
-  action_state_e state;
+  action_state_e state = DONE;
   // the state to go back to when running a "subroutine" event series
-  action_state_e ret_state;
+  action_state_e ret_state = DONE;
 
   task void action_next () {
 

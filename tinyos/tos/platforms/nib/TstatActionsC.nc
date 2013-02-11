@@ -17,8 +17,8 @@ implementation {
   components new TstatMultiButtonC(tid) as MButton;
   TstatActionsP.TstatMultiButton -> MButton.TstatMultiButton;
 
-  components TstatStateC;
-  TstatActionsP.TstatState -> TstatStateC;
+  components new TstatStateC();
+  TstatActionsP.TstatState -> TstatStateC.LcdSniffer;
 
   TstatActions = TstatActionsP.TstatActions;
 }
