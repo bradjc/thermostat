@@ -54,7 +54,7 @@ implementation {
 
   task void i2c_NXPTASK () {
 
-if (!call I2CResource.isOwner()) {
+    if (!call I2CResource.isOwner()) {
       call I2CResource.request();
       return;
     }
@@ -141,6 +141,7 @@ if (!call I2CResource.isOwner()) {
         break;
 
       case I2C_ST_SET_PIN2:
+        i2c_state = I2C_ST_DONE;
         // after the write release the I2C bus and send the callback
         call I2CResource.release();
         signal SetPins.setDone();
