@@ -20,5 +20,5 @@ implementation {
 
   // Extenal interfaces
   TstatButtonsIn    = TstatButtonsInP.TstatButtonsIn;
-  DetectKeypadInput = TstatGpioC.DetectKeypadInput;
+  DetectKeypadInput = TstatGpioC.DetectKeypadInput[tid];
 }

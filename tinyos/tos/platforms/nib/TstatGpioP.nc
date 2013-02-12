@@ -6,7 +6,7 @@
 module TstatGpioP {
   provides {
     interface TstatGpio;
-    interface Enable as DetectKeypadInput;
+    interface Enable as DetectKeypadInput[uint8_t tid];
     interface Init;
   }
   uses {
@@ -22,6 +22,9 @@ module TstatGpioP {
 }
 
 implementation {
+
+  // track which banks of gpio inputs should trigger interrupts
+  bool tstat_int_enabled[NUMBER_OF_THERMOSTATS] = {FALSE};
 
   // bitfield of the values on the gpio extender module
   uint16_t gpio_pins = 0;
@@ -65,7 +68,7 @@ implementation {
     call InterruptPin.makeInput();
     call InterruptInt.edge(FALSE); // falling edge interrupt
     call InterruptInt.clear();
-    call InterruptInt.enable();
+    call InterruptInt.disable();
     return SUCCESS;
   }
 
@@ -132,36 +135,64 @@ implementation {
     post read_interrupts();
   }
 
+  button_e determine_button_tstat1 (uint16_t buttons) {
+    if (buttons & TSTAT1_BUTTON_ONOFF) {
+      return OnOff;
+    } else if (buttons & TSTAT1_BUTTON_MENU) {
+      return Menu;
+    } else if (buttons & TSTAT1_BUTTON_UP) {
+      return Up;
+    } else if (buttons & TSTAT1_BUTTON_ESC) {
+      return Esc;
+    } else if (buttons & TSTAT1_BUTTON_HELP) {
+      return Help;
+    } else if (buttons & TSTAT1_BUTTON_DOWN) {
+      return Down;
+    } else if (buttons & TSTAT1_BUTTON_ENTER) {
+      return Enter;
+    }
+    return 0xff;
+  }
+
+  button_e determine_button_tstat2 (uint16_t buttons) {
+    if (buttons & TSTAT2_BUTTON_ONOFF) {
+      return OnOff;
+    } else if (buttons & TSTAT2_BUTTON_MENU) {
+      return Menu;
+    } else if (buttons & TSTAT2_BUTTON_UP) {
+      return Up;
+    } else if (buttons & TSTAT2_BUTTON_ESC) {
+      return Esc;
+    } else if (buttons & TSTAT2_BUTTON_HELP) {
+      return Help;
+    } else if (buttons & TSTAT2_BUTTON_DOWN) {
+      return Down;
+    } else if (buttons & TSTAT2_BUTTON_ENTER) {
+      return Enter;
+    }
+    return 0xff;
+  }
+
   event void ReadInterrupts.readDone (error_t e, uint16_t tstat_buttons) {
 
-    if (tstat_buttons & TSTAT1_BUTTON_ONOFF) {
-      signal TstatGpio.buttonPressed(OnOff, TSTAT1);
-    } else if (tstat_buttons & TSTAT1_BUTTON_MENU) {
-      signal TstatGpio.buttonPressed(Menu, TSTAT1);
-    } else if (tstat_buttons & TSTAT1_BUTTON_UP) {
-      signal TstatGpio.buttonPressed(Up, TSTAT1);
-    } else if (tstat_buttons & TSTAT1_BUTTON_ESC) {
-      signal TstatGpio.buttonPressed(Esc, TSTAT1);
-    } else if (tstat_buttons & TSTAT1_BUTTON_HELP) {
-      signal TstatGpio.buttonPressed(Help, TSTAT1);
-    } else if (tstat_buttons & TSTAT1_BUTTON_DOWN) {
-      signal TstatGpio.buttonPressed(Down, TSTAT1);
-    } else if (tstat_buttons & TSTAT1_BUTTON_ENTER) {
-      signal TstatGpio.buttonPressed(Enter, TSTAT1);
-    } else if (tstat_buttons & TSTAT2_BUTTON_ONOFF) {
-      signal TstatGpio.buttonPressed(OnOff, TSTAT2);
-    } else if (tstat_buttons & TSTAT2_BUTTON_MENU) {
-      signal TstatGpio.buttonPressed(Menu, TSTAT2);
-    } else if (tstat_buttons & TSTAT2_BUTTON_UP) {
-      signal TstatGpio.buttonPressed(Up, TSTAT2);
-    } else if (tstat_buttons & TSTAT2_BUTTON_ESC) {
-      signal TstatGpio.buttonPressed(Esc, TSTAT2);
-    } else if (tstat_buttons & TSTAT2_BUTTON_HELP) {
-      signal TstatGpio.buttonPressed(Help, TSTAT2);
-    } else if (tstat_buttons & TSTAT2_BUTTON_DOWN) {
-      signal TstatGpio.buttonPressed(Down, TSTAT2);
-    } else if (tstat_buttons & TSTAT2_BUTTON_ENTER) {
-      signal TstatGpio.buttonPressed(Enter, TSTAT2);
+    button_e b;
+    // only signal 1 button was pressed at a time
+    bool signaled = FALSE;
+
+    if (tstat_int_enabled[0] == TRUE) {
+      b = determine_button_tstat1(tstat_buttons);
+      if (b != 0xff) {
+        signal TstatGpio.buttonPressed(b, TSTAT1);
+        signaled = TRUE;
+      }
+    }
+
+    if (!signaled && tstat_int_enabled[1] == TRUE) {
+      b = determine_button_tstat2(tstat_buttons);
+      if (b != 0xff) {
+        signal TstatGpio.buttonPressed(b, TSTAT2);
+        signaled = TRUE;
+      }
     }
 
     // Clear the interrupt at this point to minimize the chance of another
@@ -170,11 +201,23 @@ implementation {
     call InterruptInt.enable();
   }
 
-  command void DetectKeypadInput.enable () {
+  command void DetectKeypadInput.enable[uint8_t tid] () {
+    tstat_int_enabled[tid - 1] = TRUE;
     call InterruptInt.enable();
   }
 
-  command void DetectKeypadInput.disable () {
+  command void DetectKeypadInput.disable[uint8_t tid] () {
+    uint8_t i;
+
+    tstat_int_enabled[tid - 1] = FALSE;
+
+    // loop through all tstats and find if any banks want the interrupt enabled
+    for (i=0; i<NUMBER_OF_THERMOSTATS; i++) {
+      if (tstat_int_enabled[i] == TRUE) {
+        return;
+      }
+    }
+
     call InterruptInt.disable();
   }
 

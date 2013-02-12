@@ -11,7 +11,7 @@
 configuration TstatGpioC {
   provides {
     interface TstatGpio;
-    interface Enable as DetectKeypadInput;
+    interface Enable as DetectKeypadInput[uint8_t tid];
   }
 }
 
