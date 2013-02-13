@@ -43,6 +43,7 @@ implementation {
     ENTER_PASSWORD3,
     ENTER_PASSWORD4,
     ENTER_PASSWORD5,
+    SIGNAL_DONE,
     DONE,
   } action_state_e;
 
@@ -86,7 +87,7 @@ implementation {
 //        state = DONE;
 
         state = ENTER_PASSWORD1;
-        ret_state = DONE;
+        ret_state = SIGNAL_DONE;
         // now actually set the temperature
         {
           uint8_t diff;
@@ -124,7 +125,7 @@ implementation {
         break;
 
       case TURN_ON2:
-        state = DONE;
+        state = SIGNAL_DONE;
         if (tstat_status == 0) {
           // it is currently off, so press 1 button
           // on button works from any screen
@@ -138,7 +139,7 @@ implementation {
         break;
 
       case TURN_OFF2:
-        state = DONE;
+        state = SIGNAL_DONE;
         if (tstat_status == 1) {
           // it is currently on, so press 1 button
           // off button works from any screen
@@ -205,14 +206,21 @@ implementation {
         call TstatState.getCurrentDisplay(tid);
         break;
 
-      case DONE:
+      case SIGNAL_DONE:
+       // state = DONE;
         signal TstatActions.actionDone();
+        break;
+
+      case DONE:
         break;
     }
   }
 
 
   event void TstatMultiButton.pressMultipleButtonsDone () {
+  //  if (state == DONE) {
+  //    return;
+  //  }
     post action_next();
   }
 
