@@ -19,9 +19,10 @@ implementation {
     SET_ST_CLEAR,
     SET_ST_WAIT,
     SET_ST_DONE,
+    SET_ST_NULL,
   } set_state_e;
 
-  set_state_e set_state;
+  set_state_e set_state = SET_ST_NULL;
   button_e    button_pressed; // which button
 
   task void next_set () {
@@ -45,7 +46,11 @@ implementation {
         break;
 
       case SET_ST_DONE:
+        set_state = SET_ST_NULL;
         signal TstatButtonsOut.pressButtonDone(button_pressed);
+        break;
+
+      case SET_ST_NULL:
         break;
     }
   }
