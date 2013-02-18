@@ -18,10 +18,14 @@ module TstatGpioP {
 
     interface HplMsp430GeneralIO as InterruptPin;
     interface HplMsp430Interrupt as InterruptInt;
+
+    interface Timer<TMilli> as TimerPeriodicSetup;
   }
 }
 
 implementation {
+
+  #define RESETUP_PERIOD 61440U
 
   // track which banks of gpio inputs should trigger interrupts
   bool tstat_int_enabled[NUMBER_OF_THERMOSTATS] = {FALSE};
@@ -69,7 +73,14 @@ implementation {
     call InterruptInt.edge(FALSE); // falling edge interrupt
     call InterruptInt.clear();
     call InterruptInt.disable();
+
+    call TimerPeriodicSetup.startPeriodic(RESETUP_PERIOD);
     return SUCCESS;
+  }
+
+  event void TimerPeriodicSetup.fired () {
+    call GpioExtenderOut.setup(&i2c_extender_config_out);
+    call GpioExtenderIn.setup(&i2c_extender_config_in);
   }
 
   //

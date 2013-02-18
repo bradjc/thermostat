@@ -57,6 +57,10 @@ implementation {
   // Init
   MainC.SoftwareInit -> TstatGpioP.Init;
 
+  // Timer for periodic reprogramming of the gpio extenders
+  components new TimerMilliC() as TimerPeriodicSetup;
+  TstatGpioP.TimerPeriodicSetup -> TimerPeriodicSetup;
+
   // External interfaces
   TstatGpio         = TstatGpioP.TstatGpio;
   DetectKeypadInput = TstatGpioP.DetectKeypadInput;
