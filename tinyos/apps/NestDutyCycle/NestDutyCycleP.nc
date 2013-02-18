@@ -42,7 +42,7 @@ implementation {
       call Leds.led2On();
 
       call Keypad.disable();
-      call Tstat1InDetect.enable();
+      call Tstat1InDetect.disable();
       call Tstat2InDetect.disable();
 
       call RadioControl.start();
