@@ -1,0 +1,2 @@
+author: Brad Campbell
+description: Interface board for the Nest thermostat and a Liebert airhandling unit. The Nest Interface Board (nib) acts like a home HVAC system (using the relays) in order to receive heating and cooling commands from the Nest. It then impersonates a human when pressing buttons on the Liebert device and reading the status display.
